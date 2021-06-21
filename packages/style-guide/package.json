@@ -30,9 +30,5 @@
   "dependencies": {
     "@axoniq-product-frontend/core": "workspace:*",
     "sirv-cli": "^1.0.0"
-  },
-  "files": [
-    "src",
-    "dipst"
-  ]
+  }
 }
