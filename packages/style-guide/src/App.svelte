@@ -245,10 +245,6 @@ let dialogOpen = false;
 	.row--full {
 		grid-column: 1 / span 3;
 	}
-	.app_row {
-		margin-bottom: 20px;
-		margin-top: 20px;
-	}
 	.button-wrapper {
 		display: flex;
 		justify-content: center;
