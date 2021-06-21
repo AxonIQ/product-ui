@@ -1,0 +1,13 @@
+lockfileVersion: 5.3
+
+specifiers:
+  recursive: ^0.0.2
+
+dependencies:
+  recursive: 0.0.2
+
+packages:
+
+  /recursive/0.0.2:
+    resolution: {integrity: sha1-iuJ817KEDRJK4V/pxM/tc5SJScg=}
+    dev: false
