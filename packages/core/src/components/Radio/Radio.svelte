@@ -19,7 +19,7 @@ import Typography from "../Typography/Typography.svelte";
       </label>
 </div>
 <style lang="scss">
-    @use "../Colors/colors.scss";
+    @use "../../../stylesheets/colors.scss";
 
     // Heavily relied on https://moderncss.dev/pure-css-custom-styled-radio-buttons/ to create the custom radio buttons.
     *,

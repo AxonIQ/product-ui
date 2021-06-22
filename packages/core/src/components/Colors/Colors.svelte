@@ -27,7 +27,7 @@ import Typography from "../Typography/Typography.svelte";
 </div>
 
 <style lang="scss">
-    @use "./colors.scss";
+    @use "../../../stylesheets/colors.scss";
     
     .colors__row {
         display: flex;

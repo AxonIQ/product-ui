@@ -20,7 +20,7 @@ let darkMode = false;
 
 
 <style lang="scss">
-    @use "~@axoniq-product-ui/core/dist/colors.scss";
+    @use "~@axoniq-product-ui/core/stylesheets/colors.scss";
 
     .header {
         background-color: colors.$dove;

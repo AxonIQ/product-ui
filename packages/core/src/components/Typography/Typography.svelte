@@ -49,7 +49,7 @@
     </h3>
 {/if}
 <style lang="scss">
-    @use "../Colors/colors.scss";
+    @use "../../../stylesheets/colors.scss";
 
     .typography {
         font-family: 'Lato', sans-serif;

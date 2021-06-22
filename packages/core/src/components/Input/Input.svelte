@@ -10,7 +10,7 @@
     bind:value={value}
 />
 <style lang="scss">
-    @use "../Colors/colors.scss";
+    @use "../../../stylesheets/colors.scss";
 
     .input {
         height: 26px;

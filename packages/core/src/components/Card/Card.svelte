@@ -3,7 +3,7 @@
 </div>
 
 <style lang="scss">
-    @use "../Colors/colors.scss";
+    @use "../../../stylesheets/colors.scss";
 
     .card {
         border-radius: 4px;

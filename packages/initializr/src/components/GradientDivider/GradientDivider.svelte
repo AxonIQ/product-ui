@@ -1,6 +1,6 @@
 <hr class="divider"/>
 <style lang="scss">
-    @use "~@axoniq-product-ui/core/dist/colors.scss";
+    @use "~@axoniq-product-ui/core/stylesheets/colors.scss";
 
     .divider {
         border: 0;

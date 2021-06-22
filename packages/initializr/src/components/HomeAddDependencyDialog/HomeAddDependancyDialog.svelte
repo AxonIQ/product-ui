@@ -93,7 +93,7 @@ $: dependencyAlreadyAdded = (dependencyItem: DependenciesValue) => {
 </Dialog>
 
 <style lang="scss">
-    @use "~@axoniq-product-ui/core/dist/colors.scss";
+    @use "~@axoniq-product-ui/core/stylesheets/colors.scss";
     
     .home-add-dependency-dialog__top-bar {
         display: flex;

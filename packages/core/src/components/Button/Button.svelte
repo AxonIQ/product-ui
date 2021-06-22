@@ -37,7 +37,7 @@ import Typography from "../Typography/Typography.svelte";
 </button>
 
 <style lang="scss">
-    @use "../Colors/colors.scss";
+    @use "../../../stylesheets/colors.scss";
 
     .button {
         padding: 0;

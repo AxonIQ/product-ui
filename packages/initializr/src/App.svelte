@@ -97,7 +97,7 @@ $: $userSelection.dependencies = addedDependencies.map(dep => dep.id);
 {/if}
 
 <style type="scss">
-	@use "~@axoniq-product-ui/core/dist/colors.scss";
+	@use "~@axoniq-product-ui/core/stylesheets/colors.scss";
 
 	// Heavily relied on https://css-tricks.com/how-to-use-css-grid-for-sticky-headers-and-footers/ for building the grid
 	.app {

@@ -28,7 +28,7 @@
 {/if}
 
 <style lang="scss">
-    @use '../Colors/colors.scss';
+    @use '../../../stylesheets/colors.scss';
 
     .dialog__overlay {
         position: fixed;

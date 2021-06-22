@@ -224,7 +224,7 @@ let dialogOpen = false;
 </main>
 
 <style type="scss">
-	@use "~@axoniq-product-ui/core/dist/colors.scss";
+	@use "~@axoniq-product-ui/core/stylesheets/colors.scss";
 
 	main {
 		display: grid;

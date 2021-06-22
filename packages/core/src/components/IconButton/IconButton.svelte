@@ -24,7 +24,7 @@
 </button>
 
 <style lang="scss">
-    @use "../Colors/colors.scss";
+    @use "../../../stylesheets/colors.scss";
 
     .icon-button {
         padding: 0;

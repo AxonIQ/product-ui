@@ -29,7 +29,7 @@ async function download() {
     <ActionFooterShareDialog bind:visible={shareVisible}/>
 
 <style lang="scss">
-    @use "~@axoniq-product-ui/core/dist/colors.scss";
+    @use "~@axoniq-product-ui/core/stylesheets/colors.scss";
 
     .action-footer {
         display: flex;
