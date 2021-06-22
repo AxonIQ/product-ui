@@ -1,5 +1,5 @@
 <script lang="ts">
-import { Colors, Button, Typography, Radio, IconButton, Toggle, Card, Input, Dialog } from '@axoniq-product-frontend/core';
+import { Colors, Button, Typography, Radio, IconButton, Toggle, Card, Input, Dialog } from '@axoniq-product-ui/core';
 
 let group1 = "";
 let group2 = "Java";
@@ -224,7 +224,7 @@ let dialogOpen = false;
 </main>
 
 <style type="scss">
-	@use "~@axoniq-product-frontend/core/dist/colors.scss";
+	@use "~@axoniq-product-ui/core/dist/colors.scss";
 
 	main {
 		display: grid;

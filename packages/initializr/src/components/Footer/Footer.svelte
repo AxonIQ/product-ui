@@ -1,6 +1,6 @@
 <script>
     import GradientDivider from "../GradientDivider/GradientDivider.svelte";
-    import { Typography } from '@axoniq-product-frontend/core';
+    import { Typography } from '@axoniq-product-ui/core';
     
     </script>
 
@@ -18,7 +18,7 @@
         </div>
         
     <style lang="scss">
-        @use "~@axoniq-product-frontend/core/dist/colors.scss";
+        @use "~@axoniq-product-ui/core/dist/colors.scss";
     
         .footer {
             display: grid;

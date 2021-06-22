@@ -1,5 +1,5 @@
 <script lang="ts">
-import { IconButton } from '@axoniq-product-frontend/core';
+import { IconButton } from '@axoniq-product-ui/core';
     
     export let disabled = false;
     export let onClick = () => {}; 

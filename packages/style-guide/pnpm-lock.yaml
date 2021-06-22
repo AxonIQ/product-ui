@@ -1,7 +1,7 @@
 lockfileVersion: 5.3
 
 specifiers:
-  '@axoniq-product-frontend/core': workspace:*
+  '@axoniq-product-ui/core': workspace:*
   '@rollup/plugin-commonjs': ^17.0.0
   '@rollup/plugin-node-resolve': ^11.0.0
   '@rollup/plugin-typescript': ^8.0.0
@@ -20,7 +20,7 @@ specifiers:
   typescript: ^4.0.0
 
 dependencies:
-  '@axoniq-product-frontend/core': link:../core
+  '@axoniq-product-ui/core': link:../core
   sirv-cli: 1.0.12
 
 devDependencies:

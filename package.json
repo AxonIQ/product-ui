@@ -1,16 +1,16 @@
 {
-    "name": "axoniq-product-frontend",
+    "name": "axoniq-product-ui",
     "version": "0.0.1",
     "description": "A monorepo for AxonIQ product frontends",
     "scripts": {
         "preinstall": "npx only-allow pnpm",
         "build": "pnpm recursive run build",
-        "build:core": "pnpm run build --filter @axoniq-product-frontend/core",
-        "build:style-guide": "pnpm run build --filter @axoniq-product-frontend/style-guide",
-        "build:initializr": "pnpm run build --filter @axoniq-product-frontend/initializr",
+        "build:core": "pnpm run build --filter @axoniq-product-ui/core",
+        "build:style-guide": "pnpm run build --filter @axoniq-product-ui/style-guide",
+        "build:initializr": "pnpm run build --filter @axoniq-product-ui/initializr",
         
-        "dev:style-guide": "pnpm run dev --filter @axoniq-product-frontend/style-guide",
-        "dev:initializr": "pnpm run dev --filter @axoniq-product-frontend/initializr"
+        "dev:style-guide": "pnpm run dev --filter @axoniq-product-ui/style-guide",
+        "dev:initializr": "pnpm run dev --filter @axoniq-product-ui/initializr"
     },
     "keywords": [
         "monorepo",

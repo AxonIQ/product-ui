@@ -1,5 +1,5 @@
 <script lang="ts">
-    import { Button } from '@axoniq-product-frontend/core';
+    import { Button } from '@axoniq-product-ui/core';
     import { userSelection } from "../../userSelectionStore";
     import ActionFooterShareDialog from "../ActionFooterShareDialog/ActionFooterShareDialog.svelte";
 
@@ -29,7 +29,7 @@ async function download() {
     <ActionFooterShareDialog bind:visible={shareVisible}/>
 
 <style lang="scss">
-    @use "~@axoniq-product-frontend/core/dist/colors.scss";
+    @use "~@axoniq-product-ui/core/dist/colors.scss";
 
     .action-footer {
         display: flex;

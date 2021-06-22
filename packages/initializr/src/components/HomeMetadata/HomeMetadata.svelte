@@ -1,5 +1,5 @@
 <script lang="ts">
-    import { Card,Input,Typography } from '@axoniq-product-frontend/core';
+    import { Card,Input,Typography } from '@axoniq-product-ui/core';
 
     export let groupId = '';
     export let artifactId = '';

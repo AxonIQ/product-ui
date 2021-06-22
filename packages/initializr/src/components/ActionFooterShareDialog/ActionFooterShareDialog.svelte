@@ -2,7 +2,7 @@
 
     
     import { userSelection } from "../../userSelectionStore";
-    import { Button, Dialog, Input, Typography } from '@axoniq-product-frontend/core';
+    import { Button, Dialog, Input, Typography } from '@axoniq-product-ui/core';
     
     export let visible = false;
     $: shareableLink = `${location.origin}?${new URLSearchParams($userSelection).toString()}`

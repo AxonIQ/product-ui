@@ -1,5 +1,5 @@
 {
-  "name": "@axoniq-product-frontend/style-guide",
+  "name": "@axoniq-product-ui/style-guide",
   "version": "1.0.0",
   "private": true,
   "scripts": {
@@ -28,7 +28,7 @@
     "typescript": "^4.0.0"
   },
   "dependencies": {
-    "@axoniq-product-frontend/core": "workspace:*",
+    "@axoniq-product-ui/core": "workspace:*",
     "sirv-cli": "^1.0.0"
   }
 }

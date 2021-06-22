@@ -1,5 +1,5 @@
 <script lang="ts">
-import { Card, Dialog, Input, Typography } from '@axoniq-product-frontend/core';
+import { Card, Dialog, Input, Typography } from '@axoniq-product-ui/core';
 
 import type { DataDependencies, DependenciesValue } from "../../dataTypes";
 import IconButtonClear from "../IconButonClear/IconButtonClear.svelte";
@@ -93,7 +93,7 @@ $: dependencyAlreadyAdded = (dependencyItem: DependenciesValue) => {
 </Dialog>
 
 <style lang="scss">
-    @use "~@axoniq-product-frontend/core/dist/colors.scss";
+    @use "~@axoniq-product-ui/core/dist/colors.scss";
     
     .home-add-dependency-dialog__top-bar {
         display: flex;

@@ -1,5 +1,5 @@
 <script lang="ts">
-import { Card,Typography } from '@axoniq-product-frontend/core';
+import { Card,Typography } from '@axoniq-product-ui/core';
 import type { DataDependencies,DependenciesValue } from "../../dataTypes";
 import HomeAddDependancyDialog from '../HomeAddDependencyDialog/HomeAddDependancyDialog.svelte';
 import IconButtonPlus from '../IconButtonPlus/IconButtonPlus.svelte';

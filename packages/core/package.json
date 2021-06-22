@@ -1,5 +1,5 @@
 {
-  "name": "@axoniq-product-frontend/core",
+  "name": "@axoniq-product-ui/core",
   "version": "1.0.0",
   "description": "AxonIQ Core UI components",
   "svelte": "src/index.ts",

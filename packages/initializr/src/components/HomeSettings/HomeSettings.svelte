@@ -1,5 +1,5 @@
 <script lang="ts">
-import { Card,Radio,Typography } from '@axoniq-product-frontend/core';
+import { Card,Radio,Typography } from '@axoniq-product-ui/core';
 import type { DataType,SettingsItem } from "../../dataTypes";
 
     export let projectTypeData: DataType;
