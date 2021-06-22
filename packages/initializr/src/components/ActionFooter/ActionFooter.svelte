@@ -1,5 +1,6 @@
 <script lang="ts">
     import { Button } from '@axoniq-product-ui/core';
+import { rootUrl } from '../../services/rootUrl';
     import { userSelection } from "../../userSelectionStore";
     import ActionFooterShareDialog from "../ActionFooterShareDialog/ActionFooterShareDialog.svelte";
 
@@ -11,7 +12,7 @@ defaultHeaders.append("Content-Disposition", "attachment");
 
 async function download() {
     const fileLink = document.createElement('a');
-    fileLink.href = `http://localhost:8080/starter.zip?${new URLSearchParams($userSelection).toString()}`;
+    fileLink.href = `${rootUrl}/starter.zip?${new URLSearchParams($userSelection).toString()}`;
     fileLink.click();
 }
 
