@@ -98,19 +98,3 @@ export interface Tags {
     build:  string;
     format: string;
 }
-
-async function getData(): Promise<InitializerData> {
-    const response = await fetch("http://localhost:8080/");
-    if (!response.ok) {
-        throw new Error('Bad response');
-    }
-    return await response.json();
-}
-
-export const data = readable<InitializerData | null>(null, (set) => {
-    getData()
-        .then(set)
-        .catch(err => {
-            console.error("Failed to fetch", err);
-        });
-});
