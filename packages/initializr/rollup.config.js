@@ -6,8 +6,7 @@ import { terser } from 'rollup-plugin-terser';
 import sveltePreprocess from 'svelte-preprocess';
 import typescript from '@rollup/plugin-typescript';
 import css from 'rollup-plugin-css-only';
-
-const production = !process.env.ROLLUP_WATCH;
+import replace from '@rollup/plugin-replace';
 
 function serve() {
 	let server;
@@ -30,54 +29,73 @@ function serve() {
 	};
 }
 
-export default {
-	input: 'src/main.ts',
-	output: {
-		sourcemap: !production,
-		format: 'iife',
-		name: 'app',
-		file: 'public/build/bundle.js'
-	},
-	plugins: [
-		svelte({
-			preprocess: sveltePreprocess({ sourceMap: !production }),
-			compilerOptions: {
-				// enable run-time checks when not in production
-				dev: !production
-			}
-		}),
-		// we'll extract any component CSS out into
-		// a separate file - better for performance
-		css({ output: 'bundle.css' }),
+export default (args) => {
+	const isProd = args['config-prod'];
+	let currentEnv = '';
 
-		// If you have external dependencies installed from
-		// npm, you'll most likely need these plugins. In
-		// some cases you'll need additional configuration -
-		// consult the documentation for details:
-		// https://github.com/rollup/plugins/tree/master/packages/commonjs
-		resolve({
-			browser: true,
-			dedupe: ['svelte']
-		}),
-		commonjs(),
-		typescript({
-			sourceMap: !production,
-			inlineSources: !production
-		}),
+	if (args['config-local']) {
+		currentEnv = 'local';
+	} else if (args['config-dev']) {
+		currentEnv = 'dev';
+	} else if (args['config-prod']) {
+		currentEnv = 'prod';
+	}
+	
+	return {
+		input: 'src/main.ts',
+		output: {
+			sourcemap: !isProd,
+			format: 'iife',
+			name: 'app',
+			file: 'public/build/bundle.js'
+		},
+		plugins: [
+			replace({
+				preventAssignment: true,
+				globalThis: JSON.stringify({
+					currentEnv,
+				}),
+			}),
+			svelte({
+				preprocess: sveltePreprocess({ sourceMap: !isProd }),
+				compilerOptions: {
+					// enable run-time checks when not in production
+					dev: !isProd
+				}
+			}),
+			// we'll extract any component CSS out into
+			// a separate file - better for performance
+			css({ output: 'bundle.css' }),
 
-		// In dev mode, call `npm run start` once
-		// the bundle has been generated
-		!production && serve(),
+			// If you have external dependencies installed from
+			// npm, you'll most likely need these plugins. In
+			// some cases you'll need additional configuration -
+			// consult the documentation for details:
+			// https://github.com/rollup/plugins/tree/master/packages/commonjs
+			resolve({
+				browser: true,
+				dedupe: ['svelte']
+			}),
+			commonjs(),
+			typescript({
+				sourceMap: !isProd,
+				inlineSources: !isProd
+			}),
 
-		// Watch the `public` directory and refresh the
-		// browser on changes when not in production
-		!production && livereload('public'),
+			// In dev mode, call `npm run start` once
+			// the bundle has been generated
+			!isProd && serve(),
 
-		// If we're building for production (npm run build
-		// instead of npm run dev), minify
-		production && terser()
-	],
-	watch: {
-		clearScreen: false
+			// Watch the `public` directory and refresh the
+			// browser on changes when not in production
+			!isProd && livereload('public'),
+
+			// If we're building for production (npm run build
+			// instead of npm run dev), minify
+			isProd && terser()
+		],
+		watch: {
+			clearScreen: false
+		}
 	}
 };

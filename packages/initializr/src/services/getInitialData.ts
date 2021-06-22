@@ -1,7 +1,12 @@
 import type { InitializerData } from "../dataTypes";
 
 export const getInitialData = async (): Promise<InitializerData> => {
-    const response = await fetch("http://localhost:8080/");
+    const rootUrl = {
+        'local': 'http://localhost:8080/',
+        'dev': 'https://start.dev.axoniq.net/',
+        'prod': 'https://start.axoniq.net/',
+    }
+    const response = await fetch(rootUrl[globalThis.currentEnv]);
     if (!response.ok) {
         throw new Error('Bad response');
     }
