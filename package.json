@@ -6,9 +6,11 @@
         "preinstall": "npx only-allow pnpm",
         "build": "pnpm recursive run build",
         "build:core": "pnpm run build --filter @axoniq-product-frontend/core",
-        "build:style-guide": "pnpm run dev --filter @axoniq-product-frontend/style-guide",
+        "build:style-guide": "pnpm run build --filter @axoniq-product-frontend/style-guide",
+        "build:initializr": "pnpm run build --filter @axoniq-product-frontend/initializr",
         
-        "dev:style-guide": "pnpm run dev --filter @axoniq-product-frontend/style-guide"
+        "dev:style-guide": "pnpm run dev --filter @axoniq-product-frontend/style-guide",
+        "dev:initializr": "pnpm run dev --filter @axoniq-product-frontend/initializr"
     },
     "keywords": [
         "monorepo",

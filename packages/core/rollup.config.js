@@ -1,12 +1,12 @@
-import svelte from 'rollup-plugin-svelte';
 import commonjs from '@rollup/plugin-commonjs';
 import resolve from '@rollup/plugin-node-resolve';
-import livereload from 'rollup-plugin-livereload';
-import { terser } from 'rollup-plugin-terser';
-import sveltePreprocess from 'svelte-preprocess';
 import typescript from '@rollup/plugin-typescript';
 import css from 'rollup-plugin-css-only';
-import pkg from './package.json'
+import svelte from 'rollup-plugin-svelte';
+import copy from 'rollup-plugin-copy'
+
+import sveltePreprocess from 'svelte-preprocess';
+import pkg from './package.json';
 
 export default {
 	input: 'src/index.ts',
@@ -24,6 +24,11 @@ export default {
 		// we'll extract any component CSS out into
 		// a separate file - better for performance
 		css({ output: 'bundle.css' }),
+		copy({
+			targets: [
+				{ src: "src/components/Colors/colors.scss", dest: 'dist/' }
+			]
+		}),
 
 		// If you have external dependencies installed from
 		// npm, you'll most likely need these plugins. In

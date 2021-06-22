@@ -1,14 +1,5 @@
 <script lang="ts">
-import { Typography } from '@axoniq-product-frontend/core';
-import { Button } from '@axoniq-product-frontend/core';
-
-import { Radio } from "@axoniq-product-frontend/core";
-import { Colors } from "@axoniq-product-frontend/core";
-import { Card } from "@axoniq-product-frontend/core";
-import { IconButton } from "@axoniq-product-frontend/core";
-import { Input } from "@axoniq-product-frontend/core";
-import { Toggle } from "@axoniq-product-frontend/core";
-import { Dialog } from "@axoniq-product-frontend/core";
+import { Colors, Button, Typography, Radio, IconButton, Toggle, Card, Input, Dialog } from '@axoniq-product-frontend/core';
 
 let group1 = "";
 let group2 = "Java";
@@ -233,6 +224,8 @@ let dialogOpen = false;
 </main>
 
 <style type="scss">
+	@use "~@axoniq-product-frontend/core/dist/colors.scss";
+
 	main {
 		display: grid;
 		grid-template-columns: minmax(20px, 1fr) fit-content(1024px) minmax(20px, 1fr);
