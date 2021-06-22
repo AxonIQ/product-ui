@@ -8,6 +8,8 @@ import typescript from '@rollup/plugin-typescript';
 import css from 'rollup-plugin-css-only';
 import replace from '@rollup/plugin-replace';
 
+const production = !process.env.ROLLUP_WATCH;
+
 function serve() {
 	let server;
 
@@ -30,7 +32,6 @@ function serve() {
 }
 
 export default (args) => {
-	const isProd = args['config-prod'];
 	let currentEnv = '';
 
 	if (args['config-local']) {
@@ -44,7 +45,7 @@ export default (args) => {
 	return {
 		input: 'src/main.ts',
 		output: {
-			sourcemap: !isProd,
+			sourcemap: !production,
 			format: 'iife',
 			name: 'app',
 			file: 'public/build/bundle.js'
@@ -57,10 +58,10 @@ export default (args) => {
 				}),
 			}),
 			svelte({
-				preprocess: sveltePreprocess({ sourceMap: !isProd }),
+				preprocess: sveltePreprocess({ sourceMap: !production }),
 				compilerOptions: {
 					// enable run-time checks when not in production
-					dev: !isProd
+					dev: !production
 				}
 			}),
 			// we'll extract any component CSS out into
@@ -78,21 +79,21 @@ export default (args) => {
 			}),
 			commonjs(),
 			typescript({
-				sourceMap: !isProd,
-				inlineSources: !isProd
+				sourceMap: !production,
+				inlineSources: !production
 			}),
 
 			// In dev mode, call `npm run start` once
 			// the bundle has been generated
-			!isProd && serve(),
+			!production && serve(),
 
 			// Watch the `public` directory and refresh the
 			// browser on changes when not in production
-			!isProd && livereload('public'),
+			!production && livereload('public'),
 
 			// If we're building for production (npm run build
 			// instead of npm run dev), minify
-			isProd && terser()
+			production && terser()
 		],
 		watch: {
 			clearScreen: false
