@@ -35,7 +35,7 @@ import Typography from "../Typography/Typography.svelte";
         display: grid;
         grid-template-columns: min-content auto;
         grid-gap: 10px;
-        align-items: baseline;
+        align-items: center;
     }
     .radio__input {
         display: flex;
