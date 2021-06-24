@@ -9,6 +9,8 @@ export let dependencyData: DataDependencies;
 export let addedDependencies: DependenciesValue[] = [];
 
 let addDependenciesVisible = false;
+
+const removeDependency = (currentDependency) => addedDependencies = addedDependencies.filter(dep => dep.id !== currentDependency.id)
 </script>
 
 <div class="home-dependencies__heading">
@@ -19,6 +21,7 @@ let addDependenciesVisible = false;
         {dependencyData}
         {addedDependencies}
         onAddDependency={(dependencyItem) => {addedDependencies = [...addedDependencies, dependencyItem]}}
+        onRemoveDependency={(dependencyItem) => removeDependency(dependencyItem)}
         bind:visible={addDependenciesVisible}
     />
 </div>
@@ -32,9 +35,10 @@ let addDependenciesVisible = false;
                         {addedDep.description}
                     </Typography>
                     <div class="home-dependencies__remove-button">
-                        <IconButtonTrash onClick={() => {
-                            addedDependencies = addedDependencies.filter(dep => dep.id !== addedDep.id);
-                        }}/>
+                        <IconButtonTrash
+                            disabled={['axon-starter', 'axon-test'].indexOf(addedDep.id) > -1}
+                            onClick={() => removeDependency(addedDep)}
+                        />
                     </div>
                 </div>
             </Card>
@@ -48,6 +52,7 @@ let addDependenciesVisible = false;
         display: flex;
         justify-content: space-between;
         align-items: center;
+        margin-right: 25px;
     }
     .home-dependencies__list {
         display: grid;

@@ -36,6 +36,9 @@ onMount(async() => {
 
 		dependencies: (params.dependencies && params.dependencies.split(',')) || [],
 	});
+
+	// TODO: remove this one pre-selection when this issue gets resolved: https://github.com/AxonIQ/initializr/issues/25
+	$userSelection.dependencies = ['axon-starter', 'axon-test'];
 	let allDependencies = [];
 	initialData.dependencies.values.forEach(depWithName => allDependencies = [...allDependencies, ...depWithName.values]);
 	addedDependencies = allDependencies.filter(dep => $userSelection.dependencies.indexOf(dep.id) > -1);
@@ -102,10 +105,7 @@ $: $userSelection.dependencies = addedDependencies.map(dep => dep.id);
 	// Heavily relied on https://css-tricks.com/how-to-use-css-grid-for-sticky-headers-and-footers/ for building the grid
 	.app {
 		height: 100vh;
-		background-image: url(/assets/grid-bg.svg);
-		background-repeat: no-repeat;
 		background-color: colors.$seal;
-		background-position: 60vw 9vh;
 
 		display: grid;
 		grid-template-columns: 1fr;

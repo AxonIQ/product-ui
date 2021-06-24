@@ -4,12 +4,14 @@ import { Card, Dialog, Input, Typography } from '@axoniq-product-ui/core';
 import type { DataDependencies, DependenciesValue } from "../../dataTypes";
 import IconButtonClear from "../IconButonClear/IconButtonClear.svelte";
 import IconButtonPlus from '../IconButtonPlus/IconButtonPlus.svelte';
+import IconButtonTrash from '../IconButtonTrash/IconButtonTrash.svelte';
 import Fuse from 'fuse.js';
 
 export let visible = false;
 export let dependencyData: DataDependencies;
 export let addedDependencies: DependenciesValue[];
 export let onAddDependency: (dependencyItem: DependenciesValue) => void;
+export let onRemoveDependency: (dependencyItem: DependenciesValue) => void;
 
 let searchResult = dependencyData.values;
 let searchInput = '';
@@ -76,11 +78,17 @@ $: dependencyAlreadyAdded = (dependencyItem: DependenciesValue) => {
                                     <Typography size="s">
                                         {dependencyItem.description}
                                     </Typography>
-                                    <div class="home-add-dependency-dialog__add-button">
-                                        <IconButtonPlus
-                                            disabled={dependencyAlreadyAdded(dependencyItem)}
-                                            onClick={() => onAddDependency(dependencyItem)}
-                                        />
+                                    <div class="home-add-dependency-dialog__button">
+                                        {#if dependencyAlreadyAdded(dependencyItem)}
+                                            <IconButtonTrash
+                                                disabled={['axon-starter', 'axon-test'].indexOf(dependencyItem.id) > -1}
+                                                onClick={() => onRemoveDependency(dependencyItem)}
+                                            />
+                                        {:else}
+                                            <IconButtonPlus
+                                                onClick={() => onAddDependency(dependencyItem)}
+                                            />
+                                        {/if}
                                     </div>
                                 </div>
                             </Card>
@@ -135,7 +143,7 @@ $: dependencyAlreadyAdded = (dependencyItem: DependenciesValue) => {
         display: grid;
         grid-gap: 10px;
     }
-    .home-add-dependency-dialog__add-button {
+    .home-add-dependency-dialog__button {
         grid-column: 2;
         grid-row: 1 / span 2;
         align-self: center;
