@@ -12,13 +12,21 @@
     ]
     .filter(value => value)
     .join(' ');
+
+    $: contentClassesToUse = [
+        'icon-button__content',
+        disabled && "icon-button__content--disabled",
+    ]
+    .filter(value => value)
+    .join(' ');
+    
 </script>
 
 <button
     class={classesToUse}
     disabled={disabled}
     on:click={() => onClick()}>
-    <span class={disabled && "icon-button__content--disabled"}>
+    <span class={contentClassesToUse}>
         <slot />
     </span>
 </button>
@@ -95,6 +103,9 @@
         &:hover {
             cursor: default
         }
+    }
+    .icon-button__content {
+        display: flex;
     }
     .icon-button__content--disabled {
         opacity: 0.5
