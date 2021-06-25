@@ -37,6 +37,7 @@
     .icon-button {
         padding: 0;
 
+        position: relative;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -106,6 +107,10 @@
     }
     .icon-button__content {
         display: flex;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
     }
     .icon-button__content--disabled {
         opacity: 0.5
