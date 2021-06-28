@@ -134,9 +134,6 @@ $: $userSelection.dependencies = addedDependencies.map(dep => dep.id);
 			grid-template-columns: fit-content(320px) minmax(auto, 672px);
 			grid-gap: 32px;
 		}
-		.app__content-footer {
-			grid-area: 2 / 1 / 2 / 4;
-		}
 
 		footer {
 			grid-area: action-footer;
