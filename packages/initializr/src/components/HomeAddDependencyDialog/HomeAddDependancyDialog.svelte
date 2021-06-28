@@ -19,7 +19,7 @@ let searchInput = '';
 const searchOptions = {
     includeMatches: true,
     includeScore: true,
-    keys: ['values.name'],
+    keys: ['name', 'values.name'],
 }
 const fuse = new Fuse(dependencyData.values, searchOptions)
 
@@ -29,11 +29,23 @@ $: {
     } else {
         const fuseSearchResult = fuse.search(searchInput);
         searchResult = [];
+        
         searchResult = fuseSearchResult.map(fuseResult => {
             const values = [];
+
+            // If we match the entire group, we add the entire group to the result list.
+            if (fuseResult.matches[0].key === 'name') {
+                return {
+                    name: fuseResult.item.name,
+                    values: fuseResult.item.values,
+                }
+            }
+
+            // Otherwise just get the items of that group, which match the search.
             fuseResult.matches.forEach(match => {
                 values.push(fuseResult.item.values[match.refIndex]);
             });
+
             return {
                 name: fuseResult.item.name,
                 values,
