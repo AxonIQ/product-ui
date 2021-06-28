@@ -1,7 +1,6 @@
 <script lang="ts">
 import { onMount } from "svelte";
 import ActionFooter from "./components/ActionFooter/ActionFooter.svelte";
-import Footer from "./components/Footer/Footer.svelte";
 import Header from "./components/Header/Header.svelte";
 import HomeDependencies from "./components/HomeDependencies/HomeDependencies.svelte";
 import HomeMetadata from "./components/HomeMetadata/HomeMetadata.svelte";
@@ -87,9 +86,6 @@ $: $userSelection.dependencies = addedDependencies.map(dep => dep.id);
 					/>
 				</div>
 			</section>
-			<div class="app__content-footer">
-				<Footer />
-			</div>
 		</main>
 		<footer>
 			<section class="app__action-footer">

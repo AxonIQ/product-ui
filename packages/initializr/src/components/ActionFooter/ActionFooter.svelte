@@ -17,21 +17,30 @@ async function download() {
 }
 
 </script>
-    <div class="action-footer">
-        <Button
-            text="Download"
-            onClick={() => download()}
-        />
-        <Button
-            text="Share"
-            onClick={() => shareVisible = true}
-            variant="secondary" />
+    <div class="action-footer-wrapper">
+        <div class="action-footer">
+            <Button
+                text="Download"
+                onClick={() => download()}
+            />
+            <Button
+                text="Share"
+                onClick={() => shareVisible = true}
+                variant="secondary" />
+        </div>
+        <a href="https://academy.axoniq.io/">
+            <img src="/assets/academy-banner-1.png" alt="Academy Link" />
+        </a>
     </div>
     <ActionFooterShareDialog bind:visible={shareVisible}/>
 
 <style lang="scss">
     @use "~@axoniq-product-ui/core/stylesheets/colors.scss";
 
+    .action-footer-wrapper {
+        display: flex;
+        justify-content: space-between;
+    }
     .action-footer {
         display: flex;
         align-items: center;
