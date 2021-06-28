@@ -28,7 +28,7 @@ async function download() {
                 onClick={() => shareVisible = true}
                 variant="secondary" />
         </div>
-        <a href="https://academy.axoniq.io/">
+        <a href="https://academy.axoniq.io/" target="_blank">
             <img src="/assets/academy-banner-1.png" alt="Academy Link" />
         </a>
     </div>
