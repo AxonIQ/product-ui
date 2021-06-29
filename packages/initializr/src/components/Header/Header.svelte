@@ -9,7 +9,9 @@ let darkMode = false;
 
     <div class="header">
         <div class="header__content">
-            <img src="/assets/header-logo.png" alt="Logo" />
+            <a href="/">
+                <img src="/assets/header-logo.png" alt="Logo" />
+            </a>
             <!-- <Toggle bind:value={darkMode}>
                 <IconSun slot="off-label" />
                 <IconMoon slot="on-label" />
