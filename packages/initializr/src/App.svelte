@@ -122,7 +122,7 @@ $: $userSelection.dependencies = addedDependencies.map(dep => dep.id);
 
 			display: grid;
 			grid-template-columns: minmax(20px, 1fr) fit-content(1024px) minmax(20px, 1fr);
-			grid-template-rows: 1fr auto;
+			grid-template-rows: 1fr;
 		}
 		.app__content {
 			margin-top: 26px;

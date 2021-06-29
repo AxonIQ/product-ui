@@ -1,5 +1,5 @@
 <script lang="ts">
-import { Colors, Button, Typography, Radio, IconButton, Toggle, Card, Input, Dialog } from '@axoniq-product-ui/core';
+import { Colors, Button, Typography, Radio, IconButton, Toggle, Card, Input, Dialog, Search } from '@axoniq-product-ui/core';
 
 let group1 = "";
 let group2 = "Java";
@@ -9,6 +9,7 @@ let toggle1 = true;
 let toggle2 = false;
 
 let textExample = 'Please change me'
+let searchExample = 'I am a filter'
 
 let dialogOpen = false;
 </script>
@@ -199,6 +200,13 @@ let dialogOpen = false;
 		<Input disabled placeholder="Disabled example"/>
 		<Input placeholder="com.example" bind:value={textExample}/>
 		<Typography size="l" weight="bold">{textExample}</Typography>
+	</div>
+
+	<div class="row input-wrapper">
+		<Search placeholder="Placeholder search example"/>
+		<Search disabled placeholder="Disabled search example"/>
+		<Search placeholder="com.search.example" bind:value={searchExample}/>
+		<Typography size="l" weight="bold">{searchExample}</Typography>
 	</div>
 	<div class="row--full">
 		<hr />
