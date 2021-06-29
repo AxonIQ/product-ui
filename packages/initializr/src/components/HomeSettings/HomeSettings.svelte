@@ -15,7 +15,7 @@ import type { DataType,SettingsItem } from "../../dataTypes";
     export let projectPackagingSelected = '';
 </script>
 
-<div>
+<div class="home-settings">
     <div class="home-settings__heading">
         <Typography size="xl" weight="bold">Settings</Typography>
     </div>
@@ -76,6 +76,9 @@ import type { DataType,SettingsItem } from "../../dataTypes";
 </div>
 
 <style lang="scss">
+    .home-settings {
+        margin-bottom: 60px;
+    }
     .home-settings__heading {
         display: flex;
         align-items: center;
