@@ -33,11 +33,10 @@ onMount(async() => {
 		javaVersion: params.javaVersion || initialData.javaVersion.default,
 		packaging: params.packaging || initialData.packaging.default,
 
-		dependencies: (params.dependencies && params.dependencies.split(',')) || [],
+		dependencies: (params.dependencies && params.dependencies.split(',')) || ['axon-starter', 'axon-test'],
 	});
 
 	// TODO: remove this one pre-selection when this issue gets resolved: https://github.com/AxonIQ/initializr/issues/25
-	$userSelection.dependencies = ['axon-starter', 'axon-test'];
 	let allDependencies = [];
 	initialData.dependencies.values.forEach(depWithName => allDependencies = [...allDependencies, ...depWithName.values]);
 	addedDependencies = allDependencies.filter(dep => $userSelection.dependencies.indexOf(dep.id) > -1);
