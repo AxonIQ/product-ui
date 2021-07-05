@@ -1,8 +1,7 @@
 <script lang="ts">
-import { Card, Dialog, Input, Typography } from '@axoniq-product-ui/core';
+import { Card, Dialog, Typography, Search } from '@axoniq-product-ui/core';
 
 import type { DataDependencies, DependenciesValue } from "../../dataTypes";
-import IconButtonClear from "../IconButonClear/IconButtonClear.svelte";
 import IconButtonPlus from '../IconButtonPlus/IconButtonPlus.svelte';
 import IconButtonTrash from '../IconButtonTrash/IconButtonTrash.svelte';
 import Fuse from 'fuse.js';
@@ -65,17 +64,13 @@ $: dependencyAlreadyAdded = (dependencyItem: DependenciesValue) => {
     open={visible}
     onClose={() => visible = false}
 >
-    <div class="home-add-dependency-dialog__top-bar">
-        <Typography size="xl" weight="bold">Add dependencies</Typography>
-        
-        <div class="home-add-dependency-dialog__search-input">
-            <Input
-                placeholder="Web, Security, JPA, Actuator, Devtools..."
-                bind:value={searchInput}
-            />
-            <IconButtonClear onClick={() => searchInput = ''}/>
-        </div>
+    <div slot="title">
+        <Typography slot="title" size="xl" weight="bold">Add dependencies</Typography>
     </div>
+    <Search
+        placeholder="Web, Security, JPA, Actuator, Devtools..."
+        bind:value={searchInput}
+    />
 
     <ul class="home-add-dependency-dialog__group-list">
         {#each searchResult as dependencyDataItemWithName (dependencyDataItemWithName.name) }
@@ -114,18 +109,7 @@ $: dependencyAlreadyAdded = (dependencyItem: DependenciesValue) => {
 
 <style lang="scss">
     @use "~@axoniq-product-ui/core/stylesheets/colors.scss";
-    
-    .home-add-dependency-dialog__top-bar {
-        display: flex;
-        flex-direction: column;
-        gap: 24px;
-    }
-    .home-add-dependency-dialog__search-input {
-        display: flex;
-        flex-shrink: 0;
-        gap: 10px;
-        align-items: center;
-    }
+
     .home-add-dependency-dialog__group-list {
         margin-top: 24px;
         display: flex;
