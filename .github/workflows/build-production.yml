@@ -1,0 +1,37 @@
+name: Build production
+on: 
+  push:
+    branches:
+      - master
+jobs:
+  build-and-commit:
+    runs-on: ubuntu-latest
+    env:
+      CI: false
+    steps:
+    - uses: actions/checkout@v2
+
+    - uses: actions/cache@v2
+      env:
+        cache-name: cache-pnpm-modules
+      with:
+        path: ~/.pnpm-store
+        key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ matrix.node-version }}-${{ hashFiles('**/pnpm-lock.yaml') }}
+        restore-keys: |
+          ${{ runner.os }}-build-${{ env.cache-name }}-${{ matrix.node-version }}-
+
+    - uses: pnpm/action-setup@v2.0.1
+      with:
+        version: 6.9.1
+        run_install: true
+    - run: pnpm build
+
+    - name: Push release changes
+      if: github.github.head_ref == null
+      run: |
+        git config user.name 'Dusan Perkovic'
+        git config user.email 'dusan.perkovic@axoniq.io'
+
+        git add --force packages/initializr/public/build
+        git commit -m "[product-ui] Committing the build"
+        git push
