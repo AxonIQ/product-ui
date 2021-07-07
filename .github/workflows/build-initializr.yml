@@ -1,13 +1,8 @@
-name: Production build
-on: 
-  push:
-    branches:
-      - master
+name: Build Initializr
+on: [pull_request]
 jobs:
-  build-and-commit:
+  install-dependencies:
     runs-on: ubuntu-latest
-    env:
-      CI: false
     steps:
     - uses: actions/checkout@v2
 
@@ -24,14 +19,14 @@ jobs:
       with:
         version: 6.9.1
         run_install: true
-    - run: pnpm build
 
-    - name: Push release changes
-      if: github.github.head_ref == null
-      run: |
-        git config user.name 'Dusan Perkovic'
-        git config user.email 'dusan.perkovic@axoniq.io'
+  build-initializr:
+    runs-on: ubuntu-latest
+    env:
+      CI: false
+    steps:
+    - name: Execute the initializr build
+      working-directory: packages/initializr
+      run: pnpm build
+  
 
-        git add --force packages/initializr/public/build
-        git commit -m "[product-ui] Committing the build"
-        git push
