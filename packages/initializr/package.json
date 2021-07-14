@@ -7,11 +7,12 @@
     "prebuild": "[ $CI = true ] && npx pnpm install --store=node_modules/.pnpm-store || echo skiping pnpm install",
     
     "build": "rollup -c --config-prod",
-    "build:dev": "rollup -c --config-dev",
     "build:local": "rollup -c --config-local",
+    "build:netlify": "rollup -c --config-netlify",
 
-    "dev": "rollup -c -w --config-dev",
-    "dev:local": "rollup -c -w --config-local",
+    "dev": "rollup -c -w --config-local",
+    "dev:prod": "rollup -c -w --config-prod",
+    "dev:netlify": "rollup -c --config-netlify",
 
     "start": "sirv public --no-clear",
     "validate": "svelte-check"
