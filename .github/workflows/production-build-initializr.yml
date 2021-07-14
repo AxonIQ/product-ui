@@ -1,0 +1,50 @@
+name: "[Initializr]: Production build"
+on: 
+  push:
+    branches:
+      - master
+    paths: 
+      - 'packages/initializr/**'
+      - 'packages/core/**'
+jobs:
+  production-build-initialzr:
+    name: Generate a production build.
+    runs-on: ubuntu-latest
+    env:
+      CI: false
+    defaults:
+      run:
+        working-directory: ./packages/initializr
+
+    steps:
+    - name: Delete previous initializr artifacts.
+      uses: geekyeggo/delete-artifact@v1
+      with:
+        name: initializr
+
+    - uses: actions/checkout@v2
+
+    - name: Check PNPM cache before install
+      uses: actions/cache@v2
+      env:
+        cache-name: cache-pnpm-modules
+      with:
+        path: ~/.pnpm-store
+        key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ matrix.node-version }}-${{ hashFiles('**/pnpm-lock.yaml') }}
+        restore-keys: |
+          ${{ runner.os }}-build-${{ env.cache-name }}-${{ matrix.node-version }}-
+
+    - name: Install dependencies
+      uses: pnpm/action-setup@v2.0.1
+      with:
+        version: 6.9.1
+        run_install: true
+    
+    - name: Generate the build
+      run: pnpm build
+
+    - name: Archive initializr artifact
+      uses: actions/upload-artifact@v2
+      with:
+        name: initializr
+        path: packages/initializr/public

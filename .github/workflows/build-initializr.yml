@@ -1,0 +1,37 @@
+name: Build Initializr package
+on:
+  pull_request:
+    paths: 
+      - 'packages/initializr/**'
+      - 'packages/core/**'
+jobs:
+  build-initializr:
+    name: Build Initializr
+    runs-on: ubuntu-latest
+    env:
+      CI: false
+    defaults:
+      run:
+        working-directory: ./packages/initializr
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Check PNPM cache before install
+      uses: actions/cache@v2
+      env:
+        cache-name: cache-pnpm-modules
+      with:
+        path: ~/.pnpm-store
+        key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ matrix.node-version }}-${{ hashFiles('**/pnpm-lock.yaml') }}
+        restore-keys: |
+          ${{ runner.os }}-build-${{ env.cache-name }}-${{ matrix.node-version }}-
+
+    - name: Install dependencies
+      uses: pnpm/action-setup@v2.0.1
+      with:
+        version: 6.9.1
+        run_install: true
+
+    - name: Execute the initializr build
+      run: pnpm build
