@@ -12,7 +12,7 @@ defaultHeaders.append("Content-Disposition", "attachment");
 
 async function download() {
     const fileLink = document.createElement('a');
-    fileLink.href = `${rootUrl}/starter.zip?${new URLSearchParams($userSelection).toString()}`;
+    fileLink.href = `${rootUrl}starter.zip?${new URLSearchParams($userSelection).toString()}`;
     fileLink.click();
 }
 
