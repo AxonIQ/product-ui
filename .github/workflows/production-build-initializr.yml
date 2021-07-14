@@ -17,11 +17,6 @@ jobs:
         working-directory: ./packages/initializr
 
     steps:
-    - name: Delete previous initializr artifacts.
-      uses: geekyeggo/delete-artifact@v1
-      with:
-        name: initializr
-
     - uses: actions/checkout@v2
 
     - name: Check PNPM cache before install
