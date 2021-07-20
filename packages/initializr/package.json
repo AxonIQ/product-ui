@@ -10,9 +10,9 @@
     "build:local": "rollup -c --config-local",
     "build:netlify": "rollup -c --config-netlify",
 
-    "dev": "rollup -c -w --config-local",
+    "dev": "rollup -c -w --config-netlify",
+    "dev:local": "rollup -c -w --config-local",
     "dev:prod": "rollup -c -w --config-prod",
-    "dev:netlify": "rollup -c --config-netlify",
 
     "start": "sirv public --no-clear",
     "validate": "svelte-check"
