@@ -48,6 +48,13 @@ $: $userSelection.baseDir = $userSelection.artifactId;
 $: $userSelection.dependencies = addedDependencies.map(dep => dep.id);
 </script>
 
+<!-- Google Tag Manager (noscript) -->
+
+<noscript><iframe title="Google Tag Manager" src="https://www.googletagmanager.com/ns.html?id=GTM-5QD58ZB"
+	height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+<!-- End Google Tag Manager (noscript) -->
+
 {#if !dataLoaded}
 	<div>Loading...</div>
 {:else}
