@@ -34,5 +34,8 @@
                 text-decoration-thickness: 1px;
                 text-underline-offset: 7px;
             }
+            &:visited {
+                color: inherit;
+            }
         }
     </style>
