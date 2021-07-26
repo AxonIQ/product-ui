@@ -3,18 +3,24 @@
     
         export let href = '';
         export let target = '';
+        export let size: 's' | 'm' | 'l' | 'xl' = 'm';
+        export let text: string;
     </script>
     
     <a
         class="link"
         {href}
         {target}>
-        <Typography
-            center
-            color="rhino"
-            size="s">
-                <slot />
-        </Typography>
+        {#if text}
+            <Typography
+                center
+                color="rhino"
+                {size}>
+                    {text}
+            </Typography>
+        {:else}
+            <slot />    
+        {/if}
     </a>
     
     <style lang="scss">
