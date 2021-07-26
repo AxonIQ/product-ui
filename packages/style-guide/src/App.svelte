@@ -1,5 +1,5 @@
 <script lang="ts">
-import { Colors, Button, Typography, Radio, IconButton, Toggle, Card, Input, Dialog, Search } from '@axoniq-product-ui/core';
+import { Colors, Button, Typography, Radio, IconButton, Toggle, Card, Input, Dialog, Search, Link } from '@axoniq-product-ui/core';
 
 let group1 = "";
 let group2 = "Java";
@@ -62,6 +62,13 @@ let dialogOpen = false;
 	<div class="row button-wrapper">
 		<Button onClick={() => alert('Hello from a primary button')} text="Use cases" />
 		<Button text="Use cases" disabled />
+	</div>
+	<div class="row--full">
+		<hr />
+	</div>
+
+	<div class="row button-wrapper">
+		<Link>Hello, I am a link</Link>
 	</div>
 	<div class="row--full">
 		<hr />

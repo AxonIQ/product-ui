@@ -8,3 +8,4 @@ export * from './Radio';
 export * from './Toggle';
 export * from './Typography';
 export * from './Search';
+export * from './Link';
