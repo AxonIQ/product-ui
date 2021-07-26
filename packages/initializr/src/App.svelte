@@ -1,6 +1,6 @@
 <script lang="ts">
 import { onMount } from "svelte";
-import ActionFooter from "./components/ActionFooter/ActionFooter.svelte";
+import Footer from "./components/Footer/Footer.svelte";
 import Header from "./components/Header/Header.svelte";
 import HomeDependencies from "./components/HomeDependencies/HomeDependencies.svelte";
 import HomeMetadata from "./components/HomeMetadata/HomeMetadata.svelte";
@@ -94,9 +94,7 @@ $: $userSelection.dependencies = addedDependencies.map(dep => dep.id);
 			</section>
 		</main>
 		<footer>
-			<section class="app__action-footer">
-				<ActionFooter />
-			</section>
+			<Footer />
 		</footer>
 	</div>
 {/if}
@@ -115,7 +113,7 @@ $: $userSelection.dependencies = addedDependencies.map(dep => dep.id);
 		grid-template-areas: 
 			'header'
 			'main'
-			'action-footer';
+			'footer';
 
 		header {
 			grid-area: header;
@@ -142,20 +140,9 @@ $: $userSelection.dependencies = addedDependencies.map(dep => dep.id);
 		}
 
 		footer {
-			grid-area: action-footer;
-			
-			display: grid;
-			grid-template-columns: minmax(20px, 1fr) minmax(auto, 1024px) minmax(20px, 1fr);
-			background-color: colors.$dove;
-			height: 100px;
-			align-items: center;
-			box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.4), 0px 5px 4px rgba(0, 0, 0, 0.1);
-			border-radius: 4px;
+			grid-area: footer;
+			grid-column: 1 / span 4;
 			z-index: 1;
 		}
-		.app__action-footer {
-			grid-area: 1 / 2 / 1 / 3;
-		}
-
 	}
 </style>
