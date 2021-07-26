@@ -1,0 +1,136 @@
+<script lang="ts">
+    import { Button, Typography, Link } from '@axoniq-product-ui/core';
+import { rootUrl } from '../../services/rootUrl';
+    import { userSelection } from "../../userSelectionStore";
+    import ActionFooterShareDialog from "../ActionFooterShareDialog/ActionFooterShareDialog.svelte";
+
+let shareVisible = false;
+
+const defaultHeaders = new Headers();
+defaultHeaders.append("Content-Type", "application/zip");
+defaultHeaders.append("Content-Disposition", "attachment");
+
+async function download() {
+    const fileLink = document.createElement('a');
+    fileLink.href = `${rootUrl}starter.zip?${new URLSearchParams($userSelection).toString()}`;
+    fileLink.click();
+}
+
+</script>
+    <div class="footer">
+        <div class="footer__content">
+            <div class="footer__actions">
+                <Button
+                    text="Download"
+                    onClick={() => download()}
+                />
+                <Button
+                    text="Share"
+                    onClick={() => shareVisible = true}
+                    variant="secondary" />
+            </div>
+            <a href="https://academy.axoniq.io/" target="_blank">
+                <img src="/assets/academy-banner-1.png" alt="Academy Link" />
+            </a>
+        </div>
+    </div>
+    <div class="footer__links">
+        <div class="footer__links-content">
+            <div class="footer__links-content-legal">
+                <Typography size="s">AxonIQ © 2021</Typography>
+                <Link size="s" href="https://docs.axoniq.io/reference-guide/" target="_blank" text="Axon Reference Guide" />
+                <Link size="s" href="https://academy.axoniq.io/" target="_blank" text="AxonIQ Academy" />
+                <Link size="s" href="https://discuss.axoniq.io/" target="_blank" text="AxonIQ Discuss" />
+                <Link size="s" href="https://axoniqio.cdn.prismic.io/axoniqio%2Fdc52fae5-3e71-46d1-9bb5-29eb89485294_general+conditions+axoniq_1.0.1.docx-2.pdf" target="_blank" text="General Conditions" />
+                <Link size="s" href="https://axoniq.io/resources/privacy" target="_blank" text="Privacy Policy" />
+            </div>
+
+            <svg width="1" height="22" viewBox="0 0 1 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect y="0.5" width="1" height="21" fill="#A1A4AA"/>
+            </svg>
+                
+            <div class="footer__links-content-social">
+
+                <Link href="https://www.youtube.com/AxonIQ" target="_blank">
+                    <svg width="16" height="24" viewBox="0 0 16 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M15.0117 8.16797C14.8477 7.51172 14.3281 6.99219 13.6992 6.82812C12.5234 6.5 7.875 6.5 7.875 6.5C7.875 6.5 3.19922 6.5 2.02344 6.82812C1.39453 6.99219 0.875 7.51172 0.710938 8.16797C0.382812 9.31641 0.382812 11.7773 0.382812 11.7773C0.382812 11.7773 0.382812 14.2109 0.710938 15.3867C0.875 16.043 1.39453 16.5352 2.02344 16.6992C3.19922 17 7.875 17 7.875 17C7.875 17 12.5234 17 13.6992 16.6992C14.3281 16.5352 14.8477 16.043 15.0117 15.3867C15.3398 14.2109 15.3398 11.7773 15.3398 11.7773C15.3398 11.7773 15.3398 9.31641 15.0117 8.16797ZM6.34375 13.9922V9.5625L10.2266 11.7773L6.34375 13.9922Z" fill="#434A56"/>
+                    </svg>
+                </Link>
+
+                <Link href="https://www.linkedin.com/company/axoniq/" target="_blank">
+                    <svg width="13" height="24" viewBox="0 0 13 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M2.73438 17V8.82422H0.191406V17H2.73438ZM1.44922 7.73047C2.26953 7.73047 2.92578 7.04688 2.92578 6.22656C2.92578 5.43359 2.26953 4.77734 1.44922 4.77734C0.65625 4.77734 0 5.43359 0 6.22656C0 7.04688 0.65625 7.73047 1.44922 7.73047ZM12.2227 17H12.25V12.5156C12.25 10.3281 11.7578 8.63281 9.1875 8.63281C7.95703 8.63281 7.13672 9.31641 6.78125 9.94531H6.75391V8.82422H4.32031V17H6.86328V12.9531C6.86328 11.8867 7.05469 10.875 8.36719 10.875C9.67969 10.875 9.70703 12.0781 9.70703 13.0352V17H12.2227Z" fill="#434A56"/>
+                    </svg>
+                </Link>
+
+                <Link href="https://www.facebook.com/AxonIQ.io/" target="_blank">
+                    <svg width="9" height="24" viewBox="0 0 9 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M7.62891 12.625L8.01172 10.1094H5.57812V8.46875C5.57812 7.75781 5.90625 7.10156 7 7.10156H8.12109V4.94141C8.12109 4.94141 7.10938 4.75 6.15234 4.75C4.15625 4.75 2.84375 5.98047 2.84375 8.16797V10.1094H0.601562V12.625H2.84375V18.75H5.57812V12.625H7.62891Z" fill="#434A56"/>
+                    </svg>
+                </Link>
+
+                <Link href="https://twitter.com/axon_iq" target="_blank">
+                    <svg width="14" height="24" viewBox="0 0 14 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12.5508 8.90625C13.0977 8.49609 13.5898 8.00391 13.9727 7.42969C13.4805 7.64844 12.9062 7.8125 12.332 7.86719C12.9336 7.51172 13.3711 6.96484 13.5898 6.28125C13.043 6.60938 12.4141 6.85547 11.7852 6.99219C11.2383 6.41797 10.5 6.08984 9.67969 6.08984C8.09375 6.08984 6.80859 7.375 6.80859 8.96094C6.80859 9.17969 6.83594 9.39844 6.89062 9.61719C4.51172 9.48047 2.37891 8.33203 0.957031 6.60938C0.710938 7.01953 0.574219 7.51172 0.574219 8.05859C0.574219 9.04297 1.06641 9.91797 1.85938 10.4375C1.39453 10.4102 0.929688 10.3008 0.546875 10.082V10.1094C0.546875 11.5039 1.53125 12.6523 2.84375 12.9258C2.625 12.9805 2.35156 13.0352 2.10547 13.0352C1.91406 13.0352 1.75 13.0078 1.55859 12.9805C1.91406 14.1289 2.98047 14.9492 4.23828 14.9766C3.25391 15.7422 2.02344 16.207 0.683594 16.207C0.4375 16.207 0.21875 16.1797 0 16.1523C1.25781 16.9727 2.76172 17.4375 4.40234 17.4375C9.67969 17.4375 12.5508 13.0898 12.5508 9.28906C12.5508 9.15234 12.5508 9.04297 12.5508 8.90625Z" fill="#434A56"/>
+                    </svg>
+                </Link>
+                
+                <Link href="https://github.com/AxonIQ" target="_blank">
+                    <svg width="14" height="24" viewBox="0 0 14 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M4.51172 15.6328C4.51172 15.5781 4.45703 15.5234 4.375 15.5234C4.29297 15.5234 4.23828 15.5781 4.23828 15.6328C4.23828 15.6875 4.29297 15.7422 4.375 15.7148C4.45703 15.7148 4.51172 15.6875 4.51172 15.6328ZM3.66406 15.4961C3.66406 15.5508 3.71875 15.6328 3.80078 15.6328C3.85547 15.6602 3.9375 15.6328 3.96484 15.5781C3.96484 15.5234 3.9375 15.4688 3.85547 15.4414C3.77344 15.4141 3.69141 15.4414 3.66406 15.4961ZM4.89453 15.4688C4.8125 15.4688 4.75781 15.5234 4.75781 15.6055C4.75781 15.6602 4.83984 15.6875 4.92188 15.6602C5.00391 15.6328 5.05859 15.6055 5.03125 15.5508C5.03125 15.4961 4.94922 15.4414 4.89453 15.4688ZM6.67188 4.96875C2.89844 4.96875 0 7.86719 0 11.6406C0 14.6758 1.88672 17.2734 4.62109 18.2031C4.97656 18.2578 5.08594 18.0391 5.08594 17.875C5.08594 17.6836 5.08594 16.7539 5.08594 16.1797C5.08594 16.1797 3.17188 16.5898 2.76172 15.3594C2.76172 15.3594 2.46094 14.5664 2.02344 14.375C2.02344 14.375 1.39453 13.9375 2.05078 13.9375C2.05078 13.9375 2.73438 13.9922 3.11719 14.6484C3.71875 15.7148 4.70312 15.4141 5.11328 15.2227C5.16797 14.7852 5.33203 14.4844 5.55078 14.293C4.01953 14.1289 2.46094 13.9102 2.46094 11.2852C2.46094 10.5195 2.67969 10.1641 3.11719 9.67188C3.03516 9.48047 2.81641 8.76953 3.19922 7.8125C3.74609 7.64844 5.08594 8.55078 5.08594 8.55078C5.63281 8.38672 6.20703 8.33203 6.78125 8.33203C7.38281 8.33203 7.95703 8.38672 8.50391 8.55078C8.50391 8.55078 9.81641 7.62109 10.3906 7.8125C10.7734 8.76953 10.5273 9.48047 10.4727 9.67188C10.9102 10.1641 11.1836 10.5195 11.1836 11.2852C11.1836 13.9102 9.57031 14.1289 8.03906 14.293C8.28516 14.5117 8.50391 14.9219 8.50391 15.5781C8.50391 16.4805 8.47656 17.6289 8.47656 17.8477C8.47656 18.0391 8.61328 18.2578 8.96875 18.1758C11.7031 17.2734 13.5625 14.6758 13.5625 11.6406C13.5625 7.86719 10.4727 4.96875 6.67188 4.96875ZM2.65234 14.4023C2.59766 14.4297 2.625 14.5117 2.65234 14.5664C2.70703 14.5938 2.76172 14.6211 2.81641 14.5938C2.84375 14.5664 2.84375 14.4844 2.78906 14.4297C2.73438 14.4023 2.67969 14.375 2.65234 14.4023ZM2.35156 14.1836C2.32422 14.2383 2.35156 14.2656 2.40625 14.293C2.46094 14.3203 2.51562 14.3203 2.54297 14.2656C2.54297 14.2383 2.51562 14.2109 2.46094 14.1836C2.40625 14.1562 2.37891 14.1562 2.35156 14.1836ZM3.22656 15.168C3.19922 15.1953 3.19922 15.2773 3.28125 15.332C3.33594 15.3867 3.41797 15.4141 3.44531 15.3594C3.47266 15.332 3.47266 15.25 3.41797 15.1953C3.36328 15.1406 3.28125 15.1133 3.22656 15.168ZM2.92578 14.7578C2.87109 14.7852 2.87109 14.8672 2.92578 14.9219C2.98047 14.9766 3.03516 15.0039 3.08984 14.9766C3.11719 14.9492 3.11719 14.8672 3.08984 14.8125C3.03516 14.7578 2.98047 14.7305 2.92578 14.7578Z" fill="#434A56"/>
+                    </svg>
+                </Link>
+            </div>
+        </div>
+    </div>
+    
+    <ActionFooterShareDialog bind:visible={shareVisible}/>
+
+
+<style lang="scss">
+    @use "~@axoniq-product-ui/core/stylesheets/colors.scss";
+
+    .footer {
+        background-color: colors.$dove;
+
+        display: grid;
+        grid-template-columns: minmax(20px, 1fr) minmax(auto, 1024px) minmax(20px, 1fr);
+        background-color: colors.$dove;
+        padding: 10px 0;
+    }
+    .footer__content {
+        grid-column: 2;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .footer__actions {
+        display: flex;
+        align-items: center;
+        gap: 40px;
+    }
+    .footer__links {
+        background-color: colors.$seal;
+
+        display: grid;
+        grid-template-columns: minmax(20px, 1fr) minmax(auto, 1024px) minmax(20px, 1fr);
+        padding: 8px 0;
+    }
+    .footer__links-content {
+        grid-column: 2;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 32px;
+    }
+    .footer__links-content-legal {
+        display: flex;
+        gap: 32px;
+        flex-direction: row;
+    }
+    .footer__links-content-social {
+        display: flex;
+        gap: 20px;
+        flex-direction: row;
+    }
+</style>
