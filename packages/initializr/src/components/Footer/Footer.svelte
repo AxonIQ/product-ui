@@ -121,11 +121,11 @@ async function download() {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        gap: 32px;
+        gap: 16px;
     }
     .footer__links-content-legal {
         display: flex;
-        gap: 32px;
+        gap: 24px;
         flex-direction: row;
     }
     .footer__links-content-social {
