@@ -5,7 +5,7 @@
   "scripts": {
     "preinstall": "npx only-allow pnpm",
     "prebuild": "[ $CI = true ] && npx pnpm install --store=node_modules/.pnpm-store || echo skiping pnpm install",
-    
+    "printout": "echo skiping pnpm install",
     "build": "rollup -c --config-prod",
     "build:local": "rollup -c --config-local",
     "build:netlify": "rollup -c --config-netlify",
