@@ -19,6 +19,8 @@ let dialogOpen = false;
 		<Colors />
 	</div>
 
+	Hello
+
 	<div class="row--full">
 		<hr />
 	</div>
