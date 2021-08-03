@@ -19,6 +19,10 @@
         width: 100%;
         padding-left: 7px;
 
+        font-size: 14px;
+        font-family: 'Lato', sans-serif;
+        line-height: 24px;
+
         &:focus-visible {
             outline: 0;
         }
