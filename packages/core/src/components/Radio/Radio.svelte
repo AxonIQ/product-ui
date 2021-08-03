@@ -62,8 +62,9 @@ import Typography from "../Typography/Typography.svelte";
         }
     }
     .radio__control {
-        display: grid;
-        place-items: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
         width: 20px;
         height: 20px;
         border-radius: 50%;
