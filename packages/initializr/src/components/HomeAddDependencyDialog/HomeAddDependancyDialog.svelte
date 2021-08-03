@@ -116,8 +116,7 @@ $: dependencyAlreadyAdded = (dependencyItem: DependenciesValue) => {
         flex-direction: column;
         gap: 24px;
         overflow: auto;
-        min-height: 640px;
-        max-height: 640px;
+        max-height: 60vh;
     }
     .home-add-dependency-dialog__group-item {
         display: flex;
