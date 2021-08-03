@@ -3,7 +3,9 @@
     import { Button, Dialog, Input, Typography } from '@axoniq-product-ui/core';
     
     export let visible = false;
-    $: shareableLink = `${location.origin}?${new URLSearchParams($userSelection).toString()}`
+    let buttonText = "Copy";
+
+    $: shareableLink = `${location.origin}?${new URLSearchParams($userSelection).toString()}`;
 </script>
     
     <Dialog
@@ -17,8 +19,9 @@
     <div class="action-footer-share-dialog__input">
         <Input
             value={shareableLink} />
-        <Button text="Copy" onClick={() => {
+        <Button text={buttonText} onClick={() => {
             navigator.clipboard.writeText(shareableLink);
+            buttonText = "Link copied!"
         }}/>
     </div>
     </Dialog>
