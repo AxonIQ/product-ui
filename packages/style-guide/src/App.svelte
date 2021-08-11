@@ -14,8 +14,32 @@ let searchExample = 'I am a filter'
 let dialogOpen = false;
 </script>
 
-<main>
-	<div class="row--full">
+<main class="mx-auto p-2">
+	<div class="flex flex-wrap justify-center gap-3">
+		<div class="w-48 h-48 bg-ox flex items-center justify-center text-dove">
+			<div>Ox - #21252B</div>
+		</div>
+		<div class="w-48 h-48 bg-rhino flex items-center justify-center text-dove">
+			<div>Rhino - #434A56</div>
+		</div>
+		<div class="w-48 h-48 bg-elephant flex items-center justify-center text-dove">
+			<div>Elephant - #A1A4AA</div>
+		</div>
+		<div class="w-48 h-48 bg-seal flex items-center justify-center text-dark-grey">
+			<div>Seal - #F5F6F6</div>
+		</div>
+		<div class="w-48 h-48 bg-dove flex items-center justify-center text-dark-grey">
+			<div>Dove - #FFFFFF</div>
+		</div>
+		<div class="w-48 h-48 bg-fox flex items-center justify-center text-dove">
+			<div>Fox - #F35C00</div>
+		</div>
+		<div class="w-48 h-48 bg-peacock flex items-center justify-center text-dove">
+			<div>Peacock - #026CAF</div>
+
+		</div>
+	</div>
+	<!-- <div class="row--full">
 		<Colors />
 	</div>
 
@@ -235,68 +259,68 @@ let dialogOpen = false;
 				<Button text="Copy"/>
 			</div>
 		</Dialog>
-	</div>
+	</div> -->
 </main>
 
 <style type="scss">
 	@use "~@axoniq-product-ui/core/stylesheets/colors.scss";
 
-	main {
-		display: grid;
-		grid-template-columns: minmax(20px, 1fr) fit-content(1024px) minmax(20px, 1fr);
-		row-gap: 20px;
-		padding: 8px;
-	}
-	.row {
-		grid-column: 2;
-	}
-	.row--full {
-		grid-column: 1 / span 3;
-	}
-	.button-wrapper {
-		display: flex;
-		justify-content: center;
-		gap: 20px;
-	}
-	.radio-wrapper {
-		display: grid;
-		grid-template-rows: repeat(3, 1fr);
-		gap: 10px;
-		grid-auto-flow: column;
-		grid-auto-columns: 200px;
-	}
-	.icon-button-wrapper {
-		display: grid;
-		grid-template-columns: auto auto;
-		justify-content: center;
-		justify-items: center;
-		gap: 20px;
-	}
-	.toggle-wrapper {
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		gap: 20px;
-	}
-	.toggle {
-		display: flex;
-	}
-	.card-wrapper {
-		max-width: 700px;
-	}
-	.card {
-		display: flex;
-		flex-direction: column;
-		gap: 10px;
-	}
-	.input-wrapper {
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		gap: 20px;
-	}
-	.dialog-wrapper {
-		display: flex;
-		justify-content: center;
-	}
+	// main {
+	// 	display: grid;
+	// 	grid-template-columns: minmax(20px, 1fr) fit-content(1024px) minmax(20px, 1fr);
+	// 	row-gap: 20px;
+	// 	padding: 8px;
+	// }
+	// .row {
+	// 	grid-column: 2;
+	// }
+	// .row--full {
+	// 	grid-column: 1 / span 3;
+	// }
+	// .button-wrapper {
+	// 	display: flex;
+	// 	justify-content: center;
+	// 	gap: 20px;
+	// }
+	// .radio-wrapper {
+	// 	display: grid;
+	// 	grid-template-rows: repeat(3, 1fr);
+	// 	gap: 10px;
+	// 	grid-auto-flow: column;
+	// 	grid-auto-columns: 200px;
+	// }
+	// .icon-button-wrapper {
+	// 	display: grid;
+	// 	grid-template-columns: auto auto;
+	// 	justify-content: center;
+	// 	justify-items: center;
+	// 	gap: 20px;
+	// }
+	// .toggle-wrapper {
+	// 	display: flex;
+	// 	flex-direction: column;
+	// 	align-items: center;
+	// 	gap: 20px;
+	// }
+	// .toggle {
+	// 	display: flex;
+	// }
+	// .card-wrapper {
+	// 	max-width: 700px;
+	// }
+	// .card {
+	// 	display: flex;
+	// 	flex-direction: column;
+	// 	gap: 10px;
+	// }
+	// .input-wrapper {
+	// 	display: flex;
+	// 	flex-direction: column;
+	// 	align-items: center;
+	// 	gap: 20px;
+	// }
+	// .dialog-wrapper {
+	// 	display: flex;
+	// 	justify-content: center;
+	// }
 </style>
