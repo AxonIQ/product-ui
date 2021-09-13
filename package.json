@@ -8,7 +8,6 @@
         "build:core": "pnpm run build --filter @axoniq-product-ui/core",
         "build:style-guide": "pnpm run build --filter @axoniq-product-ui/style-guide",
         "build:initializr": "pnpm run build --filter @axoniq-product-ui/initializr",
-        
         "dev:style-guide": "pnpm run dev --filter @axoniq-product-ui/style-guide",
         "dev:initializr": "pnpm run dev --filter @axoniq-product-ui/initializr"
     },
@@ -21,5 +20,10 @@
     "license": "MIT",
     "dependencies": {
         "recursive": "^0.0.2"
+    },
+    "devDependencies": {
+        "autoprefixer": "^10.3.1",
+        "postcss": "^8.3.6",
+        "tailwindcss": "^2.2.7"
     }
 }
