@@ -1,4 +1,6 @@
 <script lang="ts">
+	import Tailwindcss from '../../../Tailwindcss.svelte';
+
 import { Colors, Button, Typography, Radio, IconButton, Toggle, Card, Input, Dialog, Search, Link } from '@axoniq-product-ui/core';
 
 let group1 = "";
@@ -14,72 +16,62 @@ let searchExample = 'I am a filter'
 let dialogOpen = false;
 </script>
 
+<Tailwindcss />
+
 <main class="mx-auto p-2">
-	<div class="flex flex-wrap justify-center gap-3">
+	<div class="flex flex-wrap justify-center gap-10">
 		<div class="w-48 h-48 bg-ox flex items-center justify-center text-dove">
-			<div>Ox - #21252B</div>
+			<div class="font-bold">Ox - #21252B</div>
 		</div>
 		<div class="w-48 h-48 bg-rhino flex items-center justify-center text-dove">
-			<div>Rhino - #434A56</div>
+			<div class="font-bold">Rhino - #434A56</div>
 		</div>
 		<div class="w-48 h-48 bg-elephant flex items-center justify-center text-dove">
-			<div>Elephant - #A1A4AA</div>
+			<div class="font-bold">Elephant - #A1A4AA</div>
 		</div>
 		<div class="w-48 h-48 bg-seal flex items-center justify-center text-dark-grey">
-			<div>Seal - #F5F6F6</div>
+			<div class="font-bold">Seal - #F5F6F6</div>
 		</div>
 		<div class="w-48 h-48 bg-dove flex items-center justify-center text-dark-grey">
-			<div>Dove - #FFFFFF</div>
+			<div class="font-bold">Dove - #FFFFFF</div>
 		</div>
 		<div class="w-48 h-48 bg-fox flex items-center justify-center text-dove">
-			<div>Fox - #F35C00</div>
+			<div class="font-bold">Fox - #F35C00</div>
 		</div>
 		<div class="w-48 h-48 bg-peacock flex items-center justify-center text-dove">
-			<div>Peacock - #026CAF</div>
+			<div class="font-bold">Peacock - #026CAF</div>
 
 		</div>
 	</div>
-	<!-- <div class="row--full">
-		<Colors />
-	</div>
 
-	<div class="row--full">
-		<hr />
-	</div>
-	<div class="row">
-		<Typography size="s" center>Hello from small typography - 14px</Typography>
-		<Typography size="s" center weight="bold">Hello from small typography - 14px</Typography>
-		<Typography size="s" center italic>Hello from small typography - 14px</Typography>
-	</div>
-	<div class="row--full">
-		<hr />
-	</div>
-	<div class="row">
-		<Typography size="m" center>Hello from medium typography - 16px</Typography>
-		<Typography size="m" center weight="bold">Hello from medium typography - 16px</Typography>
-		<Typography size="m" center italic>Hello from medium typography - 16px</Typography>
-	</div>
-	<div class="row--full">
-		<hr />
-	</div>
-	<div class="row">
-		<Typography size="l" center>Hello from large typography - 18px</Typography>
-		<Typography size="l" center weight="bold">Hello from large typography - 18px</Typography>
-		<Typography size="l" center italic>Hello from large typography - 18px</Typography>
-	</div>
-	<div class="row--full">
-		<hr />
-	</div>
-	<div class="row">
-		<Typography size="xl" center>Hello from extra large typography - 24px</Typography>
-		<Typography size="xl" center weight="bold">Hello from extra large typography - 24px</Typography>
-		<Typography size="xl" center italic>Hello from extra large typography - 24px</Typography>
-	</div>
-	<div class="row--full">
-		<hr />
-	</div>
+	<hr class="my-10"/>
 
-	<div class="row button-wrapper">
+	<div class="flex flex-col items-center gap-1">
+		<div class="text-sm">Hello from small typography - 14px</div>
+		<div class="text-sm font-bold">Hello from small typography - 14px</div>
+		<div class="text-sm italic">Hello from small typography - 14px</div>
+	</div>
+	<hr class="my-10"/>
+	<div class="flex flex-col items-center gap-1">
+		<div>Hello from small typography - 16px</div>
+		<div class="font-bold">Hello from small typography - 16px</div>
+		<div class="italic">Hello from small typography - 16px</div>
+	</div>
+	<hr class="my-10"/>
+	<div class="flex flex-col items-center gap-1">
+		<div class="text-lg">Hello from small typography - 18px</div>
+		<div class="text-lg font-bold">Hello from small typography - 18px</div>
+		<div class="text-lg italic">Hello from small typography - 18px</div>
+	</div>
+	<hr class="my-10"/>
+	<div class="flex flex-col items-center gap-1">
+		<div class="text-xl">Hello from small typography - 24px</div>
+		<div class="text-xl font-bold">Hello from small typography - 24px</div>
+		<div class="text-xl italic">Hello from small typography - 24px</div>
+	</div>
+	<hr class="my-10"/>
+
+	<!--<div class="row button-wrapper">
 		<Button onClick={() => alert('Hello from a secondary button')} variant="secondary" text="Use cases" />
 		<Button variant="secondary" disabled text="Use cases" />
 	</div>

@@ -9,6 +9,12 @@ module.exports = {
   },
   darkMode: false, // or 'media' or 'class'
   theme: {
+    fontSize: {
+      sm: '14px',
+      base: '16px',
+      lg: '18px',
+      xl: '24px',
+    },
     colors: {
       transparent: 'transparent',
       current: 'currentColor',
@@ -19,6 +25,9 @@ module.exports = {
       dove: '#FFFFFF',
       fox: '#F35C00',
       peacock: '#0F53B8',
+    },
+    fontFamily: {
+      sans: ['Lato', 'sans-serif'],
     },
     extend: {},
   },
