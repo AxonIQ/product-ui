@@ -71,19 +71,19 @@ let dialogOpen = false;
 	</div>
 	<hr class="my-10"/>
 
-	<!--<div class="row button-wrapper">
-		<Button onClick={() => alert('Hello from a secondary button')} variant="secondary" text="Use cases" />
-		<Button variant="secondary" disabled text="Use cases" />
+	<div class="container mx-auto">
+		<div class="flex gap-5 justify-center mb-5">
+			<Button onClick={() => alert('Hello from a secondary button')} variant="secondary" text="Use cases" />
+			<Button variant="secondary" disabled text="Use cases" />
+		</div>
+		<div class="flex gap-5 justify-center">
+			<Button onClick={() => alert('Hello from a primary button')} text="Use cases" />
+			<Button text="Use cases" disabled />
+		</div>
 	</div>
-	<div class="row button-wrapper">
-		<Button onClick={() => alert('Hello from a primary button')} text="Use cases" />
-		<Button text="Use cases" disabled />
-	</div>
-	<div class="row--full">
-		<hr />
-	</div>
+	<hr class="my-5"/>
 
-	<div class="row button-wrapper">
+	<!-- <div class="row button-wrapper">
 		<Link>Hello, I am a link</Link>
 	</div>
 	<div class="row--full">

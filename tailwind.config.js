@@ -16,6 +16,7 @@ module.exports = {
       xl: '24px',
     },
     colors: {
+      inherit: 'inherit',
       transparent: 'transparent',
       current: 'currentColor',
       ox: '#21252B',
@@ -29,10 +30,22 @@ module.exports = {
     fontFamily: {
       sans: ['Lato', 'sans-serif'],
     },
-    extend: {},
+    minWidth: {
+      '0': '0',
+      '1/4': '25%',
+      '1/2': '50%',
+      '3/4': '75%',
+      'full': '100%',
+      'button': '130px',
+    },
+    boxShadow: {
+      'button': `0 0 0 2px #fff, 0 0 4px 3px #434A56`
+    }
   },
   variants: {
-    extend: {},
+    extend: {
+      textDecoration: ['focus-visible']
+    },
   },
   plugins: [],
 }
