@@ -8,7 +8,7 @@
     </script>
     
     <a
-        class="link"
+        class="no-underline hover:underline visited:text-inherit link"
         {href}
         {target}>
         {#if text}
@@ -27,15 +27,10 @@
         @use "../../../stylesheets/colors.scss";
     
         .link {
-            text-decoration: none;
             &:hover {
-                text-decoration: underline;
                 text-decoration-color: colors.$elephant;
                 text-decoration-thickness: 1px;
                 text-underline-offset: 7px;
-            }
-            &:visited {
-                color: inherit;
             }
         }
     </style>

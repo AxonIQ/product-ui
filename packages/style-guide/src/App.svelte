@@ -81,14 +81,12 @@ let dialogOpen = false;
 			<Button text="Use cases" disabled />
 		</div>
 	</div>
-	<hr class="my-5"/>
+	<hr class="my-10"/>
 
-	<!-- <div class="row button-wrapper">
+	<div class="container mx-auto text-center">
 		<Link>Hello, I am a link</Link>
 	</div>
-	<div class="row--full">
-		<hr />
-	</div>
+	<hr class="my-10"/>
 
 	<div class="row radio-wrapper">
 		<Radio value="Maven" label="Maven" bind:group={group1} name="group1" />
@@ -103,11 +101,8 @@ let dialogOpen = false;
 		<Radio value="Snapshot" label="Snapshot" bind:group={group3} name="group3"/>
 		<Typography>Selected: <Typography inline weight="bold">{group3}</Typography></Typography>
 	</div>
-	<div class="row--full">
-		<hr />
-	</div>
 
-	<div class="row icon-button-wrapper">
+	<!-- <div class="row icon-button-wrapper">
 		<IconButton onClick={() => alert("You clicked the trash button!")}>
 			<span class="icon-wrapper">
 				<svg width="17" height="19" viewBox="0 0 17 19" fill="none" xmlns="http://www.w3.org/2000/svg">
