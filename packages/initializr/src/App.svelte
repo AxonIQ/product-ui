@@ -32,6 +32,8 @@ onMount(async() => {
 		language: params.language || initialData.language.default,
 		javaVersion: params.javaVersion || initialData.javaVersion.default,
 		packaging: params.packaging || initialData.packaging.default,
+		usingAxonServer: params.usingAxonServer || 'EE',
+		axonServerContext: params.axonServerContext || '',
 
 		dependencies: (params.dependencies && params.dependencies.split(',')) || ['axon-starter', 'axon-test'],
 	});
@@ -82,6 +84,8 @@ $: $userSelection.dependencies = addedDependencies.map(dep => dep.id);
 						bind:projectLanguageSelected={$userSelection.language}
 						bind:projectJavaVersionSelected={$userSelection.javaVersion}
 						bind:projectPackagingSelected={$userSelection.packaging}
+						bind:projectUsingAxonServer={$userSelection.usingAxonServer}
+						bind:projectAxonServerContext={$userSelection.axonServerContext}
 					/>
 				</div>
 				<div>

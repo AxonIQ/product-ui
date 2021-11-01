@@ -13,6 +13,8 @@ export const userSelection = writable({
     language: '',
     javaVersion: '',
     packaging: '',
+    usingAxonServer: '',
+    axonServerContext: '',
     
     // Dependencies
     dependencies: [],

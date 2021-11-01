@@ -1,5 +1,5 @@
 <script lang="ts">
-import { Card,Radio,Typography } from '@axoniq-product-ui/core';
+import { Card,Radio,Typography, Input } from '@axoniq-product-ui/core';
 import type { DataType,SettingsItem } from "../../dataTypes";
 
     export let projectTypeData: DataType;
@@ -13,6 +13,11 @@ import type { DataType,SettingsItem } from "../../dataTypes";
 
     export let projectPackagingData: SettingsItem;
     export let projectPackagingSelected = '';
+
+    export let projectUsingAxonServer = 'EE';
+
+    export let projectAxonServerContext = '';
+
 </script>
 
 <div class="home-settings">
@@ -55,7 +60,7 @@ import type { DataType,SettingsItem } from "../../dataTypes";
                         value={projectJavaVersionItem.id}
                         label={projectJavaVersionItem.name}
                         name="projectJavaVersion"
-                        bind:group={projectJavaVersionSelected}
+                        bind:group={projectJavaVersionSelected} 
                     />
                 {/each}
             </div>
@@ -71,6 +76,32 @@ import type { DataType,SettingsItem } from "../../dataTypes";
                     />
                 {/each}
             </div>
+
+            <Typography size="s">Axon Server</Typography>
+            <div class="home-settings__radio-wrapper">
+                <Radio
+                    value={'EE'}
+                    label={'EE'}
+                    name="projectUsingAxonServer"
+                    bind:group={projectUsingAxonServer} 
+                />
+                <Radio
+                    value={'SE'}
+                    label={'SE'}
+                    name="projectUsingAxonServer"
+                    bind:group={projectUsingAxonServer} 
+                />
+                <Radio
+                    value={'CLOUD'}
+                    label={'Cloud'}
+                    name="projectUsingAxonServer"
+                    bind:group={projectUsingAxonServer} 
+                />
+            </div>
+
+            <Typography size="s">Context</Typography>
+            <Input placeholder="Context Name" bind:value={projectAxonServerContext} />
+
         </div>
     </Card>
 </div>
