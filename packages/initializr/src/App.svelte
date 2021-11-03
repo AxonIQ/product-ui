@@ -32,7 +32,7 @@ onMount(async() => {
 		language: params.language || initialData.language.default,
 		javaVersion: params.javaVersion || initialData.javaVersion.default,
 		packaging: params.packaging || initialData.packaging.default,
-		usingAxonServer: params.usingAxonServer || 'EE',
+		usingAxonServer: params.usingAxonServer || 'CLOUD',
 		axonServerContext: params.axonServerContext || '',
 
 		dependencies: (params.dependencies && params.dependencies.split(',')) || ['axon-starter', 'axon-test'],

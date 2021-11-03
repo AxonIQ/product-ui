@@ -80,6 +80,12 @@ import type { DataType,SettingsItem } from "../../dataTypes";
             <Typography size="s">Axon Server</Typography>
             <div class="home-settings__radio-wrapper">
                 <Radio
+                    value={'CLOUD'}
+                    label={'Cloud'}
+                    name="projectUsingAxonServer"
+                    bind:group={projectUsingAxonServer} 
+                />
+                <Radio
                     value={'EE'}
                     label={'EE'}
                     name="projectUsingAxonServer"
@@ -92,8 +98,8 @@ import type { DataType,SettingsItem } from "../../dataTypes";
                     bind:group={projectUsingAxonServer} 
                 />
                 <Radio
-                    value={'CLOUD'}
-                    label={'Cloud'}
+                    value={''}
+                    label={'None'}
                     name="projectUsingAxonServer"
                     bind:group={projectUsingAxonServer} 
                 />
