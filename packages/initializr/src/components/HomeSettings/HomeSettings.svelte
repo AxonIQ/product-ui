@@ -104,9 +104,10 @@ import type { DataType,SettingsItem } from "../../dataTypes";
                     bind:group={projectUsingAxonServer} 
                 />
             </div>
-
-            <Typography size="s">Context</Typography>
-            <Input placeholder="Context Name" bind:value={projectAxonServerContext} />
+            {#if projectUsingAxonServer === "CLOUD" || projectUsingAxonServer === "EE"}
+                <Typography size="s">Context</Typography>
+                <Input placeholder="default" bind:value={projectAxonServerContext} />
+            {/if}
 
         </div>
     </Card>
