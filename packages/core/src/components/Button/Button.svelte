@@ -1,31 +1,21 @@
 <script lang="ts">
+
+    export let size: 'sm' | 'md' = 'md'
     export let disabled = false;
     export let variant: "primary" | "secondary" = "primary";
     export let text: string;
     export let onClick: () => void = () => {};
-
-    const variantClasses = {
-        'primary': 'bg-peacock text-dove',
-        'secondary': 'bg-dove text-rhino'
-    }
-
-    $: classesToUse = [
-        'h-9 min-w-button rounded-full filter drop-shadow',
-        'hover:cursor-pointer hover:drop-shadow-md hover:opacity-75',
-        'active:bg-inherit active:color-inherit active:opacity-50 active:drop-shadow-md',
-        'focus:outline-none focus:shadow-button',
-        variantClasses[variant],
-        disabled && 'opacity-50 pointer-events-none',
-    ]
-    .filter(value => value)
-    .join(' ');
     
 </script>
 
 <button
-    class={classesToUse}
-    disabled={disabled}
+    class="btn"
+    class:btn-primary={variant === "primary"}
+    class:btn-secondary={variant === "secondary"}
+    class:btn-sm={size === 'sm'}
+    class:btn-disabled={disabled}
     on:click={() => onClick()}>
+    <div>
     {#if text}
         <div class="font-bold text-center">
             {#if disabled}
@@ -38,3 +28,20 @@
         <slot />    
     {/if}
 </button>
+
+<style lang="scss">
+    .btn {
+        @apply rounded-full min-h-0 shadow normal-case text-base;
+        height: 36px;
+        &.btn-sm {
+            @apply text-sm;
+            height: 24px;
+        }
+        &.btn-primary.btn-disabled {
+            @apply bg-primary-disabled border-primary-disabled;
+        }
+        &.btn-secondary.btn-disabled {
+            @apply bg-secondary-disabled border-secondary-disabled shadow-none;
+        }
+    }
+</style>

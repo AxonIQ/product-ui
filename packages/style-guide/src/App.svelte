@@ -18,7 +18,7 @@ let dialogOpen = false;
 
 <Tailwindcss />
 
-<main class="mx-auto p-2">
+<main class="mx-auto p-2 bg-white">
 	<div class="flex flex-wrap justify-center gap-10">
 		<div class="w-48 h-48 bg-ox flex items-center justify-center text-dove">
 			<div class="font-bold">Ox - #21252B</div>
@@ -29,17 +29,17 @@ let dialogOpen = false;
 		<div class="w-48 h-48 bg-elephant flex items-center justify-center text-dove">
 			<div class="font-bold">Elephant - #A1A4AA</div>
 		</div>
-		<div class="w-48 h-48 bg-seal flex items-center justify-center text-dark-grey">
+		<div class="w-48 h-48 bg-seal flex items-center justify-center text-rhino">
 			<div class="font-bold">Seal - #F5F6F6</div>
 		</div>
-		<div class="w-48 h-48 bg-dove flex items-center justify-center text-dark-grey">
+		<div class="w-48 h-48 bg-dove flex items-center justify-center text-rhino">
 			<div class="font-bold">Dove - #FFFFFF</div>
 		</div>
 		<div class="w-48 h-48 bg-fox flex items-center justify-center text-dove">
 			<div class="font-bold">Fox - #F35C00</div>
 		</div>
 		<div class="w-48 h-48 bg-peacock flex items-center justify-center text-dove">
-			<div class="font-bold">Peacock - #026CAF</div>
+			<div class="font-bold">Peacock - #1374CF</div>
 
 		</div>
 	</div>
@@ -252,12 +252,13 @@ let dialogOpen = false;
 <style type="scss">
 	@use "~@axoniq-product-ui/core/stylesheets/colors.scss";
 
-	// main {
+	main {
+		background-color: #e5e5e5;
 	// 	display: grid;
 	// 	grid-template-columns: minmax(20px, 1fr) fit-content(1024px) minmax(20px, 1fr);
 	// 	row-gap: 20px;
 	// 	padding: 8px;
-	// }
+	}
 	// .row {
 	// 	grid-column: 2;
 	// }
