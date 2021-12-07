@@ -204,30 +204,27 @@ let dialogOpen = false;
 		</IconButton>
 	</div>
 	<hr class="my-10"/>
-	
-	<!-- <div class="row--full">
-		<hr />
-	</div>
 
-	<div class="row toggle-wrapper">
-		<div class="toggle">
-			<Typography size="s">Off</Typography>
-			<Toggle bind:value={toggle1} />
-			<Typography size="s">On</Typography>
-		</div>
-		<Typography weight="bold">Toggle is {toggle1 ? "on" : "off"}</Typography>
+	<div class="container mx-auto place-items-center grid gap-5">
 
-		<Toggle bind:value={toggle2}>
-			<Typography slot="off-label" size="s">Off</Typography>
-			<Typography slot="on-label" size="s">On</Typography>
+		<Toggle bind:value={toggle1}>
+			<div slot="off-label" class="text-sm">Off</div>
+			<div slot="on-label" class="text-sm">On</div>
 		</Toggle>
-		<Typography weight="bold">Toggle is {toggle2 ? "on" : "off"}</Typography>
-	</div>
-	<div class="row--full">
-		<hr />
+
+		<div class="font-bold">Toggle is {toggle1 ? "on" : "off"}</div>
+
+		<Toggle bind:value={toggle2} disabled>
+			<div slot="off-label" class="text-sm">Off</div>
+			<div slot="on-label" class="text-sm">On</div>
+		</Toggle>
+		
+		<div class="font-bold">Toggle is {toggle2 ? "on" : "off"}</div>
 	</div>
 
-	<div class="row card-wrapper">
+	<hr class="my-10"/>
+
+	<!-- <div class="row card-wrapper">
 		<Card>
 			<div class="card">
 				<Typography size="m" weight="bold">Title</Typography>
@@ -274,7 +271,8 @@ let dialogOpen = false;
 				<Button text="Copy"/>
 			</div>
 		</Dialog>
-	</div> --> -->
+	</div> -->
+
 </main>
 
 <style type="scss">

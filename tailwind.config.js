@@ -5,6 +5,9 @@ module.exports = {
     content: [
       "./src/**/*.svelte",
     ],
+    safelist: [
+      /data-theme$/,
+    ],
     enabled: production // disable purge in dev
   },
   darkMode: false, // or 'media' or 'class'
