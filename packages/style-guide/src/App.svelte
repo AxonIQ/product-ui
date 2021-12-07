@@ -113,18 +113,18 @@ let dialogOpen = false;
 	</div>
 	<hr class="my-10"/>
 
-	<div class="row radio-wrapper">
+	<div class="container mx-auto max-w-screen-xl grid grid-rows-3 grid-cols-3 grid-flow-col">
 		<Radio value="Maven" label="Maven" bind:group={group1} name="group1" />
 		<Radio value="Gradle" label="Gradle" bind:group={group1} name="group1" />
-		<Typography>Selected: <Typography inline weight="bold">{group1}</Typography></Typography>
+		<div>Selected: <span class="font-bold">{group1}</span></div>
 
 		<Radio value="Java" label="Java" bind:group={group2} name="group2"/>
 		<Radio value="Java & Kotlin" label="Java & Kotlin" bind:group={group2} name="group2"/>
-		<Typography>Selected: <Typography inline weight="bold">{group2}</Typography></Typography>
+		<div>Selected: <span class="font-bold">{group2}</span></div>
 
 		<Radio value="Latest" label="Latest" bind:group={group3} name="group3"/>
 		<Radio value="Snapshot" label="Snapshot" bind:group={group3} name="group3"/>
-		<Typography>Selected: <Typography inline weight="bold">{group3}</Typography></Typography>
+		<div>Selected: <span class="font-bold">{group3}</span></div>
 	</div>
 
 	<!-- <div class="row icon-button-wrapper">

@@ -60,7 +60,6 @@ module.exports = {
     require('daisyui')
   ],
   daisyui: {
-    style: false,
     themes: [
       {
         'light': {
@@ -69,22 +68,22 @@ module.exports = {
           'primary-content': '#F5F6F6',
           'primary-disabled': '#89b9e7',
 
-          'secondary' : '#F5F6F6',         /* Secondary color */
-          'secondary-focus' : '#F5F6F6',   /* Secondary color - focused */
-          'secondary-content' : '#434A56', /* Foreground content color to use on secondary color */
+          'secondary': '#F5F6F6',         /* Secondary color */
+          'secondary-focus': '#F5F6F6',   /* Secondary color - focused */
+          'secondary-content': '#434A56', /* Foreground content color to use on secondary color */
 
-          'accent' : '#37cdbe',            /* Accent color */
-          'accent-focus' : '#2aa79b',      /* Accent color - focused */
-          'accent-content' : '#ffffff',    /* Foreground content color to use on accent color */
+          'accent': '#37cdbe',            /* Accent color */
+          'accent-focus': '#2aa79b',      /* Accent color - focused */
+          'accent-content': '#ffffff',    /* Foreground content color to use on accent color */
 
-          'neutral' : '#3d4451',           /* Neutral color */
-          'neutral-focus' : '#2a2e37',     /* Neutral color - focused */
-          'neutral-content' : '#ffffff',   /* Foreground content color to use on neutral color */
+          'neutral': '#434A56',           /* Neutral color */
+          'neutral-focus': '#434A56',     /* Neutral color - focused */
+          'neutral-content': '#ffffff',   /* Foreground content color to use on neutral color */
 
-          'base-100' : '#ffffff',          /* Base color of page, used for blank backgrounds */
-          'base-200' : '#f9fafb',          /* Base color, a little darker */
-          'base-300' : '#d1d5db',          /* Base color, even more darker */
-          'base-content' : '#1f2937',      /* Foreground content color to use on base color */
+          'base-100': '#e5e5e5',          /* Base color of page, used for blank backgrounds */
+          'base-200': '#f9fafb',          /* Base color, a little darker */
+          'base-300': '#d1d5db',          /* Base color, even more darker */
+          'base-content': '#434A56',      /* Foreground content color to use on base color */
         }
       }
     ]
