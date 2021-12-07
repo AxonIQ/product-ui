@@ -92,7 +92,24 @@ let dialogOpen = false;
 	<hr class="my-10"/>
 
 	<div class="container mx-auto text-center">
-		<Link>Hello, I am a link</Link>
+		<div>
+			<Link>
+				<span class="text-sm">Hello, I am a link</span>
+			</Link>
+		</div>
+		<div>
+			<Link>Hello, I am a link</Link>
+		</div>
+		<div>
+			<Link>
+				<span class="text-lg">Hello, I am a link</span>
+			</Link>
+		</div>
+		<div>
+			<Link>
+				<span class="text-xl">Hello, I am a link</span>
+			</Link>
+		</div>
 	</div>
 	<hr class="my-10"/>
 

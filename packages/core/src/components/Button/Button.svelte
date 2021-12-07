@@ -13,7 +13,7 @@
     class:btn-secondary={variant === "secondary"}
     class:btn-sm={size === 'sm'}
     class:btn-disabled={disabled}
-    disabled={disabled}
+    {disabled}
     on:click={() => onClick()}>
         <div class="font-bold text-center">
             {#if disabled}

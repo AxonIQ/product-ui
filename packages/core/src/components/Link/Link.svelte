@@ -1,26 +1,13 @@
 <script lang="ts">
-    import Typography from "../Typography/Typography.svelte";
-    
         export let href = '';
         export let target = '';
-        export let size: 's' | 'm' | 'l' | 'xl' = 'm';
-        export let text: string;
     </script>
     
     <a
-        class="no-underline hover:underline visited:text-inherit link"
+        class="no-underline hover:underline visited:text-inherit link text-rhino"
         {href}
         {target}>
-        {#if text}
-            <Typography
-                center
-                color="rhino"
-                {size}>
-                    {text}
-            </Typography>
-        {:else}
-            <slot />    
-        {/if}
+            <slot />
     </a>
     
     <style lang="scss">
