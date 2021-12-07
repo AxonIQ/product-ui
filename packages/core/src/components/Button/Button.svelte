@@ -15,14 +15,11 @@
     class:btn-disabled={disabled}
     {disabled}
     on:click={() => onClick()}>
-        <div class="font-bold text-center">
-            {#if disabled}
-                <span class="opacity-50">
-                    <slot />
-                </span>
-            {:else}
-                <slot />
-            {/if}
+        <div
+            class="font-bold text-center"
+            class:opacity-50={disabled}
+        >
+            <slot />
         </div>
 </button>
 

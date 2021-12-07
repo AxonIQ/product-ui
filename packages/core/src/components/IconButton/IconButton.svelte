@@ -1,118 +1,35 @@
 <script lang="ts">
-    export let color: "fox" | "peacock" | "seal" = "fox";
+    export let variant: "primary" | "secondary" | "accent" = "primary";
     export let onClick: () => void = () => {};
     export let disabled = false;
-    export let size: "s" | " m" = "m";
-
-    $: classesToUse = [
-        'icon-button',
-        `icon-button--${color}`,
-        `icon-button--${size}`,
-        disabled && 'icon-button--disabled',
-    ]
-    .filter(value => value)
-    .join(' ');
-
-    $: contentClassesToUse = [
-        'icon-button__content',
-        disabled && "icon-button__content--disabled",
-    ]
-    .filter(value => value)
-    .join(' ');
+    export let size: "sm" | "md" = "md";
     
 </script>
 
 <button
-    class={classesToUse}
+    class="btn btn-circle border-none"
+    class:btn-sm={size === 'sm'}
+    class:btn-primary={variant === 'primary'}
+    class:btn-secondary={variant === 'secondary'}
+    class:btn-accent={variant === 'accent'}
+    class:btn-disabled={disabled}
     disabled={disabled}
     on:click={() => onClick()}>
-    <span class={contentClassesToUse}>
-        <slot />
-    </span>
+        <div class:opacity-50={disabled}>
+            <slot />
+        </div>
 </button>
-
 <style lang="scss">
-    @use "../../../stylesheets/colors.scss";
-
-    .icon-button {
-        padding: 0;
-
-        position: relative;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        border: 0;
-        filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.15));
-        &:hover {
-            cursor: pointer;
-            filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.1));
-            opacity: 0.75;
+    .btn-disabled {
+        @apply shadow-none;
+        &.btn-primary {
+            @apply bg-primary-disabled text-dove;
         }
-        &:active {
-            background-color: inherit;
-            color: inherit;
-            filter: drop-shadow(0px 5px 3px rgba(0, 0, 0, 0.1));
-            opacity: 0.5;
+        &.btn-secondary {
+            @apply bg-secondary-disabled text-ox;
         }
-        &:focus-visible {
-            box-shadow: 0 0 0 2px #fff, 0 0 4px 3px colors.$rhino;
-            outline: 0;
+        &.btn-accent {
+            @apply bg-accent-disabled text-ox;
         }
-
-        border-radius: 50px;
-        background-color: colors.$fox;
-        cursor: pointer;
-    }
-    .icon-button--m {
-        width: 48px;
-        height: 48px;
-    }
-    .icon-button--s {
-        width: 36px;
-        height: 36px;
-    }
-    .icon-button--fox {
-        background-color: colors.$fox;
-        &:hover {
-            background-color: colors.$fox;
-        }
-        &:active {
-            background-color: colors.$fox;
-        }
-    }
-    .icon-button--peacock {
-        background-color: colors.$peacock;
-        &:hover {
-            background-color: colors.$peacock;
-        }
-        &:active {
-            background-color: colors.$peacock;
-        }
-    }
-    .icon-button--seal {
-        background-color: colors.$seal;
-        &:hover {
-            background-color: colors.$seal;
-        }
-        &:active {
-            background-color: colors.$seal;
-        }
-    }
-    .icon-button--disabled {
-        opacity: 0.5;
-        pointer-events: none;
-        &:hover {
-            cursor: default
-        }
-    }
-    .icon-button__content {
-        display: flex;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-    }
-    .icon-button__content--disabled {
-        opacity: 0.5
     }
 </style>

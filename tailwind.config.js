@@ -28,7 +28,8 @@ module.exports = {
       peacock: '#1374CF',
 
       "primary-disabled": "#89b9e7",
-      "secondary-disabled": "#f5f6f6"
+      "secondary-disabled": "#f5f6f6",
+      "accent-disabled": "#feae7f",
     },
     fontFamily: {
       sans: ['Lato', 'sans-serif'],
@@ -72,8 +73,8 @@ module.exports = {
           'secondary-focus': '#F5F6F6',   /* Secondary color - focused */
           'secondary-content': '#434A56', /* Foreground content color to use on secondary color */
 
-          'accent': '#37cdbe',            /* Accent color */
-          'accent-focus': '#2aa79b',      /* Accent color - focused */
+          'accent': '#FE5E00',            /* Accent color */
+          'accent-focus': '#FE8640',      /* Accent color - focused */
           'accent-content': '#ffffff',    /* Foreground content color to use on accent color */
 
           'neutral': '#434A56',           /* Neutral color */
