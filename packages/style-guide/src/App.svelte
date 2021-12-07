@@ -73,20 +73,20 @@ let dialogOpen = false;
 
 	<div class="container mx-auto">
 		<div class="flex gap-5 justify-center mb-5">
-			<Button onClick={() => alert('Hello from a secondary button')} variant="secondary" text="Use cases" />
-			<Button variant="secondary" disabled text="Use cases" />
+			<Button onClick={() => alert('Hello from a primary button')}>Use cases</Button>
+			<Button disabled>Use cases</Button>
 		</div>
 		<div class="flex gap-5 justify-center mb-5">
-			<Button onClick={() => alert('Hello from a secondary button')} variant="secondary" text="Use cases" size="sm"/>
-			<Button variant="secondary" disabled text="Use cases" size="sm"/>
+			<Button onClick={() => alert('Hello from a primary button')} size="sm">Use cases</Button>
+			<Button disabled size="sm">Use cases</Button>
 		</div>
 		<div class="flex gap-5 justify-center mb-5">
-			<Button onClick={() => alert('Hello from a primary button')} text="Use cases" />
-			<Button text="Use cases" disabled />
+			<Button onClick={() => alert('Hello from a secondary button')} variant="secondary">Use cases</Button>
+			<Button variant="secondary" disabled>Use cases</Button>
 		</div>
-		<div class="flex gap-5 justify-center">
-			<Button onClick={() => alert('Hello from a primary button')} text="Use cases" size="sm"/>
-			<Button text="Use cases" disabled size="sm"/>
+		<div class="flex gap-5 justify-center mb-5">
+			<Button onClick={() => alert('Hello from a secondary button')} variant="secondary" size="sm">Use cases</Button>
+			<Button variant="secondary" disabled size="sm">Use cases</Button>
 		</div>
 	</div>
 	<hr class="my-10"/>
