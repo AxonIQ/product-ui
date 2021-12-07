@@ -76,9 +76,17 @@ let dialogOpen = false;
 			<Button onClick={() => alert('Hello from a secondary button')} variant="secondary" text="Use cases" />
 			<Button variant="secondary" disabled text="Use cases" />
 		</div>
-		<div class="flex gap-5 justify-center">
+		<div class="flex gap-5 justify-center mb-5">
+			<Button onClick={() => alert('Hello from a secondary button')} variant="secondary" text="Use cases" size="sm"/>
+			<Button variant="secondary" disabled text="Use cases" size="sm"/>
+		</div>
+		<div class="flex gap-5 justify-center mb-5">
 			<Button onClick={() => alert('Hello from a primary button')} text="Use cases" />
 			<Button text="Use cases" disabled />
+		</div>
+		<div class="flex gap-5 justify-center">
+			<Button onClick={() => alert('Hello from a primary button')} text="Use cases" size="sm"/>
+			<Button text="Use cases" disabled size="sm"/>
 		</div>
 	</div>
 	<hr class="my-10"/>
