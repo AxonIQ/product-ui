@@ -1,12 +1,10 @@
 const production = !process.env.ROLLUP_WATCH;
 
 module.exports = {
+  mode: 'jit',
   purge: {
     content: [
       "./src/**/*.svelte",
-    ],
-    safelist: [
-      /data-theme$/,
     ],
     enabled: production // disable purge in dev
   },

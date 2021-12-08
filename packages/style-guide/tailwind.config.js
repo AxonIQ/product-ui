@@ -8,9 +8,6 @@ module.exports = {
       "../core/src/**/*.svelte",
       "./src/**/*.svelte",
     ],
-    safelist: [
-      /data-theme$/,
-    ],
     enabled: production // disable purge in dev
   },
 }
