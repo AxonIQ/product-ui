@@ -1,14 +1,9 @@
 const production = !process.env.ROLLUP_WATCH;
 
 module.exports = {
-  mode: 'jit',
-  purge: {
-    content: [
-      "./src/**/*.svelte",
-    ],
-    enabled: production // disable purge in dev
-  },
-  darkMode: false, // or 'media' or 'class'
+  content: [
+    "./src/**/*.svelte",
+  ],
   theme: {
     fontSize: {
       sm: '14px',
@@ -27,10 +22,6 @@ module.exports = {
       dove: '#FFFFFF',
       fox: '#F35C00',
       peacock: '#1374CF',
-
-      "primary-disabled": "#89b9e7",
-      "secondary-disabled": "#f5f6f6",
-      "accent-disabled": "#feae7f",
     },
     fontFamily: {
       sans: ['Lato', 'sans-serif'],
@@ -55,39 +46,4 @@ module.exports = {
       none: 'none',
     }
   },
-  variants: {
-    extend: {},
-  },
-  plugins: [
-    require('daisyui')
-  ],
-  daisyui: {
-    themes: [
-      {
-        'light': {
-          'primary': '#1374CF',
-          'primary-focus': '#4e97db',
-          'primary-content': '#F5F6F6',
-          'primary-disabled': '#89b9e7',
-
-          'secondary': '#F5F6F6',         /* Secondary color */
-          'secondary-focus': '#F5F6F6',   /* Secondary color - focused */
-          'secondary-content': '#434A56', /* Foreground content color to use on secondary color */
-
-          'accent': '#FE5E00',            /* Accent color */
-          'accent-focus': '#FE8640',      /* Accent color - focused */
-          'accent-content': '#ffffff',    /* Foreground content color to use on accent color */
-
-          'neutral': '#434A56',           /* Neutral color */
-          'neutral-focus': '#434A56',     /* Neutral color - focused */
-          'neutral-content': '#ffffff',   /* Foreground content color to use on neutral color */
-
-          'base-100': '#e5e5e5',          /* Base color of page, used for blank backgrounds */
-          'base-200': '#f9fafb',          /* Base color, a little darker */
-          'base-300': '#d1d5db',          /* Base color, even more darker */
-          'base-content': '#434A56',      /* Foreground content color to use on base color */
-        }
-      }
-    ]
-  }
 }
