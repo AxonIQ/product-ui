@@ -86,23 +86,43 @@ let dialogOpen = false;
 	<div class="container mx-auto text-center">
 		<div>
 			<Link>
-				<span class="text-sm">Hello, I am a link</span>
+				<span class="text-sm">Hello, I am a primary link</span>
 			</Link>
 		</div>
 		<div>
-			<Link>Hello, I am a link</Link>
+			<Link>Hello, I am a primary link</Link>
 		</div>
 		<div>
 			<Link>
-				<span class="text-lg">Hello, I am a link</span>
+				<span class="text-lg">Hello, I am a primary link</span>
 			</Link>
 		</div>
 		<div>
 			<Link>
-				<span class="text-xl">Hello, I am a link</span>
+				<span class="text-xl">Hello, I am a primary link</span>
+			</Link>
+		</div>
+
+		<div>
+			<Link variant="secondary">
+				<span class="text-sm">Hello, I am a secondary link</span>
+			</Link>
+		</div>
+		<div>
+			<Link variant="secondary">Hello, I am a secondary link</Link>
+		</div>
+		<div>
+			<Link variant="secondary">
+				<span class="text-lg">Hello, I am a secondary link</span>
+			</Link>
+		</div>
+		<div>
+			<Link variant="secondary">
+				<span class="text-xl">Hello, I am a secondary link</span>
 			</Link>
 		</div>
 	</div>
+
 	<hr class="my-10"/>
 
 	<div class="container mx-auto max-w-screen-xl grid grid-rows-3 grid-cols-3 grid-flow-col place-items-center">

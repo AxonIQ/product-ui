@@ -1,23 +1,21 @@
 <script lang="ts">
-        export let href = '';
-        export let target = '';
-    </script>
-    
-    <a
-        class="no-underline hover:underline visited:text-inherit link text-rhino"
-        {href}
-        {target}>
-            <slot />
-    </a>
-    
-    <style lang="scss">
-        @use "../../../stylesheets/colors.scss";
-    
-        .link {
-            &:hover {
-                text-decoration-color: colors.$elephant;
-                text-decoration-thickness: 1px;
-                text-underline-offset: 7px;
-            }
-        }
-    </style>
+    export let href = '';
+    export let target = '';
+    export let variant: "primary" | "secondary" = "primary";
+</script>
+
+<a
+    class:link-primary={variant === 'primary'}
+    class:link-secondary={variant === 'secondary'}
+    {href}
+    {target}>
+        <slot />
+</a>
+<style lang="scss">
+    .link-primary {
+        @apply text-peacock hover:opacity-80
+    }
+    .link-secondary {
+        @apply text-rhino hover:decoration-elephant hover:underline hover:decoration-1 hover:underline-offset-4 visited:text-inherit
+    }
+</style>
