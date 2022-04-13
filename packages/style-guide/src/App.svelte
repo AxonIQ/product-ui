@@ -77,16 +77,8 @@ let dialogOpen = false;
 			<Button disabled>Use cases</Button>
 		</div>
 		<div class="flex gap-5 justify-center mb-5">
-			<Button onClick={() => alert('Hello from a primary button')} size="sm">Use cases</Button>
-			<Button disabled size="sm">Use cases</Button>
-		</div>
-		<div class="flex gap-5 justify-center mb-5">
 			<Button onClick={() => alert('Hello from a secondary button')} variant="secondary">Use cases</Button>
 			<Button variant="secondary" disabled>Use cases</Button>
-		</div>
-		<div class="flex gap-5 justify-center mb-5">
-			<Button onClick={() => alert('Hello from a secondary button')} variant="secondary" size="sm">Use cases</Button>
-			<Button variant="secondary" disabled size="sm">Use cases</Button>
 		</div>
 	</div>
 	<hr class="my-10"/>
@@ -221,24 +213,47 @@ let dialogOpen = false;
 		
 		<div class="font-bold">Toggle is {toggle2 ? "on" : "off"}</div>
 	</div>
-
 	<hr class="my-10"/>
 
-	<!-- <div class="row card-wrapper">
+	<div class="container mx-auto max-w-screen-md flex flex-col gap-5">
 		<Card>
-			<div class="card">
-				<Typography size="m" weight="bold">Title</Typography>
-				<Typography size="s">
-					Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-				</Typography>
-			</div>
+			<Typography size="m" weight="bold">Title</Typography>
+			<Typography size="s">
+				Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+			</Typography>
 		</Card>
-	</div>
-	<div class="row--full">
-		<hr />
-	</div>
 
-	<div class="row input-wrapper">
+		<div class="card shadow-xl lg:card-side bg-secondary">
+			<div class="card-body">
+				<div class="card-title flex justify-between">
+					<div>Axon Framework</div>
+					<button class="btn btn-accent btn-circle btn-sm">
+						<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" class="inline-block w-6 h-6 stroke-current">   
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>                       
+						</svg>
+					</button>
+				</div>
+				<p>Rerum reiciendis beatae tenetur excepturi aut pariatur est eos.</p>
+			</div>
+		</div>
+		
+		<div class="card shadow-xl lg:card-side bg-secondary">
+			<div class="card-body">
+				<div class="card-title flex justify-between">
+					<div>Axon Framework</div>
+					<button class="btn btn-primary btn-circle btn-sm">
+						<svg width="16" height="17" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<path d="M14.7619 6.5625H9.69942V1.5C9.69942 0.902344 9.17208 0.375 8.57442 0.375H7.44942C6.81661 0.375 6.32442 0.902344 6.32442 1.5V6.5625H1.26192C0.62911 6.5625 0.136923 7.08984 0.136923 7.6875V8.8125C0.136923 9.44531 0.62911 9.9375 1.26192 9.9375H6.32442V15C6.32442 15.6328 6.81661 16.125 7.44942 16.125H8.57442C9.17208 16.125 9.69942 15.6328 9.69942 15V9.9375H14.7619C15.3596 9.9375 15.8869 9.44531 15.8869 8.8125V7.6875C15.8869 7.08984 15.3596 6.5625 14.7619 6.5625Z" fill="white"/>
+						</svg>
+					</button>
+				</div>
+				<p>Rerum reiciendis beatae tenetur excepturi aut pariatur est eos.</p>
+			</div>
+		</div>
+	</div>
+	<hr class="my-10"/>
+
+	<!-- <div class="row input-wrapper">
 		<Input placeholder="Placeholder example"/>
 		<Input disabled placeholder="Disabled example"/>
 		<Input placeholder="com.example" bind:value={textExample}/>

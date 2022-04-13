@@ -1,6 +1,5 @@
 <script lang="ts">
 
-    export let size: 'sm' | 'md' = 'md'
     export let disabled = false;
     export let variant: "primary" | "secondary" = "primary";
     export let onClick: () => void = () => {};
@@ -11,8 +10,6 @@
     class="btn shadow"
     class:btn-primary={variant === "primary"}
     class:btn-secondary={variant === "secondary"}
-    class:btn-sm={size === 'sm'}
-    class:btn-disabled={disabled}
     {disabled}
     on:click={() => onClick()}>
         <div
@@ -25,17 +22,13 @@
 
 <style lang="scss">
     .btn {
-        @apply rounded-full min-h-0 normal-case text-base px-7;
-        height: 36px;
-        &.btn-sm {
-            @apply text-sm px-3;
-            height: 24px;
+        @apply h-[36px] rounded-full normal-case text-base px-7 disabled:pointer-events-none disabled:opacity-50;
+
+        &.btn-primary {
+            @apply bg-peacock text-dove hover:opacity-75 active:opacity-50;
         }
-        &.btn-primary.btn-disabled {
-            @apply bg-primary-disabled border-primary-disabled shadow-none text-dove;
-        }
-        &.btn-secondary.btn-disabled {
-            @apply bg-secondary-disabled border-secondary-disabled shadow-none text-ox;
+        &.btn-secondary {
+            @apply bg-dove text-ox;
         }
     }
 </style>

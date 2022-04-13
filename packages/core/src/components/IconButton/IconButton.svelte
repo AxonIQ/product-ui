@@ -23,13 +23,13 @@
     .btn-disabled {
         @apply shadow-none;
         &.btn-primary {
-            @apply bg-primary-disabled text-dove;
+            @apply text-dove;
         }
         &.btn-secondary {
-            @apply bg-secondary-disabled text-ox;
+            @apply text-ox;
         }
         &.btn-accent {
-            @apply bg-accent-disabled text-ox;
+            @apply text-ox;
         }
     }
 </style>
