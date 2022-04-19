@@ -1,25 +1,27 @@
 <script lang="ts">
 
     export let value: string;
-    export let label = '';
     export let group: string;
     export let name: string;
 </script>
     <!-- svelte-ignore a11y-label-has-associated-control -->
-    <div>
-        <label class="cursor-pointer label">
-            <input
-                type="radio"
-                class="radio border-opacity-100 radio-sm border-2" 
-                {value}
-                {name}
-                bind:group={group}
-            />
-            <span class="label-text">{label}</span> 
-        </label>
-    </div>
+    <label class="flex items-center cursor-pointer">
+        <input
+            type="radio"
+            class="hidden"
+            {value}
+            {name}
+            bind:group={group}
+        />
+        <span class="design"></span>
+        <slot />
+    </label>
+
 <style lang="scss">
-    .label {
-        @apply justify-start gap-3 inline-flex;
+    .design {
+        @apply w-2 h-2 rounded-full outline-offset-2 outline outline-2 outline-ox mr-5;
+    }
+    input[type="radio"]:checked~.design {
+        @apply outline-ox bg-ox;
     }
 </style>

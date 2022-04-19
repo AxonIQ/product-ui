@@ -46,4 +46,5 @@ module.exports = {
       none: 'none',
     }
   },
+  plugins: [],
 }

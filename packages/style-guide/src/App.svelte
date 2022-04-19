@@ -126,16 +126,16 @@ let dialogOpen = false;
 	<hr class="my-10"/>
 
 	<div class="container mx-auto max-w-screen-xl grid grid-rows-3 grid-cols-3 grid-flow-col place-items-center">
-		<Radio value="Maven" label="Maven" bind:group={group1} name="group1" />
-		<Radio value="Gradle" label="Gradle" bind:group={group1} name="group1" />
+		<Radio value="Maven" bind:group={group1} name="group1">Maven</Radio>
+		<Radio value="Gradle" bind:group={group1} name="group1">Gradle</Radio>
 		<div>Selected: <span class="font-bold">{group1}</span></div>
 
-		<Radio value="Java" label="Java" bind:group={group2} name="group2"/>
-		<Radio value="Java & Kotlin" label="Java & Kotlin" bind:group={group2} name="group2"/>
+		<Radio value="Java" bind:group={group2} name="group2">Java</Radio>
+		<Radio value="Java & Kotlin" bind:group={group2} name="group2">Java & Kotlin</Radio>
 		<div>Selected: <span class="font-bold">{group2}</span></div>
 
-		<Radio value="Latest" label="Latest" bind:group={group3} name="group3"/>
-		<Radio value="Snapshot" label="Snapshot" bind:group={group3} name="group3"/>
+		<Radio value="Latest" bind:group={group3} name="group3">Latest</Radio>
+		<Radio value="Snapshot" bind:group={group3} name="group3">Snapshot</Radio>
 		<div>Selected: <span class="font-bold">{group3}</span></div>
 	</div>
 	<hr class="my-10"/>
