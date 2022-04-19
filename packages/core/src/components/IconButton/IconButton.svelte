@@ -7,12 +7,12 @@
 </script>
 
 <button
-    class="btn btn-circle border-none"
+    class="rounded-full flex items-center justify-center border-none hover:opacity-75 disabled:opacity-100"
+    class:btn-md={size === 'md'}
     class:btn-sm={size === 'sm'}
     class:btn-primary={variant === 'primary'}
     class:btn-secondary={variant === 'secondary'}
     class:btn-accent={variant === 'accent'}
-    class:btn-disabled={disabled}
     disabled={disabled}
     on:click={() => onClick()}>
         <div class:opacity-50={disabled}>
@@ -20,16 +20,19 @@
         </div>
 </button>
 <style lang="scss">
-    .btn-disabled {
-        @apply shadow-none;
-        &.btn-primary {
-            @apply text-dove;
-        }
-        &.btn-secondary {
-            @apply text-ox;
-        }
-        &.btn-accent {
-            @apply text-ox;
-        }
+    .btn-md {
+        @apply w-12 h-12;
+    }
+    .btn-sm {
+        @apply w-9 h-9;
+    }
+    .btn-accent {
+        @apply bg-fox text-dove;
+    }
+    .btn-primary {
+        @apply bg-peacock text-dove
+    }
+    .btn-secondary {
+        @apply bg-dove text-ox
     }
 </style>
