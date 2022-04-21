@@ -36,6 +36,8 @@ module.exports = {
     },
     boxShadow: {
       'button': `0 0 0 2px #fff, 0 0 4px 3px #434A56`,
+      'toggle-focus': '0 0 0 2px #ffffff, 0 0 4px 3px #434A56',
+      'radio-focus': '0 0 0 7px #fff, 0 0 4px 8px #434A56',
 
       sm: '0 1px 2px 0 rgba(0, 0, 0, 0.05)',
       DEFAULT: '0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06)',

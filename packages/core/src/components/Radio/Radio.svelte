@@ -26,7 +26,6 @@
         @apply outline-ox bg-ox;
     }
     input[type="radio"]:focus-visible~.design {
-        @apply shadow-ox;
-        box-shadow: 0 0 0 7px #fff, 0 0 4px 8px;
+        @apply shadow-radio-focus;
     }
 </style>

@@ -237,7 +237,7 @@ let dialogOpen = false;
 			<div slot="on-label" class="text-sm">On</div>
 		</Toggle>
 		
-		<div class="font-bold">Toggle is {toggle2 ? "on" : "off"}</div>
+		<div class="font-bold">Toggle is disabled but set to {toggle2 ? "on" : "off"}</div>
 	</div>
 	<hr class="my-10"/>
 
