@@ -7,9 +7,9 @@
 </script>
 
 <button
-    class="btn shadow"
-    class:btn-primary={variant === "primary"}
-    class:btn-secondary={variant === "secondary"}
+    class="button"
+    class:button-primary={variant === "primary"}
+    class:button-secondary={variant === "secondary"}
     {disabled}
     on:click={() => onClick()}>
         <div
@@ -21,14 +21,13 @@
 </button>
 
 <style lang="scss">
-    .btn {
-        @apply h-[36px] rounded-full normal-case text-base px-7 disabled:pointer-events-none disabled:opacity-50;
-
-        &.btn-primary {
-            @apply bg-peacock text-dove hover:opacity-75 active:opacity-50;
-        }
-        &.btn-secondary {
-            @apply bg-dove text-ox;
-        }
+    .button {
+        @apply h-[36px] rounded-full normal-case text-base px-7 disabled:pointer-events-none disabled:opacity-50 shadow;
+    }
+    .button-primary {
+        @apply bg-peacock text-dove hover:opacity-75 active:opacity-50;
+    }
+    .button-secondary {
+        @apply bg-dove text-ox;
     }
 </style>

@@ -7,12 +7,12 @@
 </script>
 
 <button
-    class="rounded-full flex items-center justify-center border-none hover:opacity-75 disabled:opacity-100"
-    class:btn-md={size === 'md'}
-    class:btn-sm={size === 'sm'}
-    class:btn-primary={variant === 'primary'}
-    class:btn-secondary={variant === 'secondary'}
-    class:btn-accent={variant === 'accent'}
+    class="icon-button"
+    class:icon-button-md={size === 'md'}
+    class:icon-button-sm={size === 'sm'}
+    class:icon-button-primary={variant === 'primary'}
+    class:icon-button-secondary={variant === 'secondary'}
+    class:icon-button-accent={variant === 'accent'}
     disabled={disabled}
     on:click={() => onClick()}>
         <div class:opacity-50={disabled}>
@@ -20,19 +20,22 @@
         </div>
 </button>
 <style lang="scss">
-    .btn-md {
+    .icon-button {
+        @apply rounded-full flex items-center justify-center border-none hover:opacity-75 disabled:opacity-100;
+    }
+    .icon-button-md {
         @apply w-12 h-12;
     }
-    .btn-sm {
+    .icon-button-sm {
         @apply w-9 h-9;
     }
-    .btn-accent {
+    .icon-button-accent {
         @apply bg-fox text-dove;
     }
-    .btn-primary {
+    .icon-button-primary {
         @apply bg-peacock text-dove
     }
-    .btn-secondary {
+    .icon-button-secondary {
         @apply bg-dove text-ox
     }
 </style>

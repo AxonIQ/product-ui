@@ -309,14 +309,16 @@ let dialogOpen = false;
 	</div>
 	<hr class="my-10"/>
 
-	<!-- <div class="row input-wrapper">
+	<div class="container mx-auto max-w-screen-md flex flex-col gap-5">
 		<Input placeholder="Placeholder example"/>
 		<Input disabled placeholder="Disabled example"/>
 		<Input placeholder="com.example" bind:value={textExample}/>
-		<Typography size="l" weight="bold">{textExample}</Typography>
+		<div class="text-lg font-bold">{textExample}</div>
 	</div>
+	<hr class="my-10"/>
 
-	<div class="row input-wrapper">
+
+	<!-- <div class="row input-wrapper">
 		<Search placeholder="Placeholder search example"/>
 		<Search disabled placeholder="Disabled search example"/>
 		<Search placeholder="com.search.example" bind:value={searchExample}/>
