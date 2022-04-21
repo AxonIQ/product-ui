@@ -326,23 +326,19 @@ let dialogOpen = false;
 	</div>
 	<hr class="my-10"/>
 
-	<!-- <div class="row dialog-wrapper">
-		<Button onClick={() => dialogOpen = true} text="Open dialog" />
+	<div class="container mx-auto max-w-screen-md flex flex-col gap-5">
+		<Button onClick={() => dialogOpen = true}>Open dialog</Button>
 		<Dialog open={dialogOpen} onClose={() => dialogOpen = false}>
-			<div style="margin-bottom: 24px">
-				<Typography size="xl" weight="bold">Share your configuration</Typography>
-			</div>
-			<div style="margin-bottom: 30px">
-				<Typography size="s">Use this link to share the current configuration. Attributes can be removed from the URL if you want to rely on our defaults.</Typography>
-			</div>
-			<div style="display: flex; align-items: center;">
+			<div slot="title" class="text-xl font-bold">Share your configuration</div>
+			<div class="mb-7 text-sm">Use this link to share the current configuration. Attributes can be removed from the URL if you want to rely on our defaults.</div>
+			<div class="flex items-center">
 				<div style="margin-right: 10px; width: 100%">
 					<Input value={'https://start.axoniq.io/#!type=maven-project&language=java&platformVersion=2.5.0.RELEASE&packaging=jar&jvmVersion=11&groupId=com.example&artifactId=demo&name=demo&description=Demo%20project%20for%20Axon&packageName=com.example.demo'} />
 				</div>
-				<Button text="Copy"/>
+				<Button>Copy</Button>
 			</div>
 		</Dialog>
-	</div> -->
+	</div>
 
 </main>
 
@@ -351,61 +347,5 @@ let dialogOpen = false;
 
 	main {
 		background-color: #e5e5e5;
-	// 	display: grid;
-	// 	grid-template-columns: minmax(20px, 1fr) fit-content(1024px) minmax(20px, 1fr);
-	// 	row-gap: 20px;
-	// 	padding: 8px;
 	}
-	// .row {
-	// 	grid-column: 2;
-	// }
-	// .row--full {
-	// 	grid-column: 1 / span 3;
-	// }
-	// .button-wrapper {
-	// 	display: flex;
-	// 	justify-content: center;
-	// 	gap: 20px;
-	// }
-	// .radio-wrapper {
-	// 	display: grid;
-	// 	grid-template-rows: repeat(3, 1fr);
-	// 	gap: 10px;
-	// 	grid-auto-flow: column;
-	// 	grid-auto-columns: 200px;
-	// }
-	// .icon-button-wrapper {
-	// 	display: grid;
-	// 	grid-template-columns: auto auto;
-	// 	justify-content: center;
-	// 	justify-items: center;
-	// 	gap: 20px;
-	// }
-	// .toggle-wrapper {
-	// 	display: flex;
-	// 	flex-direction: column;
-	// 	align-items: center;
-	// 	gap: 20px;
-	// }
-	// .toggle {
-	// 	display: flex;
-	// }
-	// .card-wrapper {
-	// 	max-width: 700px;
-	// }
-	// .card {
-	// 	display: flex;
-	// 	flex-direction: column;
-	// 	gap: 10px;
-	// }
-	// .input-wrapper {
-	// 	display: flex;
-	// 	flex-direction: column;
-	// 	align-items: center;
-	// 	gap: 20px;
-	// }
-	// .dialog-wrapper {
-	// 	display: flex;
-	// 	justify-content: center;
-	// }
 </style>

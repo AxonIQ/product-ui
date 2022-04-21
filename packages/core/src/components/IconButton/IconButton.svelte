@@ -22,6 +22,7 @@
 <style lang="scss">
     .icon-button {
         @apply rounded-full flex items-center justify-center border-none hover:opacity-75 disabled:opacity-100;
+        filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.15));
     }
     .icon-button-md {
         @apply w-12 h-12;
@@ -33,9 +34,9 @@
         @apply bg-fox text-dove;
     }
     .icon-button-primary {
-        @apply bg-peacock text-dove
+        @apply bg-peacock text-dove;
     }
     .icon-button-secondary {
-        @apply bg-dove text-ox
+        @apply bg-seal text-ox;
     }
 </style>
