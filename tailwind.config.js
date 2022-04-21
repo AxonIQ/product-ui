@@ -6,10 +6,11 @@ module.exports = {
   ],
   theme: {
     fontSize: {
-      sm: '14px',
-      base: '16px',
-      lg: '18px',
-      xl: '24px',
+      'sm': ['.875rem', '24px'],
+      'base': ['1rem', '24px'],
+      'lg': ['1.125rem', '24px'],
+      'xl': ['1.25rem', '24px'],
+      '2xl': ['1.5rem', '24px']
     },
     colors: {
       inherit: 'inherit',
@@ -22,6 +23,7 @@ module.exports = {
       dove: '#FFFFFF',
       fox: '#F35C00',
       peacock: '#1374CF',
+      gecko: '#00B7BF',
     },
     fontFamily: {
       sans: ['Lato', 'sans-serif'],

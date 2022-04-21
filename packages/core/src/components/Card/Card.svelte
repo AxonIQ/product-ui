@@ -1,3 +1,8 @@
-<div class="card shadow-xl lg:card-side bg-secondary">
+<div class="card p-6 shadow-lg bg-dove rounded">
     <slot />
 </div>
+<style lang="scss">
+    .card {
+        box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.4), 0px 5px 4px rgba(0, 0, 0, 0.1);
+    }
+</style>

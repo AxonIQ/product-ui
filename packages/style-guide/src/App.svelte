@@ -46,28 +46,34 @@ let dialogOpen = false;
 
 	<hr class="my-10"/>
 
-	<div class="flex flex-col items-center gap-1">
+	<div class="flex flex-col items-center">
 		<div class="text-sm">Hello from small typography - 14px</div>
 		<div class="text-sm font-bold">Hello from small typography - 14px</div>
 		<div class="text-sm italic">Hello from small typography - 14px</div>
 	</div>
 	<hr class="my-10"/>
-	<div class="flex flex-col items-center gap-1">
-		<div>Hello from small typography - 16px</div>
-		<div class="font-bold">Hello from small typography - 16px</div>
-		<div class="italic">Hello from small typography - 16px</div>
+	<div class="flex flex-col items-center">
+		<div>Hello from base typography - 16px</div>
+		<div class="font-bold">Hello from base typography - 16px</div>
+		<div class="italic">Hello from base typography - 16px</div>
 	</div>
 	<hr class="my-10"/>
-	<div class="flex flex-col items-center gap-1">
-		<div class="text-lg">Hello from small typography - 18px</div>
-		<div class="text-lg font-bold">Hello from small typography - 18px</div>
-		<div class="text-lg italic">Hello from small typography - 18px</div>
+	<div class="flex flex-col items-center">
+		<div class="text-lg">Hello from large typography - 18px</div>
+		<div class="text-lg font-bold">Hello from large typography - 18px</div>
+		<div class="text-lg italic">Hello from large typography - 18px</div>
 	</div>
 	<hr class="my-10"/>
-	<div class="flex flex-col items-center gap-1">
-		<div class="text-xl">Hello from small typography - 24px</div>
-		<div class="text-xl font-bold">Hello from small typography - 24px</div>
-		<div class="text-xl italic">Hello from small typography - 24px</div>
+	<div class="flex flex-col items-center">
+		<div class="text-xl">Hello from extra large typography - 24px</div>
+		<div class="text-xl font-bold">Hello from extra large typography - 24px</div>
+		<div class="text-xl italic">Hello from extra large typography - 24px</div>
+	</div>
+	<hr class="my-10"/>
+	<div class="flex flex-col items-center">
+		<div class="text-2xl">Hello from extra extra large typography - 24px</div>
+		<div class="text-2xl font-bold">Hello from extra extra large typography - 24px</div>
+		<div class="text-2xl italic">Hello from extra extra large typography - 24px</div>
 	</div>
 	<hr class="my-10"/>
 
@@ -243,39 +249,63 @@ let dialogOpen = false;
 
 	<div class="container mx-auto max-w-screen-md flex flex-col gap-5">
 		<Card>
-			<Typography size="m" weight="bold">Title</Typography>
-			<Typography size="s">
+			<div class="font-bold mb-4">Title</div>
+			<div class="text-sm">
 				Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-			</Typography>
+			</div>
 		</Card>
 
-		<div class="card shadow-xl lg:card-side bg-secondary">
-			<div class="card-body">
-				<div class="card-title flex justify-between">
-					<div>Axon Framework</div>
-					<button class="btn btn-accent btn-circle btn-sm">
-						<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" class="inline-block w-6 h-6 stroke-current">   
-							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>                       
+		<Card>
+			<div class="flex justify-between">
+				<div class="font-bold mb-4">Axon Framework</div>
+				<button class="fill-dove disabled:bg-rhino disabled:opacity-50 bg-fox rounded-full w-6 h-6 flex items-center justify-center">
+						<svg width="10" height="10" viewBox="0 0 10 10" xmlns="http://www.w3.org/2000/svg" class="fill-inherit">
+							<path d="M6.46291 5L8.80666 2.65625C9.11135 2.375 9.11135 1.90625 8.80666 1.625L8.29104 1.10938C8.00979 0.804688 7.54104 0.804688 7.25979 1.10938L4.91604 3.45312L2.54885 1.10938C2.2676 0.804688 1.79885 0.804688 1.5176 1.10938L1.00197 1.625C0.697287 1.90625 0.697287 2.375 1.00197 2.65625L3.34572 5L1.00197 7.36719C0.697287 7.64844 0.697287 8.11719 1.00197 8.39844L1.5176 8.91406C1.79885 9.21875 2.2676 9.21875 2.54885 8.91406L4.91604 6.57031L7.25979 8.91406C7.54104 9.21875 8.00979 9.21875 8.29104 8.91406L8.80666 8.39844C9.11135 8.11719 9.11135 7.64844 8.80666 7.36719L6.46291 5Z"/>
 						</svg>
-					</button>
-				</div>
-				<p>Rerum reiciendis beatae tenetur excepturi aut pariatur est eos.</p>
+				</button>
 			</div>
-		</div>
+			<p>Rerum reiciendis beatae tenetur excepturi aut pariatur est eos.</p>
+		</Card>
+
+		<Card>
+			<div class="flex justify-between">
+				<div class="font-bold mb-4">Axon Framework</div>
+				<button disabled class="fill-dove disabled:bg-rhino disabled:opacity-50 bg-fox rounded-full w-6 h-6 flex items-center justify-center">
+						<svg width="10" height="10" viewBox="0 0 10 10" xmlns="http://www.w3.org/2000/svg" class="fill-inherit">
+							<path d="M6.46291 5L8.80666 2.65625C9.11135 2.375 9.11135 1.90625 8.80666 1.625L8.29104 1.10938C8.00979 0.804688 7.54104 0.804688 7.25979 1.10938L4.91604 3.45312L2.54885 1.10938C2.2676 0.804688 1.79885 0.804688 1.5176 1.10938L1.00197 1.625C0.697287 1.90625 0.697287 2.375 1.00197 2.65625L3.34572 5L1.00197 7.36719C0.697287 7.64844 0.697287 8.11719 1.00197 8.39844L1.5176 8.91406C1.79885 9.21875 2.2676 9.21875 2.54885 8.91406L4.91604 6.57031L7.25979 8.91406C7.54104 9.21875 8.00979 9.21875 8.29104 8.91406L8.80666 8.39844C9.11135 8.11719 9.11135 7.64844 8.80666 7.36719L6.46291 5Z"/>
+						</svg>
+				</button>
+			</div>
+			<p>Rerum reiciendis beatae tenetur excepturi aut pariatur est eos.</p>
+		</Card>
 		
-		<div class="card shadow-xl lg:card-side bg-secondary">
-			<div class="card-body">
-				<div class="card-title flex justify-between">
-					<div>Axon Framework</div>
-					<button class="btn btn-primary btn-circle btn-sm">
-						<svg width="16" height="17" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
-							<path d="M14.7619 6.5625H9.69942V1.5C9.69942 0.902344 9.17208 0.375 8.57442 0.375H7.44942C6.81661 0.375 6.32442 0.902344 6.32442 1.5V6.5625H1.26192C0.62911 6.5625 0.136923 7.08984 0.136923 7.6875V8.8125C0.136923 9.44531 0.62911 9.9375 1.26192 9.9375H6.32442V15C6.32442 15.6328 6.81661 16.125 7.44942 16.125H8.57442C9.17208 16.125 9.69942 15.6328 9.69942 15V9.9375H14.7619C15.3596 9.9375 15.8869 9.44531 15.8869 8.8125V7.6875C15.8869 7.08984 15.3596 6.5625 14.7619 6.5625Z" fill="white"/>
-						</svg>
-					</button>
-				</div>
-				<p>Rerum reiciendis beatae tenetur excepturi aut pariatur est eos.</p>
+		<Card>
+			<div class="flex justify-between">
+				<div class="font-bold mb-4">Axon Framework</div>
+				<button class="fill-dove bg-gecko disabled:bg-rhino disabled:opacity-50 rounded-full w-6 h-6 flex items-center justify-center">
+
+					<svg width="12" height="12" viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg" class="fill-inherit">
+						<path d="M10.416 4.875H7.04104V1.5C7.04104 1.10156 6.68947 0.75 6.29104 0.75H5.54104C5.11916 0.75 4.79104 1.10156 4.79104 1.5V4.875H1.41604C0.994162 4.875 0.666037 5.22656 0.666037 5.625V6.375C0.666037 6.79688 0.994162 7.125 1.41604 7.125H4.79104V10.5C4.79104 10.9219 5.11916 11.25 5.54104 11.25H6.29104C6.68947 11.25 7.04104 10.9219 7.04104 10.5V7.125H10.416C10.8145 7.125 11.166 6.79688 11.166 6.375V5.625C11.166 5.22656 10.8145 4.875 10.416 4.875Z" />
+					</svg>
+						
+				</button>
 			</div>
-		</div>
+			<p>Rerum reiciendis beatae tenetur excepturi aut pariatur est eos.</p>
+		</Card>
+
+		<Card>
+			<div class="flex justify-between">
+				<div class="font-bold mb-4">Axon Framework</div>
+				<button disabled class="fill-dove bg-gecko disabled:bg-rhino disabled:opacity-50 rounded-full w-6 h-6 flex items-center justify-center">
+
+					<svg width="12" height="12" viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg" class="fill-inherit">
+						<path d="M10.416 4.875H7.04104V1.5C7.04104 1.10156 6.68947 0.75 6.29104 0.75H5.54104C5.11916 0.75 4.79104 1.10156 4.79104 1.5V4.875H1.41604C0.994162 4.875 0.666037 5.22656 0.666037 5.625V6.375C0.666037 6.79688 0.994162 7.125 1.41604 7.125H4.79104V10.5C4.79104 10.9219 5.11916 11.25 5.54104 11.25H6.29104C6.68947 11.25 7.04104 10.9219 7.04104 10.5V7.125H10.416C10.8145 7.125 11.166 6.79688 11.166 6.375V5.625C11.166 5.22656 10.8145 4.875 10.416 4.875Z" />
+					</svg>
+						
+				</button>
+			</div>
+			<p>Rerum reiciendis beatae tenetur excepturi aut pariatur est eos.</p>
+		</Card>
 	</div>
 	<hr class="my-10"/>
 
