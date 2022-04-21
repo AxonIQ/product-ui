@@ -318,17 +318,15 @@ let dialogOpen = false;
 	<hr class="my-10"/>
 
 
-	<!-- <div class="row input-wrapper">
+	<div class="container mx-auto max-w-screen-md flex flex-col gap-5">
 		<Search placeholder="Placeholder search example"/>
 		<Search disabled placeholder="Disabled search example"/>
 		<Search placeholder="com.search.example" bind:value={searchExample}/>
 		<Typography size="l" weight="bold">{searchExample}</Typography>
 	</div>
-	<div class="row--full">
-		<hr />
-	</div>
+	<hr class="my-10"/>
 
-	<div class="row dialog-wrapper">
+	<!-- <div class="row dialog-wrapper">
 		<Button onClick={() => dialogOpen = true} text="Open dialog" />
 		<Dialog open={dialogOpen} onClose={() => dialogOpen = false}>
 			<div style="margin-bottom: 24px">

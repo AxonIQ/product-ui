@@ -3,7 +3,7 @@
     export let value = '';
     export let disabled = false;
 </script>
-<div class="search-wrapper">
+<div class="relative inline-block">
     <input
         class="search"
         disabled={disabled}
@@ -25,36 +25,15 @@
 <style lang="scss">
     @use "../../../stylesheets/colors.scss";
 
-    .search-wrapper {
-        position: relative;
-        display: inline-block;
-        width: 100%;
-    }
     .search {
-        height: 26px;
-        border: 1px solid colors.$elephant;
+        @apply border border-solid border-elephant py-1 px-2 focus:outline-none text-sm w-full;
+
         box-shadow: inset 0px 1px 2px rgba(0, 0, 0, 0.25);
-        width: 100%;
-        padding-left: 7px;
-
-        &:focus-visible {
-            outline: 0;
-        }
-
         &::-webkit-search-cancel-button {
             display: none;
         }
     }
     .search__clear {
-        border: 0;
-        background-color: transparent;
-        padding: 0;
-        width: 24px;
-        height: 24px;
-        cursor: pointer;
-        position: absolute;
-        top: 50%;
-        right: 5px;
-        transform: translateY(-50%);
+        @apply border-0 bg-transparent p-0 w-6 h-6 cursor-pointer absolute top-1/2 right-1 -translate-y-1/2;
     }
 </style>
