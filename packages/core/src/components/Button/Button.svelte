@@ -22,7 +22,7 @@
 
 <style lang="scss">
     .button {
-        @apply h-[36px] w-[130px] rounded-full normal-case text-base px-4 disabled:pointer-events-none disabled:opacity-50 shadow;
+        @apply min-h-[36px] min-w-[130px] rounded-full normal-case text-base px-4 disabled:pointer-events-none disabled:opacity-50 shadow;
     }
     .button-primary {
         @apply bg-peacock text-dove hover:opacity-75 active:opacity-50;

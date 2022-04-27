@@ -8,7 +8,7 @@
     $: shareableLink = `${location.origin}?${new URLSearchParams($userSelection).toString()}`;
 </script>
     
-    <Dialog
+<Dialog
         open={visible}
         onClose={() => visible = false}
     >
@@ -16,7 +16,7 @@
         <div class="text-xl font-bold">Share your configuration</div>
     </div>
     <div class="text-sm">Use this link to share the current configuration. Attributes can be removed from the URL if you want to rely on our defaults.</div>
-    <div class="action-footer-share-dialog__input">
+    <div class="flex gap-2 items-center">
         <Input
             value={shareableLink} />
         <Button onClick={() => {
@@ -24,12 +24,4 @@
             buttonText = "Link copied!"
         }}>{buttonText}</Button>
     </div>
-    </Dialog>
-    
-<style lang="scss">
-    .action-footer-share-dialog__input {
-        display: flex;
-        gap: 10px;
-        align-items: center;
-    }
-</style>
+</Dialog>
