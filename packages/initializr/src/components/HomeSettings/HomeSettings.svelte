@@ -1,5 +1,5 @@
 <script lang="ts">
-import { Card,Radio,Typography } from '@axoniq-product-ui/core';
+import { Card,Radio } from '@axoniq-product-ui/core';
 import type { DataType,SettingsItem } from "../../dataTypes";
 
     export let projectTypeData: DataType;
@@ -17,58 +17,62 @@ import type { DataType,SettingsItem } from "../../dataTypes";
 
 <div class="home-settings">
     <div class="home-settings__heading">
-        <Typography size="xl" weight="bold">Settings</Typography>
+        <div class="text-xl font-bold">Settings</div>
     </div>
     <Card>
         <div class="home-settings__items">
             
-            <Typography size="s">Project</Typography>
+            <div class="text-sm">Project</div>
             <div class="home-settings__radio-wrapper">
                 {#each projectTypeData.values as projectTypeItem (projectTypeItem.id) }
                     {#if projectTypeItem.tags.format === "project"}
                         <Radio
                             value={projectTypeItem.id}
-                            label={projectTypeItem.name}
                             name="projectType"
                             bind:group={projectTypeSelected}
-                        />
+                        >
+                            {projectTypeItem.name}
+                        </Radio>
                     {/if}
                 {/each}
             </div>
 
-            <Typography size="s">Language</Typography>
+            <div class="text-sm">Language</div>
             <div class="home-settings__radio-wrapper">
                 {#each projectLanguageData.values as projectLanguageItem (projectLanguageItem.id) }
                     <Radio
                         value={projectLanguageItem.id}
-                        label={projectLanguageItem.name}
                         name="projectLanguage"
                         bind:group={projectLanguageSelected}
-                    />
+                    >
+                        {projectLanguageItem.name}
+                    </Radio>
                 {/each}
             </div>
 
-            <Typography size="s">Java</Typography>
+            <div class="text-sm">Java</div>
             <div class="home-settings__radio-wrapper">
                 {#each projectJavaVersionData.values as projectJavaVersionItem (projectJavaVersionItem.id) }
                     <Radio
                         value={projectJavaVersionItem.id}
-                        label={projectJavaVersionItem.name}
                         name="projectJavaVersion"
                         bind:group={projectJavaVersionSelected}
-                    />
+                    >
+                        {projectJavaVersionItem.name}
+                    </Radio>
                 {/each}
             </div>
 
-            <Typography size="s">Packaging</Typography>
+            <div class="text-sm">Packaging</div>
             <div class="home-settings__radio-wrapper">
                 {#each projectPackagingData.values as projectPackagingItem (projectPackagingItem.id) }
                     <Radio
                         value={projectPackagingItem.id}
-                        label={projectPackagingItem.name}
                         name="projectPackaging"
                         bind:group={projectPackagingSelected}
-                    />
+                    >
+                        {projectPackagingItem.name}
+                    </Radio>
                 {/each}
             </div>
         </div>

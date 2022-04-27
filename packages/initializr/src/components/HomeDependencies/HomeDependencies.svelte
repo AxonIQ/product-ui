@@ -1,5 +1,5 @@
 <script lang="ts">
-import { Card,Typography } from '@axoniq-product-ui/core';
+import { Card } from '@axoniq-product-ui/core';
 import type { DataDependencies,DependenciesValue } from "../../dataTypes";
 import HomeAddDependancyDialog from '../HomeAddDependencyDialog/HomeAddDependancyDialog.svelte';
 import IconButtonPlus from '../IconButtonPlus/IconButtonPlus.svelte';
@@ -14,7 +14,7 @@ const removeDependency = (currentDependency) => addedDependencies = addedDepende
 </script>
 
 <div class="home-dependencies__heading">
-    <Typography size="xl" weight="bold">Dependencies</Typography>
+    <div class="text-xl font-bold">Dependencies</div>
     <IconButtonPlus onClick={() => addDependenciesVisible = true}/>
 
     <HomeAddDependancyDialog
@@ -30,10 +30,10 @@ const removeDependency = (currentDependency) => addedDependencies = addedDepende
         <li>
             <Card>
                 <div class="home-dependencies__item">
-                    <Typography weight="bold">{addedDep.name}</Typography>
-                    <Typography size="s">
+                    <div class="font-bold">{addedDep.name}</div>
+                    <div class="text-sm">
                         {addedDep.description}
-                    </Typography>
+                    </div>
                     <div class="home-dependencies__remove-button">
                         <IconButtonTrash
                             disabled={['axon-starter', 'axon-test'].indexOf(addedDep.id) > -1}

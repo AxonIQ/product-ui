@@ -1,6 +1,6 @@
 <script lang="ts">
-    import { Button, Typography, Link } from '@axoniq-product-ui/core';
-import { rootUrl } from '../../services/rootUrl';
+    import { Button,Link } from '@axoniq-product-ui/core';
+    import { rootUrl } from '../../services/rootUrl';
     import { userSelection } from "../../userSelectionStore";
     import ActionFooterShareDialog from "../ActionFooterShareDialog/ActionFooterShareDialog.svelte";
 
@@ -21,13 +21,12 @@ async function download() {
         <div class="footer__content">
             <div class="footer__actions">
                 <Button
-                    text="Download"
                     onClick={() => download()}
-                />
+                >Download</Button>
                 <Button
-                    text="Share"
                     onClick={() => shareVisible = true}
-                    variant="secondary" />
+                    variant="secondary"
+                >Share</Button>
             </div>
             <a href="https://academy.axoniq.io/" target="_blank">
                 <img src="/assets/academy-banner-1.png" alt="Academy Link" />
@@ -36,13 +35,23 @@ async function download() {
     </div>
     <div class="footer__links">
         <div class="footer__links-content">
-            <div class="footer__links-content-legal">
-                <Typography size="s">AxonIQ © 2021</Typography>
-                <Link size="s" href="https://docs.axoniq.io/reference-guide/" target="_blank" text="Axon Reference Guide" />
-                <Link size="s" href="https://academy.axoniq.io/" target="_blank" text="AxonIQ Academy" />
-                <Link size="s" href="https://discuss.axoniq.io/" target="_blank" text="AxonIQ Discuss" />
-                <Link size="s" href="https://axoniqio.cdn.prismic.io/axoniqio%2Fdc52fae5-3e71-46d1-9bb5-29eb89485294_general+conditions+axoniq_1.0.1.docx-2.pdf" target="_blank" text="General Conditions" />
-                <Link size="s" href="https://axoniq.io/resources/privacy" target="_blank" text="Privacy Policy" />
+            <div class="footer__links-content-legal text-sm">
+                <div class="text-sm">AxonIQ © 2021</div>
+                <Link href="https://docs.axoniq.io/reference-guide/" target="_blank" variant="secondary">
+                    Axon Reference Guide
+                </Link>
+                <Link href="https://academy.axoniq.io/" target="_blank" variant="secondary">
+                    AxonIQ Academy
+                </Link>
+                <Link href="https://discuss.axoniq.io/" target="_blank" variant="secondary">
+                    AxonIQ Discuss
+                </Link>
+                <Link href="https://axoniqio.cdn.prismic.io/axoniqio%2Fdc52fae5-3e71-46d1-9bb5-29eb89485294_general+conditions+axoniq_1.0.1.docx-2.pdf" target="_blank" variant="secondary">
+                    General Conditions
+                </Link>
+                <Link href="https://axoniq.io/resources/privacy" target="_blank" variant="secondary">
+                    Privacy Policy
+                </Link>
             </div>
 
             <svg width="1" height="22" viewBox="0 0 1 22" fill="none" xmlns="http://www.w3.org/2000/svg">

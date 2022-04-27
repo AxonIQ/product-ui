@@ -3,7 +3,7 @@
     export let value = '';
     export let disabled = false;
 </script>
-<div class="relative inline-block">
+<div class="relative">
     <input
         class="search"
         disabled={disabled}

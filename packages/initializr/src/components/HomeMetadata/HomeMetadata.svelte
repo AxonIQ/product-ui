@@ -1,5 +1,5 @@
 <script lang="ts">
-    import { Card,Input,Typography } from '@axoniq-product-ui/core';
+    import { Card,Input } from '@axoniq-product-ui/core';
 
     export let groupId = '';
     export let artifactId = '';
@@ -10,24 +10,24 @@
 
 <div class="home-metadata">
     <div class="home-metadata__heading">
-        <Typography size="xl" weight="bold">Application metadata</Typography>
+        <div class="text-xl font-bold">Application metadata</div>
     </div>
     <Card>
         <div class="home-metadata__items">
             
-            <Typography size="s">GroupID</Typography>
+            <div class="text-sm">GroupID</div>
             <Input placeholder="com.example" bind:value={groupId} />
             
-            <Typography size="s">ArtifactID</Typography>
+            <div class="text-sm">ArtifactID</div>
             <Input placeholder="Axon Demo" bind:value={artifactId}/>
             
-            <Typography size="s">Name</Typography>
+            <div class="text-sm">Name</div>
             <Input placeholder="Axon Demo" bind:value={name}/>
             
-            <Typography size="s">Description</Typography>
+            <div class="text-sm">Description</div>
             <Input placeholder="Demo project for Axon" bind:value={description} />
             
-            <Typography size="s">Package</Typography>
+            <div class="text-sm">Package</div>
             <Input placeholder="com.example.axon" bind:value={packageName}/>
     </div>
     </Card>

@@ -1,10 +1,9 @@
 <script lang="ts">
-import { Card, Dialog, Typography, Search } from '@axoniq-product-ui/core';
-
-import type { DataDependencies, DependenciesValue } from "../../dataTypes";
+import { Card,Dialog,Search } from '@axoniq-product-ui/core';
+import Fuse from 'fuse.js';
+import type { DataDependencies,DependenciesValue } from "../../dataTypes";
 import IconButtonPlus from '../IconButtonPlus/IconButtonPlus.svelte';
 import IconButtonTrash from '../IconButtonTrash/IconButtonTrash.svelte';
-import Fuse from 'fuse.js';
 
 export let visible = false;
 export let dependencyData: DataDependencies;
@@ -65,7 +64,7 @@ $: dependencyAlreadyAdded = (dependencyItem: DependenciesValue) => {
     onClose={() => visible = false}
 >
     <div slot="title">
-        <Typography slot="title" size="xl" weight="bold">Add dependencies</Typography>
+        <div class="text-xl font-bold">Add dependencies</div>
     </div>
     <Search
         placeholder="Web, Security, JPA, Actuator, Devtools..."
@@ -75,16 +74,14 @@ $: dependencyAlreadyAdded = (dependencyItem: DependenciesValue) => {
     <ul class="home-add-dependency-dialog__group-list">
         {#each searchResult as dependencyDataItemWithName (dependencyDataItemWithName.name) }
             <li class="home-add-dependency-dialog__group-item">
-                <Typography weight="bold">{dependencyDataItemWithName.name}</Typography>
+                <div class="font-bold">{dependencyDataItemWithName.name}</div>
                 <ul class="home-add-dependency-dialog__item-list">
                     {#each dependencyDataItemWithName.values as dependencyItem (dependencyItem.id)}
                         <li>
                             <Card>
                                 <div class="home-add-dependency-dialog__item-card">
-                                    <Typography weight="bold">{dependencyItem.name}</Typography>
-                                    <Typography size="s">
-                                        {dependencyItem.description}
-                                    </Typography>
+                                    <div class="font-bold">{dependencyItem.name}</div>
+                                    <div class="text-sm">{dependencyItem.description}</div>
                                     <div class="home-add-dependency-dialog__button">
                                         {#if dependencyAlreadyAdded(dependencyItem)}
                                             <IconButtonTrash
