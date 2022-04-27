@@ -17,9 +17,9 @@ async function download() {
 }
 
 </script>
-    <div class="footer">
-        <div class="footer__content">
-            <div class="footer__actions">
+    <div class="bg-dove py-2 shadow">
+        <div class="max-w-screen-lg mx-auto flex justify-between items-center">
+            <div class="flex items-center gap-10">
                 <Button
                     onClick={() => download()}
                 >Download</Button>
@@ -33,9 +33,9 @@ async function download() {
             </a>
         </div>
     </div>
-    <div class="footer__links">
-        <div class="footer__links-content">
-            <div class="footer__links-content-legal text-sm">
+    <div class="bg-seal shadow py-2">
+        <div class="max-w-screen-lg mx-auto flex justify-between items-center gap-4">
+            <div class="flex gap-6 text-sm">
                 <div class="text-sm">AxonIQ © 2021</div>
                 <Link href="https://docs.axoniq.io/reference-guide/" target="_blank" variant="secondary">
                     Axon Reference Guide
@@ -58,7 +58,7 @@ async function download() {
                 <rect y="0.5" width="1" height="21" fill="#A1A4AA"/>
             </svg>
                 
-            <div class="footer__links-content-social">
+            <div class="flex gap-5">
 
                 <Link href="https://www.youtube.com/AxonIQ" target="_blank">
                     <svg width="16" height="24" viewBox="0 0 16 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -94,54 +94,4 @@ async function download() {
     </div>
     
     <ActionFooterShareDialog bind:visible={shareVisible}/>
-
-
-<style lang="scss">
-    @use "~@axoniq-product-ui/core/stylesheets/colors.scss";
-
-    .footer {
-        background-color: colors.$dove;
-        box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.4), 0px 5px 4px rgba(0, 0, 0, 0.1);
-
-        display: grid;
-        grid-template-columns: minmax(20px, 1fr) minmax(auto, 1024px) minmax(20px, 1fr);
-        background-color: colors.$dove;
-        padding: 10px 0;
-    }
-    .footer__content {
-        grid-column: 2;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
-    .footer__actions {
-        display: flex;
-        align-items: center;
-        gap: 40px;
-    }
-    .footer__links {
-        background-color: colors.$seal;
-        box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.4), 0px 5px 4px rgba(0, 0, 0, 0.1);
-        
-        display: grid;
-        grid-template-columns: minmax(20px, 1fr) minmax(auto, 1024px) minmax(20px, 1fr);
-        padding: 8px 0;
-    }
-    .footer__links-content {
-        grid-column: 2;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        gap: 16px;
-    }
-    .footer__links-content-legal {
-        display: flex;
-        gap: 24px;
-        flex-direction: row;
-    }
-    .footer__links-content-social {
-        display: flex;
-        gap: 20px;
-        flex-direction: row;
-    }
-</style>
+    
