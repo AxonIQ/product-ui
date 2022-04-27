@@ -7,7 +7,7 @@
 </script>
 
 <button
-    class="icon-button"
+    class="icon-button group-hover:opacity-75"
     class:icon-button-md={size === 'md'}
     class:icon-button-sm={size === 'sm'}
     class:icon-button-primary={variant === 'primary'}

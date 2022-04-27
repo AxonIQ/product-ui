@@ -1,4 +1,4 @@
-<div class="card p-6 shadow-lg bg-dove rounded">
+<div class="card p-6 shadow-lg bg-seal rounded-2xl">
     <slot />
 </div>
 <style lang="scss">

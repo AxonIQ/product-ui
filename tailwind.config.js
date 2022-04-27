@@ -25,6 +25,7 @@ module.exports = {
       peacock: '#1374CF',
       gecko: '#00B7BF',
       white: '#FFFFFF',
+      mouse: '#ECEDEE',
     },
     fontFamily: {
       sans: ['Lato', 'sans-serif'],
