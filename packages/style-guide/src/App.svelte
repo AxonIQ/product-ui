@@ -18,7 +18,7 @@ let dialogOpen = false;
 
 <Tailwindcss />
 
-<main class="mx-auto p-2 bg-white">
+<main class="mx-auto p-2 bg-dove">
 	<div class="flex flex-wrap justify-center gap-10">
 		<div class="w-48 h-48 bg-ox flex items-center justify-center text-dove">
 			<div class="font-bold">Ox - #21252B</div>

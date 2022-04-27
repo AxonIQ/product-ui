@@ -24,7 +24,6 @@ module.exports = {
       fox: '#F35C00',
       peacock: '#1374CF',
       gecko: '#00B7BF',
-      white: '#FFFFFF',
       mouse: '#ECEDEE',
     },
     fontFamily: {
