@@ -1,7 +1,7 @@
 <script lang="ts">
 	import Tailwindcss from '../../../Tailwindcss.svelte';
 
-import { Colors, Button, Typography, Radio, IconButton, Toggle, Card, Input, Dialog, Search, Link } from '@axoniq-product-ui/core';
+import { Button, Radio, IconButton, Toggle, Card, Input, Dialog, Search, Link } from '@axoniq-product-ui/core';
 
 let group1 = "";
 let group2 = "Java";
@@ -333,7 +333,7 @@ let dialogOpen = false;
 		<Search placeholder="Placeholder search example"/>
 		<Search disabled placeholder="Disabled search example"/>
 		<Search placeholder="com.search.example" bind:value={searchExample}/>
-		<Typography size="l" weight="bold">{searchExample}</Typography>
+		<div class="text-lg font-bold">{searchExample}</div>
 	</div>
 	<hr class="my-10"/>
 
