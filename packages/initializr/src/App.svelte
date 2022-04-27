@@ -8,6 +8,7 @@ import HomeSettings from "./components/HomeSettings/HomeSettings.svelte";
 import type { DependenciesValue,InitializerData } from "./dataTypes";
 import { getInitialData } from "./services/getInitialData";
 import { userSelection } from './userSelectionStore';
+import Tailwindcss from '../../../Tailwindcss.svelte';
 
 let dataLoaded = false;
 let initialData: InitializerData;
@@ -47,6 +48,8 @@ onMount(async() => {
 $: $userSelection.baseDir = $userSelection.artifactId;
 $: $userSelection.dependencies = addedDependencies.map(dep => dep.id);
 </script>
+
+<Tailwindcss />
 
 <!-- Google Tag Manager (noscript) -->
 
