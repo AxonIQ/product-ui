@@ -21,7 +21,7 @@
 </button>
 <style lang="scss">
     .icon-button {
-        @apply rounded-full flex items-center justify-center border-none hover:opacity-75 disabled:opacity-40;
+        @apply rounded-full flex items-center justify-center border-none hover:opacity-75 disabled:bg-opacity-40 disabled:hover:opacity-100;
         filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.15));
     }
     .icon-button-md {
