@@ -85,9 +85,6 @@ async function download() {
                     </svg>
                 </Link>
             </div>
-            <a href="https://academy.axoniq.io/" target="_blank">
-                <img src="/assets/academy-banner-1.png" alt="Academy Link" />
-            </a>
         </div>
     </div>
     
