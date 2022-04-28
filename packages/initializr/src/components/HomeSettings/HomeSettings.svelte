@@ -1,5 +1,5 @@
 <script lang="ts">
-import { Dropdown,DropdownItem,DropdownItems,DropdownLabel } from '@axoniq-product-ui/core';
+import { Dropdown,DropdownItem,DropdownItems,DropdownLabel,Input } from '@axoniq-product-ui/core';
 import type { DataType,SettingsItem } from "../../dataTypes";
 
     export let projectTypeData: DataType;
@@ -15,9 +15,7 @@ import type { DataType,SettingsItem } from "../../dataTypes";
     export let projectPackagingSelected = '';
 
     export let projectUsingAxonServer = 'EE';
-
     export let projectAxonServerContext = '';
-
 </script>
 
 <div class="mb-14">
@@ -59,5 +57,18 @@ import type { DataType,SettingsItem } from "../../dataTypes";
                 {/each}
             </DropdownItems>
         </Dropdown>
+        <Dropdown>
+            <DropdownLabel>Axon Server</DropdownLabel>
+            <DropdownItems bind:value={projectUsingAxonServer}>
+                <DropdownItem value={'CLOUD'}>Cloud</DropdownItem>
+                <DropdownItem value={'EE'}>EE</DropdownItem>
+                <DropdownItem value={'SE'}>SE</DropdownItem>
+                <DropdownItem value={''}>None</DropdownItem>
+            </DropdownItems>
+        </Dropdown>
+
+        {#if projectUsingAxonServer === "CLOUD" || projectUsingAxonServer === "EE"}
+            <Input placeholder="default" bind:value={projectAxonServerContext} label="Context"/>
+        {/if}
     </div>
 </div>

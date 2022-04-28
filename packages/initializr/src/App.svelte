@@ -86,6 +86,8 @@ $: $userSelection.dependencies = addedDependencies.map(dep => dep.id);
 					bind:projectLanguageSelected={$userSelection.language}
 					bind:projectJavaVersionSelected={$userSelection.javaVersion}
 					bind:projectPackagingSelected={$userSelection.packaging}
+					bind:projectUsingAxonServer={$userSelection.usingAxonServer}
+					bind:projectAxonServerContext={$userSelection.axonServerContext}
 				/>
 				<div class="col-span-full mb-7">
 					<HomeDependencies
