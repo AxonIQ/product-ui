@@ -13,7 +13,7 @@ let addDependenciesVisible = false;
 const removeDependency = (currentDependency) => addedDependencies = addedDependencies.filter(dep => dep.id !== currentDependency.id)
 </script>
 
-<div class="home-dependencies__heading">
+<div class="mb-2 flex justify-between items-center mr-5">
     <div class="text-xl font-bold">Dependencies</div>
     <IconButtonPlus onClick={() => addDependenciesVisible = true}/>
 
@@ -25,16 +25,16 @@ const removeDependency = (currentDependency) => addedDependencies = addedDepende
         bind:visible={addDependenciesVisible}
     />
 </div>
-<ul class="home-dependencies__list">
+<ul class="flex flex-col gap-3">
     {#each addedDependencies as addedDep (addedDep.id)}
         <li>
             <Card>
-                <div class="home-dependencies__item">
+                <div class="grid grid-cols-[1fr_auto] gap-2">
                     <div class="font-bold">{addedDep.name}</div>
                     <div class="text-sm">
                         {addedDep.description}
                     </div>
-                    <div class="home-dependencies__remove-button">
+                    <div class="col-start-2 row-start-1 row-span-2 self-center">
                         <IconButtonTrash
                             disabled={['axon-starter', 'axon-test'].indexOf(addedDep.id) > -1}
                             onClick={() => removeDependency(addedDep)}
@@ -45,29 +45,3 @@ const removeDependency = (currentDependency) => addedDependencies = addedDepende
         </li>
     {/each}
 </ul>
-
-<style lang="scss">
-    .home-dependencies__heading {
-        margin-bottom: 10px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        margin-right: 25px;
-    }
-    .home-dependencies__list {
-        display: grid;
-        grid-template-columns: 1fr;
-        grid-template-rows: 1fr;
-        row-gap: 10px;
-    }
-    .home-dependencies__item {
-        display: grid;
-        grid-template-columns: 1fr auto;
-        grid-gap: 10px;
-    }
-    .home-dependencies__remove-button {
-        grid-column: 2;
-        grid-row: 1 / span 2;
-        align-self: center;
-    }
-</style>

@@ -23,8 +23,6 @@
     </button>
 </div>
 <style lang="scss">
-    @use "../../../stylesheets/colors.scss";
-
     .search {
         @apply border border-solid border-elephant py-1 px-2 focus:outline-none text-sm w-full;
 

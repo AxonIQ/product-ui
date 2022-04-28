@@ -71,18 +71,18 @@ $: dependencyAlreadyAdded = (dependencyItem: DependenciesValue) => {
         bind:value={searchInput}
     />
 
-    <ul class="home-add-dependency-dialog__group-list">
+    <ul class="mt-6 overflow-auto max-h-[60vh]">
         {#each searchResult as dependencyDataItemWithName (dependencyDataItemWithName.name) }
-            <li class="home-add-dependency-dialog__group-item">
+            <li class="flex flex-col gap-3 mx-1 mb-1">
                 <div class="font-bold">{dependencyDataItemWithName.name}</div>
-                <ul class="home-add-dependency-dialog__item-list">
+                <ul class="flex flex-col gap-3">
                     {#each dependencyDataItemWithName.values as dependencyItem (dependencyItem.id)}
                         <li>
                             <Card>
-                                <div class="home-add-dependency-dialog__item-card">
+                                <div class="grid grid-cols-[1fr_auto] gap-2">
                                     <div class="font-bold">{dependencyItem.name}</div>
                                     <div class="text-sm">{dependencyItem.description}</div>
-                                    <div class="home-add-dependency-dialog__button">
+                                    <div class="col-start-2 row-start-1 row-span-2 self-center">
                                         {#if dependencyAlreadyAdded(dependencyItem)}
                                             <IconButtonTrash
                                                 disabled={['axon-starter', 'axon-test'].indexOf(dependencyItem.id) > -1}
@@ -103,42 +103,3 @@ $: dependencyAlreadyAdded = (dependencyItem: DependenciesValue) => {
         {/each}
     </ul>
 </Dialog>
-
-<style lang="scss">
-    @use "~@axoniq-product-ui/core/stylesheets/colors.scss";
-
-    .home-add-dependency-dialog__group-list {
-        margin-top: 24px;
-        display: flex;
-        flex-direction: column;
-        gap: 24px;
-        overflow: auto;
-        max-height: 60vh;
-    }
-    .home-add-dependency-dialog__group-item {
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
-        margin-left: 1px;
-        margin-right: 1px;
-        margin-bottom: 1px;
-        &:not(:last-of-type) {
-            margin-bottom: 18px;
-        }
-    }
-    .home-add-dependency-dialog__item-list {
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
-    }
-    .home-add-dependency-dialog__item-card {
-        display: grid;
-        grid-gap: 10px;
-    }
-    .home-add-dependency-dialog__button {
-        grid-column: 2;
-        grid-row: 1 / span 2;
-        align-self: center;
-        justify-self: end;
-    }
-</style>

@@ -8,7 +8,7 @@ let darkMode = false;
 </script>
 
     <div class="bg-dove py-2">
-        <div class="flex space-between items-center max-w-screen-lg mx-auto">
+        <div class="flex justify-between items-center max-w-screen-lg mx-auto">
             <a href="/">
                 <img src="/assets/header-logo.png" alt="Logo" />
             </a>

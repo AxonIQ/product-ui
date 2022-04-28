@@ -8,12 +8,12 @@
     export let packageName = '';
 </script>
 
-<div class="home-metadata">
-    <div class="home-metadata__heading">
+<div class="home-metadata mb-8">
+    <div class="flex items-center mb-2 h-12">
         <div class="text-xl font-bold">Application metadata</div>
     </div>
     <Card>
-        <div class="home-metadata__items">
+        <div class="home-metadata__items grid grid-cols-[1fr_auto] grid-flow-row justify-center gap-6">
             
             <div class="text-sm">GroupID</div>
             <Input placeholder="com.example" bind:value={groupId} />
@@ -32,24 +32,3 @@
     </div>
     </Card>
 </div>
-
-<style lang="scss">
-    .home-metadata__heading {
-        display: flex;
-        align-items: center;
-        height: 48px;
-        margin-bottom: 10px;
-    }
-    .home-metadata {
-        margin-bottom: 32px;
-    }
-    .home-metadata__items {
-        display: grid;
-        grid-template-columns: 1fr auto;
-        grid-auto-flow: row;
-        grid-gap: 24px;
-
-        align-items: center;
-        justify-content: center;
-    }
-</style>

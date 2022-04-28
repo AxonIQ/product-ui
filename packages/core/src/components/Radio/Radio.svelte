@@ -20,7 +20,7 @@
 <style lang="scss">
     // Styling heavily inspired by https://www.tutorialstonight.com/custom-radio-button.php
     .design {
-        @apply w-2 h-2 rounded-full outline-offset-2 outline outline-2 outline-ox mr-3;
+        @apply w-[10px] h-[10px] rounded-full outline-offset-[3px] outline outline-2 outline-ox mr-3 ml-[5px];
     }
     input[type="radio"]:checked~.design {
         @apply outline-ox bg-ox;

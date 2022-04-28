@@ -15,15 +15,15 @@ import type { DataType,SettingsItem } from "../../dataTypes";
     export let projectPackagingSelected = '';
 </script>
 
-<div class="home-settings">
-    <div class="home-settings__heading">
+<div class="mb-14">
+    <div class="flex items-center mb-2 h-12">
         <div class="text-xl font-bold">Settings</div>
     </div>
     <Card>
-        <div class="home-settings__items">
+        <div class="grid grid-cols-[auto_1fr] grid-flow-row gap-6 justify-center">
             
             <div class="text-sm">Project</div>
-            <div class="home-settings__radio-wrapper">
+            <div class="flex flex-col gap-2">
                 {#each projectTypeData.values as projectTypeItem (projectTypeItem.id) }
                     {#if projectTypeItem.tags.format === "project"}
                         <Radio
@@ -31,75 +31,50 @@ import type { DataType,SettingsItem } from "../../dataTypes";
                             name="projectType"
                             bind:group={projectTypeSelected}
                         >
-                            {projectTypeItem.name}
+                            <div class="text-sm">{projectTypeItem.name}</div>
                         </Radio>
                     {/if}
                 {/each}
             </div>
 
             <div class="text-sm">Language</div>
-            <div class="home-settings__radio-wrapper">
+            <div class="flex flex-col gap-2">
                 {#each projectLanguageData.values as projectLanguageItem (projectLanguageItem.id) }
                     <Radio
                         value={projectLanguageItem.id}
                         name="projectLanguage"
                         bind:group={projectLanguageSelected}
                     >
-                        {projectLanguageItem.name}
+                        <div class="text-sm">{projectLanguageItem.name}</div>
                     </Radio>
                 {/each}
             </div>
 
             <div class="text-sm">Java</div>
-            <div class="home-settings__radio-wrapper">
+            <div class="flex flex-col gap-2">
                 {#each projectJavaVersionData.values as projectJavaVersionItem (projectJavaVersionItem.id) }
                     <Radio
                         value={projectJavaVersionItem.id}
                         name="projectJavaVersion"
                         bind:group={projectJavaVersionSelected}
                     >
-                        {projectJavaVersionItem.name}
+                        <div class="text-sm">{projectJavaVersionItem.name}</div>
                     </Radio>
                 {/each}
             </div>
 
             <div class="text-sm">Packaging</div>
-            <div class="home-settings__radio-wrapper">
+            <div class="flex flex-col gap-2">
                 {#each projectPackagingData.values as projectPackagingItem (projectPackagingItem.id) }
                     <Radio
                         value={projectPackagingItem.id}
                         name="projectPackaging"
                         bind:group={projectPackagingSelected}
                     >
-                        {projectPackagingItem.name}
+                        <div class="text-sm">{projectPackagingItem.name}</div>
                     </Radio>
                 {/each}
             </div>
         </div>
     </Card>
 </div>
-
-<style lang="scss">
-    .home-settings {
-        margin-bottom: 60px;
-    }
-    .home-settings__heading {
-        display: flex;
-        align-items: center;
-        height: 48px;
-        margin-bottom: 10px;
-    }
-    .home-settings__items {
-        display: grid;
-        grid-template-columns: auto 1fr;
-        grid-auto-flow: row;
-        grid-gap: 24px;
-
-        justify-content: center;
-    }
-    .home-settings__radio-wrapper {
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
-    }
-</style>
