@@ -5,6 +5,7 @@ import { IconButton } from '@axoniq-product-ui/core';
     export let onClick = () => {}; 
 </script>
 <IconButton
+    variant="accent"
     disabled={disabled}
     onClick={() => onClick()}>
     <svg width="17" height="19" viewBox="0 0 17 19" fill="none" xmlns="http://www.w3.org/2000/svg">

@@ -1,7 +1,5 @@
 <hr class="divider"/>
 <style lang="scss">
-    @use "~@axoniq-product-ui/core/stylesheets/colors.scss";
-
     .divider {
         border: 0;
         margin: 0;

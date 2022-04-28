@@ -1,10 +1,9 @@
 <script lang="ts">
-import { Card, Dialog, Typography, Search } from '@axoniq-product-ui/core';
-
-import type { DataDependencies, DependenciesValue } from "../../dataTypes";
+import { Card,Dialog,Search } from '@axoniq-product-ui/core';
+import Fuse from 'fuse.js';
+import type { DataDependencies,DependenciesValue } from "../../dataTypes";
 import IconButtonPlus from '../IconButtonPlus/IconButtonPlus.svelte';
 import IconButtonTrash from '../IconButtonTrash/IconButtonTrash.svelte';
-import Fuse from 'fuse.js';
 
 export let visible = false;
 export let dependencyData: DataDependencies;
@@ -65,27 +64,25 @@ $: dependencyAlreadyAdded = (dependencyItem: DependenciesValue) => {
     onClose={() => visible = false}
 >
     <div slot="title">
-        <Typography slot="title" size="xl" weight="bold">Add dependencies</Typography>
+        <div class="text-xl font-bold">Add dependencies</div>
     </div>
     <Search
         placeholder="Web, Security, JPA, Actuator, Devtools..."
         bind:value={searchInput}
     />
 
-    <ul class="home-add-dependency-dialog__group-list">
+    <ul class="mt-6 overflow-auto max-h-[60vh]">
         {#each searchResult as dependencyDataItemWithName (dependencyDataItemWithName.name) }
-            <li class="home-add-dependency-dialog__group-item">
-                <Typography weight="bold">{dependencyDataItemWithName.name}</Typography>
-                <ul class="home-add-dependency-dialog__item-list">
+            <li class="flex flex-col gap-3 mx-1 mb-1">
+                <div class="font-bold">{dependencyDataItemWithName.name}</div>
+                <ul class="flex flex-col gap-3">
                     {#each dependencyDataItemWithName.values as dependencyItem (dependencyItem.id)}
                         <li>
                             <Card>
-                                <div class="home-add-dependency-dialog__item-card">
-                                    <Typography weight="bold">{dependencyItem.name}</Typography>
-                                    <Typography size="s">
-                                        {dependencyItem.description}
-                                    </Typography>
-                                    <div class="home-add-dependency-dialog__button">
+                                <div class="grid grid-cols-[1fr_auto] gap-2">
+                                    <div class="font-bold">{dependencyItem.name}</div>
+                                    <div class="text-sm">{dependencyItem.description}</div>
+                                    <div class="col-start-2 row-start-1 row-span-2 self-center">
                                         {#if dependencyAlreadyAdded(dependencyItem)}
                                             <IconButtonTrash
                                                 disabled={['axon-starter', 'axon-test'].indexOf(dependencyItem.id) > -1}
@@ -106,42 +103,3 @@ $: dependencyAlreadyAdded = (dependencyItem: DependenciesValue) => {
         {/each}
     </ul>
 </Dialog>
-
-<style lang="scss">
-    @use "~@axoniq-product-ui/core/stylesheets/colors.scss";
-
-    .home-add-dependency-dialog__group-list {
-        margin-top: 24px;
-        display: flex;
-        flex-direction: column;
-        gap: 24px;
-        overflow: auto;
-        max-height: 60vh;
-    }
-    .home-add-dependency-dialog__group-item {
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
-        margin-left: 1px;
-        margin-right: 1px;
-        margin-bottom: 1px;
-        &:not(:last-of-type) {
-            margin-bottom: 18px;
-        }
-    }
-    .home-add-dependency-dialog__item-list {
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
-    }
-    .home-add-dependency-dialog__item-card {
-        display: grid;
-        grid-gap: 10px;
-    }
-    .home-add-dependency-dialog__button {
-        grid-column: 2;
-        grid-row: 1 / span 2;
-        align-self: center;
-        justify-self: end;
-    }
-</style>
