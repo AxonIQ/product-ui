@@ -8,6 +8,7 @@ import HomeSettings from "./components/HomeSettings/HomeSettings.svelte";
 import type { DependenciesValue,InitializerData } from "./dataTypes";
 import { getInitialData } from "./services/getInitialData";
 import { userSelection } from './userSelectionStore';
+import Tailwindcss from '../../../Tailwindcss.svelte';
 
 let dataLoaded = false;
 let initialData: InitializerData;
@@ -50,6 +51,8 @@ $: $userSelection.baseDir = $userSelection.artifactId;
 $: $userSelection.dependencies = addedDependencies.map(dep => dep.id);
 </script>
 
+<Tailwindcss />
+
 <!-- Google Tag Manager (noscript) -->
 
 <noscript><iframe title="Google Tag Manager" src="https://www.googletagmanager.com/ns.html?id=GTM-5QD58ZB"
@@ -60,35 +63,33 @@ $: $userSelection.dependencies = addedDependencies.map(dep => dep.id);
 {#if !dataLoaded}
 	<div>Loading...</div>
 {:else}
-	<div class="app">
+	<div class="flex flex-col h-screen bg-dove">
 		<header>
 			<Header />
 		</header>
-		<main>
-			<section class="app__content">
-				<div>
-					<HomeMetadata
-						bind:groupId={$userSelection.groupId}
-						bind:artifactId={$userSelection.artifactId}
-						bind:name={$userSelection.name}
-						bind:description={$userSelection.description}
-						bind:packageName={$userSelection.packageName}
-					/>
-					<HomeSettings
-						projectTypeData={initialData.type}
-						projectLanguageData={initialData.language}
-						projectJavaVersionData={initialData.javaVersion}
-						projectPackagingData={initialData.packaging}
+		<main class="bg-dove overflow-auto h-full">
+			<section class="max-w-screen-lg mx-auto mt-7 grid grid-cols-[minmax(auto,_672px)_fit-content(320px)] gap-8">
+				<HomeMetadata
+					bind:groupId={$userSelection.groupId}
+					bind:artifactId={$userSelection.artifactId}
+					bind:name={$userSelection.name}
+					bind:description={$userSelection.description}
+					bind:packageName={$userSelection.packageName}
+				/>
+				<HomeSettings
+					projectTypeData={initialData.type}
+					projectLanguageData={initialData.language}
+					projectJavaVersionData={initialData.javaVersion}
+					projectPackagingData={initialData.packaging}
 
-						bind:projectTypeSelected={$userSelection.type}
-						bind:projectLanguageSelected={$userSelection.language}
-						bind:projectJavaVersionSelected={$userSelection.javaVersion}
-						bind:projectPackagingSelected={$userSelection.packaging}
-						bind:projectUsingAxonServer={$userSelection.usingAxonServer}
-						bind:projectAxonServerContext={$userSelection.axonServerContext}
-					/>
-				</div>
-				<div>
+					bind:projectTypeSelected={$userSelection.type}
+					bind:projectLanguageSelected={$userSelection.language}
+					bind:projectJavaVersionSelected={$userSelection.javaVersion}
+					bind:projectPackagingSelected={$userSelection.packaging}
+					bind:projectUsingAxonServer={$userSelection.usingAxonServer}
+					bind:projectAxonServerContext={$userSelection.axonServerContext}
+				/>
+				<div class="col-span-full mb-7">
 					<HomeDependencies
 						dependencyData={initialData.dependencies}
 
@@ -97,56 +98,8 @@ $: $userSelection.dependencies = addedDependencies.map(dep => dep.id);
 				</div>
 			</section>
 		</main>
-		<footer>
+		<footer class="sticky bottom-0 bg-dove">
 			<Footer />
 		</footer>
 	</div>
 {/if}
-
-<style type="scss">
-	@use "~@axoniq-product-ui/core/stylesheets/colors.scss";
-
-	// Heavily relied on https://css-tricks.com/how-to-use-css-grid-for-sticky-headers-and-footers/ for building the grid
-	.app {
-		height: 100vh;
-		background-color: colors.$seal;
-
-		display: grid;
-		grid-template-columns: 1fr;
-		grid-template-rows: auto 1fr auto;
-		grid-template-areas: 
-			'header'
-			'main'
-			'footer';
-
-		header {
-			grid-area: header;
-			grid-column: 1 / span 4;
-		}
-		
-		main {
-			grid-area: main;
-			overflow: auto;
-
-			display: grid;
-			grid-template-columns: minmax(20px, 1fr) fit-content(1024px) minmax(20px, 1fr);
-			grid-template-rows: 1fr;
-		}
-		.app__content {
-			margin-top: 26px;
-			margin-bottom: 26px;
-			grid-area: 1 / 2 / 1 / 3;
-			
-			display: grid;
-			grid-template-rows: 1fr;
-			grid-template-columns: fit-content(320px) minmax(auto, 672px);
-			grid-gap: 32px;
-		}
-
-		footer {
-			grid-area: footer;
-			grid-column: 1 / span 4;
-			z-index: 1;
-		}
-	}
-</style>

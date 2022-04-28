@@ -1,6 +1,6 @@
 <script lang="ts">
-    import { Button, Typography, Link } from '@axoniq-product-ui/core';
-import { rootUrl } from '../../services/rootUrl';
+    import { Button,Link } from '@axoniq-product-ui/core';
+    import { rootUrl } from '../../services/rootUrl';
     import { userSelection } from "../../userSelectionStore";
     import ActionFooterShareDialog from "../ActionFooterShareDialog/ActionFooterShareDialog.svelte";
 
@@ -17,39 +17,43 @@ async function download() {
 }
 
 </script>
-    <div class="footer">
-        <div class="footer__content">
-            <div class="footer__actions">
-                <Button
-                    text="Download"
-                    onClick={() => download()}
-                />
-                <Button
-                    text="Share"
-                    onClick={() => shareVisible = true}
-                    variant="secondary" />
-            </div>
-            <a href="https://academy.axoniq.io/" target="_blank">
-                <img src="/assets/academy-banner-1.png" alt="Academy Link" />
-            </a>
+    <div class="py-2 mb-8">
+        <div class="max-w-screen-lg mx-auto flex items-center gap-10">
+            <Button
+                onClick={() => download()}
+            >Download</Button>
+            <Button
+                onClick={() => shareVisible = true}
+                variant="secondary"
+            >Share</Button>
         </div>
     </div>
-    <div class="footer__links">
-        <div class="footer__links-content">
-            <div class="footer__links-content-legal">
-                <Typography size="s">AxonIQ © 2021</Typography>
-                <Link size="s" href="https://docs.axoniq.io/reference-guide/" target="_blank" text="Axon Reference Guide" />
-                <Link size="s" href="https://academy.axoniq.io/" target="_blank" text="AxonIQ Academy" />
-                <Link size="s" href="https://discuss.axoniq.io/" target="_blank" text="AxonIQ Discuss" />
-                <Link size="s" href="https://axoniqio.cdn.prismic.io/axoniqio%2Fdc52fae5-3e71-46d1-9bb5-29eb89485294_general+conditions+axoniq_1.0.1.docx-2.pdf" target="_blank" text="General Conditions" />
-                <Link size="s" href="https://axoniq.io/resources/privacy" target="_blank" text="Privacy Policy" />
+    <div class="mb-2">
+        <div class="max-w-screen-lg mx-auto flex justify-between items-center gap-4">
+            <div class="flex gap-6 text-sm">
+                <div class="text-sm">AxonIQ © 2021</div>
+                <Link href="https://docs.axoniq.io/reference-guide/" target="_blank" variant="secondary">
+                    Axon Reference Guide
+                </Link>
+                <Link href="https://academy.axoniq.io/" target="_blank" variant="secondary">
+                    AxonIQ Academy
+                </Link>
+                <Link href="https://discuss.axoniq.io/" target="_blank" variant="secondary">
+                    AxonIQ Discuss
+                </Link>
+                <Link href="https://axoniqio.cdn.prismic.io/axoniqio%2Fdc52fae5-3e71-46d1-9bb5-29eb89485294_general+conditions+axoniq_1.0.1.docx-2.pdf" target="_blank" variant="secondary">
+                    General Conditions
+                </Link>
+                <Link href="https://axoniq.io/resources/privacy" target="_blank" variant="secondary">
+                    Privacy Policy
+                </Link>
             </div>
 
             <svg width="1" height="22" viewBox="0 0 1 22" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <rect y="0.5" width="1" height="21" fill="#A1A4AA"/>
             </svg>
                 
-            <div class="footer__links-content-social">
+            <div class="flex gap-5">
 
                 <Link href="https://www.youtube.com/AxonIQ" target="_blank">
                     <svg width="16" height="24" viewBox="0 0 16 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -81,58 +85,11 @@ async function download() {
                     </svg>
                 </Link>
             </div>
+            <a href="https://academy.axoniq.io/" target="_blank">
+                <img src="/assets/academy-banner-1.png" alt="Academy Link" />
+            </a>
         </div>
     </div>
     
     <ActionFooterShareDialog bind:visible={shareVisible}/>
-
-
-<style lang="scss">
-    @use "~@axoniq-product-ui/core/stylesheets/colors.scss";
-
-    .footer {
-        background-color: colors.$dove;
-        box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.4), 0px 5px 4px rgba(0, 0, 0, 0.1);
-
-        display: grid;
-        grid-template-columns: minmax(20px, 1fr) minmax(auto, 1024px) minmax(20px, 1fr);
-        background-color: colors.$dove;
-        padding: 10px 0;
-    }
-    .footer__content {
-        grid-column: 2;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
-    .footer__actions {
-        display: flex;
-        align-items: center;
-        gap: 40px;
-    }
-    .footer__links {
-        background-color: colors.$seal;
-        box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.4), 0px 5px 4px rgba(0, 0, 0, 0.1);
-        
-        display: grid;
-        grid-template-columns: minmax(20px, 1fr) minmax(auto, 1024px) minmax(20px, 1fr);
-        padding: 8px 0;
-    }
-    .footer__links-content {
-        grid-column: 2;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        gap: 16px;
-    }
-    .footer__links-content-legal {
-        display: flex;
-        gap: 24px;
-        flex-direction: row;
-    }
-    .footer__links-content-social {
-        display: flex;
-        gap: 20px;
-        flex-direction: row;
-    }
-</style>
+    

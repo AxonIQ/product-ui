@@ -10,10 +10,3 @@ html {
 *, *:before, *:after {
 	box-sizing: inherit;
 }
-
-body {
-	color: #333;
-	background-color: #E5E5E5;
-	margin: 0;
-	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
-}

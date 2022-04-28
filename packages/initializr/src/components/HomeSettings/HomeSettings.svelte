@@ -1,5 +1,5 @@
 <script lang="ts">
-import { Card,Radio,Typography, Input } from '@axoniq-product-ui/core';
+import { Dropdown,DropdownItem,DropdownItems,DropdownLabel,Input } from '@axoniq-product-ui/core';
 import type { DataType,SettingsItem } from "../../dataTypes";
 
     export let projectTypeData: DataType;
@@ -15,125 +15,60 @@ import type { DataType,SettingsItem } from "../../dataTypes";
     export let projectPackagingSelected = '';
 
     export let projectUsingAxonServer = 'EE';
-
     export let projectAxonServerContext = '';
-
 </script>
 
-<div class="home-settings">
-    <div class="home-settings__heading">
-        <Typography size="xl" weight="bold">Settings</Typography>
+<div class="mb-14">
+    <div class="flex items-center mb-2 h-12">
+        <div class="text-xl font-bold">Settings</div>
     </div>
-    <Card>
-        <div class="home-settings__items">
-            
-            <Typography size="s">Project</Typography>
-            <div class="home-settings__radio-wrapper">
+    <div class="flex flex-col gap-6 justify-center">
+        <Dropdown>
+            <DropdownLabel>Project</DropdownLabel>
+            <DropdownItems bind:value={projectTypeSelected}>
                 {#each projectTypeData.values as projectTypeItem (projectTypeItem.id) }
                     {#if projectTypeItem.tags.format === "project"}
-                        <Radio
-                            value={projectTypeItem.id}
-                            label={projectTypeItem.name}
-                            name="projectType"
-                            bind:group={projectTypeSelected}
-                        />
+                        <DropdownItem value={projectTypeItem.id}>{projectTypeItem.name}</DropdownItem>
                     {/if}
                 {/each}
-            </div>
-
-            <Typography size="s">Language</Typography>
-            <div class="home-settings__radio-wrapper">
+            </DropdownItems>
+        </Dropdown>
+        <Dropdown>
+            <DropdownLabel>Language</DropdownLabel>
+            <DropdownItems bind:value={projectLanguageSelected}>
                 {#each projectLanguageData.values as projectLanguageItem (projectLanguageItem.id) }
-                    <Radio
-                        value={projectLanguageItem.id}
-                        label={projectLanguageItem.name}
-                        name="projectLanguage"
-                        bind:group={projectLanguageSelected}
-                    />
+                    <DropdownItem value={projectLanguageItem.id}>{projectLanguageItem.name}</DropdownItem>
                 {/each}
-            </div>
-
-            <Typography size="s">Java</Typography>
-            <div class="home-settings__radio-wrapper">
+            </DropdownItems>
+        </Dropdown>
+        <Dropdown>
+            <DropdownLabel>Java</DropdownLabel>
+            <DropdownItems bind:value={projectJavaVersionSelected}>
                 {#each projectJavaVersionData.values as projectJavaVersionItem (projectJavaVersionItem.id) }
-                    <Radio
-                        value={projectJavaVersionItem.id}
-                        label={projectJavaVersionItem.name}
-                        name="projectJavaVersion"
-                        bind:group={projectJavaVersionSelected} 
-                    />
+                    <DropdownItem value={projectJavaVersionItem.id}>{projectJavaVersionItem.name}</DropdownItem>
                 {/each}
-            </div>
-
-            <Typography size="s">Packaging</Typography>
-            <div class="home-settings__radio-wrapper">
+            </DropdownItems>
+        </Dropdown>
+        <Dropdown>
+            <DropdownLabel>Packaging</DropdownLabel>
+            <DropdownItems bind:value={projectPackagingSelected}>
                 {#each projectPackagingData.values as projectPackagingItem (projectPackagingItem.id) }
-                    <Radio
-                        value={projectPackagingItem.id}
-                        label={projectPackagingItem.name}
-                        name="projectPackaging"
-                        bind:group={projectPackagingSelected}
-                    />
+                    <DropdownItem value={projectPackagingItem.id}>{projectPackagingItem.name}</DropdownItem>
                 {/each}
-            </div>
+            </DropdownItems>
+        </Dropdown>
+        <Dropdown>
+            <DropdownLabel>Axon Server</DropdownLabel>
+            <DropdownItems bind:value={projectUsingAxonServer}>
+                <DropdownItem value={'CLOUD'}>Cloud</DropdownItem>
+                <DropdownItem value={'EE'}>EE</DropdownItem>
+                <DropdownItem value={'SE'}>SE</DropdownItem>
+                <DropdownItem value={''}>None</DropdownItem>
+            </DropdownItems>
+        </Dropdown>
 
-            <Typography size="s">Axon Server</Typography>
-            <div class="home-settings__radio-wrapper">
-                <Radio
-                    value={'CLOUD'}
-                    label={'Cloud'}
-                    name="projectUsingAxonServer"
-                    bind:group={projectUsingAxonServer} 
-                />
-                <Radio
-                    value={'EE'}
-                    label={'EE'}
-                    name="projectUsingAxonServer"
-                    bind:group={projectUsingAxonServer} 
-                />
-                <Radio
-                    value={'SE'}
-                    label={'SE'}
-                    name="projectUsingAxonServer"
-                    bind:group={projectUsingAxonServer} 
-                />
-                <Radio
-                    value={''}
-                    label={'None'}
-                    name="projectUsingAxonServer"
-                    bind:group={projectUsingAxonServer} 
-                />
-            </div>
-            {#if projectUsingAxonServer === "CLOUD" || projectUsingAxonServer === "EE"}
-                <Typography size="s">Context</Typography>
-                <Input placeholder="default" bind:value={projectAxonServerContext} />
-            {/if}
-
-        </div>
-    </Card>
+        {#if projectUsingAxonServer === "CLOUD" || projectUsingAxonServer === "EE"}
+            <Input placeholder="default" bind:value={projectAxonServerContext} label="Context"/>
+        {/if}
+    </div>
 </div>
-
-<style lang="scss">
-    .home-settings {
-        margin-bottom: 60px;
-    }
-    .home-settings__heading {
-        display: flex;
-        align-items: center;
-        height: 48px;
-        margin-bottom: 10px;
-    }
-    .home-settings__items {
-        display: grid;
-        grid-template-columns: auto 1fr;
-        grid-auto-flow: row;
-        grid-gap: 24px;
-
-        justify-content: center;
-    }
-    .home-settings__radio-wrapper {
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
-    }
-</style>

@@ -2,29 +2,22 @@
     export let placeholder = '';
     export let value = '';
     export let disabled = false;
+    export let label: string = '';
 </script>
-<input
-    class="input"
-    disabled={disabled}
-    placeholder={placeholder}
-    bind:value={value}
-/>
+<label class="relative">
+    <input
+        class="input"
+        disabled={disabled}
+        placeholder={placeholder}
+        bind:value={value}
+    />
+    {#if label.length > 0}
+        <span class="absolute -top-2 left-1 text-sm bg-dove px-1 leading-none">{label}</span>
+    {/if}
+</label>
 <style lang="scss">
-    @use "../../../stylesheets/colors.scss";
-
     .input {
-        height: 26px;
-        border: 1px solid colors.$elephant;
+        @apply border border-solid border-elephant px-2 focus:outline-none text-sm w-full py-2;
         box-shadow: inset 0px 1px 2px rgba(0, 0, 0, 0.25);
-        width: 100%;
-        padding-left: 7px;
-
-        font-size: 14px;
-        font-family: 'Lato', sans-serif;
-        line-height: 24px;
-
-        &:focus-visible {
-            outline: 0;
-        }
     }
 </style>
