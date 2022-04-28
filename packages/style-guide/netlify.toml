@@ -2,3 +2,4 @@
   ignore = "git diff --quiet $CACHED_COMMIT_REF $COMMIT_REF . ../core/"
 [build.environment]
   NPM_VERSION = "8.1.0"
+  NODE_VERSION = "16.13.0"
