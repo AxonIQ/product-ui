@@ -46,7 +46,7 @@
 
 <style lang="scss">
     .dialog {
-        @apply w-[730px] border-0 bg-dove p-8;
+        @apply w-[730px] border-0 bg-dove p-8 rounded-2xl;
         box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.4), 0px 5px 4px rgba(0, 0, 0, 0.1);
     }
 </style>
