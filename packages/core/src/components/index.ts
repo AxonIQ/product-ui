@@ -7,3 +7,7 @@ export * from './Radio';
 export * from './Toggle';
 export * from './Search';
 export * from './Link';
+export * from './DropdownItem';
+export * from './DropdownItems';
+export * from './Dropdown';
+export * from './DropdownLabel';

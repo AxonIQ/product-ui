@@ -1,7 +1,7 @@
 <script lang="ts">
 	import Tailwindcss from '../../../Tailwindcss.svelte';
 
-import { Button, Radio, IconButton, Toggle, Card, Input, Dialog, Search, Link } from '@axoniq-product-ui/core';
+import { Button, Radio, IconButton, Toggle, Card, Input, Dialog, Search, Link, Dropdown, DropdownLabel, DropdownItems, DropdownItem } from '@axoniq-product-ui/core';
 
 let group1 = "";
 let group2 = "Java";
@@ -9,6 +9,7 @@ let group3 = "Snapshot";
 
 let toggle1 = true;
 let toggle2 = false;
+let selected = "Test 1";
 
 let textExample = 'Please change me'
 let searchExample = 'I am a filter'
@@ -149,6 +150,21 @@ let dialogOpen = false;
 			<Radio value="Snapshot" bind:group={group3} name="group3">Snapshot</Radio>
 		</div>
 		<div>Selected: <span class="font-bold">{group3}</span></div>
+	</div>
+	<hr class="my-10"/>
+
+	<div class="container mx-auto max-w-screen-xl flex flex-col gap-5 items-center">
+			<Dropdown>
+				<DropdownLabel>Test</DropdownLabel>
+				<DropdownItems bind:value={selected}>
+					<DropdownItem value={'Test 1'}>Test 1</DropdownItem>
+					<DropdownItem value={'Test 2'}>Test 2</DropdownItem>
+					<DropdownItem value={'Test 3'}>Test 3</DropdownItem>
+					<DropdownItem value={'Reallly really really long text'}>Reallly really really long text</DropdownItem>
+				</DropdownItems>
+			</Dropdown>
+		
+		{selected}
 	</div>
 	<hr class="my-10"/>
 
