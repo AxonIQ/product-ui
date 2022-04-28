@@ -17,23 +17,18 @@ async function download() {
 }
 
 </script>
-    <div class="bg-dove py-2 shadow">
-        <div class="max-w-screen-lg mx-auto flex justify-between items-center">
-            <div class="flex items-center gap-10">
-                <Button
-                    onClick={() => download()}
-                >Download</Button>
-                <Button
-                    onClick={() => shareVisible = true}
-                    variant="secondary"
-                >Share</Button>
-            </div>
-            <a href="https://academy.axoniq.io/" target="_blank">
-                <img src="/assets/academy-banner-1.png" alt="Academy Link" />
-            </a>
+    <div class="py-2 mb-8">
+        <div class="max-w-screen-lg mx-auto flex items-center gap-10">
+            <Button
+                onClick={() => download()}
+            >Download</Button>
+            <Button
+                onClick={() => shareVisible = true}
+                variant="secondary"
+            >Share</Button>
         </div>
     </div>
-    <div class="bg-seal shadow py-2">
+    <div class="mb-2">
         <div class="max-w-screen-lg mx-auto flex justify-between items-center gap-4">
             <div class="flex gap-6 text-sm">
                 <div class="text-sm">AxonIQ © 2021</div>

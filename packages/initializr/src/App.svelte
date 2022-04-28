@@ -63,35 +63,31 @@ $: $userSelection.dependencies = addedDependencies.map(dep => dep.id);
 {#if !dataLoaded}
 	<div>Loading...</div>
 {:else}
-	<div class="h-screen bg-seal">
+	<div class="flex flex-col h-screen bg-dove">
 		<header>
 			<Header />
 		</header>
-		<main class="bg-seal overflow-auto">
-			<section class="max-w-screen-lg mx-auto mt-7 grid grid-rows-1 grid-cols-[fit-content(320px)_minmax(auto,_672px)] gap-8">
-				<div>
-					<HomeMetadata
-						bind:groupId={$userSelection.groupId}
-						bind:artifactId={$userSelection.artifactId}
-						bind:name={$userSelection.name}
-						bind:description={$userSelection.description}
-						bind:packageName={$userSelection.packageName}
-					/>
-					<HomeSettings
-						projectTypeData={initialData.type}
-						projectLanguageData={initialData.language}
-						projectJavaVersionData={initialData.javaVersion}
-						projectPackagingData={initialData.packaging}
+		<main class="bg-dove overflow-auto h-full">
+			<section class="max-w-screen-lg mx-auto mt-7 grid grid-cols-[minmax(auto,_672px)_fit-content(320px)] gap-8">
+				<HomeMetadata
+					bind:groupId={$userSelection.groupId}
+					bind:artifactId={$userSelection.artifactId}
+					bind:name={$userSelection.name}
+					bind:description={$userSelection.description}
+					bind:packageName={$userSelection.packageName}
+				/>
+				<HomeSettings
+					projectTypeData={initialData.type}
+					projectLanguageData={initialData.language}
+					projectJavaVersionData={initialData.javaVersion}
+					projectPackagingData={initialData.packaging}
 
-						bind:projectTypeSelected={$userSelection.type}
-						bind:projectLanguageSelected={$userSelection.language}
-						bind:projectJavaVersionSelected={$userSelection.javaVersion}
-						bind:projectPackagingSelected={$userSelection.packaging}
-						bind:projectUsingAxonServer={$userSelection.usingAxonServer}
-						bind:projectAxonServerContext={$userSelection.axonServerContext}
-					/>
-				</div>
-				<div>
+					bind:projectTypeSelected={$userSelection.type}
+					bind:projectLanguageSelected={$userSelection.language}
+					bind:projectJavaVersionSelected={$userSelection.javaVersion}
+					bind:projectPackagingSelected={$userSelection.packaging}
+				/>
+				<div class="col-span-full mb-7">
 					<HomeDependencies
 						dependencyData={initialData.dependencies}
 
@@ -100,7 +96,7 @@ $: $userSelection.dependencies = addedDependencies.map(dep => dep.id);
 				</div>
 			</section>
 		</main>
-		<footer class="sticky bottom-0">
+		<footer class="sticky bottom-0 bg-dove">
 			<Footer />
 		</footer>
 	</div>

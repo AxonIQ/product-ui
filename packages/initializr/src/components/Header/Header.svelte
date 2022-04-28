@@ -18,4 +18,6 @@ let darkMode = false;
             </Toggle> -->
         </div>
     </div>
-    <GradientDivider />
+    <hr class="border-0 m-0 h-px bg-elephant"/>
+
+    <!-- <GradientDivider /> -->
