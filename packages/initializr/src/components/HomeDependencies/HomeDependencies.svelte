@@ -20,7 +20,7 @@ const removeDependency = (currentDependency) => addedDependencies = addedDepende
     <HomeAddDependancyDialog
         {dependencyData}
         {addedDependencies}
-        onAddDependency={(dependencyItem) => {addedDependencies = [...addedDependencies, dependencyItem]}}
+        onAddDependency={(dependencyItem) => addedDependencies = [...addedDependencies, dependencyItem]}
         onRemoveDependency={(dependencyItem) => removeDependency(dependencyItem)}
         bind:visible={addDependenciesVisible}
     />
