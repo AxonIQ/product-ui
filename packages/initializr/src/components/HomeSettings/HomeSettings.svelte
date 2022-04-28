@@ -1,5 +1,5 @@
 <script lang="ts">
-import { Radio, Dropdown, DropdownItems, DropdownLabel, DropdownItem } from '@axoniq-product-ui/core';
+import { Dropdown,DropdownItem,DropdownItems,DropdownLabel } from '@axoniq-product-ui/core';
 import type { DataType,SettingsItem } from "../../dataTypes";
 
     export let projectTypeData: DataType;
