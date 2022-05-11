@@ -63,12 +63,12 @@ $: $userSelection.dependencies = addedDependencies.map(dep => dep.id);
 {#if !dataLoaded}
 	<div>Loading...</div>
 {:else}
-	<div class="flex flex-col h-screen bg-dove">
+	<div class="px-4 flex flex-col h-screen bg-dove">
 		<header>
 			<Header />
 		</header>
 		<main class="bg-dove overflow-auto h-full">
-			<section class="max-w-screen-lg mx-auto mt-7 grid grid-cols-[minmax(auto,_672px)_fit-content(320px)] gap-8">
+			<section class="max-w-screen-lg mx-auto mt-7 grid grid-cols-1 lg:grid-cols-[minmax(auto,_672px)_fit-content(320px)] gap-8">
 				<HomeMetadata
 					bind:groupId={$userSelection.groupId}
 					bind:artifactId={$userSelection.artifactId}

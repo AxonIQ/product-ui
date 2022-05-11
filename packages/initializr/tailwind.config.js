@@ -6,4 +6,7 @@ module.exports = {
     "../core/src/**/*.svelte",
     "./src/**/*.svelte",
   ],
+  plugins: [
+    require('@tailwindcss/line-clamp'),
+  ],
 }

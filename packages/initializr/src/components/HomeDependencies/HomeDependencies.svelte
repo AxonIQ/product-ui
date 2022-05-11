@@ -47,7 +47,7 @@ const removeDependency = (currentDependency) => addedDependencies = addedDepende
                         </button>
                     </div>
                     <p
-                        class="text-sm"
+                        class="text-sm line-clamp-4"
                         class:opacity-70={['axon-starter', 'axon-test'].indexOf(addedDep.id) > -1}
                     >{addedDep.description}</p>
                 </div>
