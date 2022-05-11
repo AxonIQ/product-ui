@@ -1,5 +1,4 @@
 <script>
-import GradientDivider from "../GradientDivider/GradientDivider.svelte";
 // import IconMoon from "../IconMoon/IconMoon.svelte";
 // import IconSun from "../IconSun/IconSun.svelte";
 // import Toggle from "../Toggle/Toggle.svelte";
@@ -19,5 +18,3 @@ let darkMode = false;
         </div>
     </div>
     <hr class="border-0 m-0 h-px bg-elephant"/>
-
-    <!-- <GradientDivider /> -->

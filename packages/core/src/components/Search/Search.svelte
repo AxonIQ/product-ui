@@ -5,13 +5,13 @@
 </script>
 <div class="relative">
     <input
-        class="search"
+        class="search border border-solid border-elephant py-1 px-2 focus:outline-none text-sm w-full shadow"
         disabled={disabled}
         placeholder={placeholder}
         type="search"
         bind:value={value}
     />
-    <button class="search__clear" on:click={() => value = ''}>
+    <button class="border-0 bg-transparent p-0 w-6 h-6 cursor-pointer absolute top-1/2 right-1 -translate-y-1/2" on:click={() => value = ''}>
         <svg
             width="9"
             height="9"
@@ -24,14 +24,8 @@
 </div>
 <style lang="scss">
     .search {
-        @apply border border-solid border-elephant py-1 px-2 focus:outline-none text-sm w-full;
-
-        box-shadow: inset 0px 1px 2px rgba(0, 0, 0, 0.25);
         &::-webkit-search-cancel-button {
             display: none;
         }
-    }
-    .search__clear {
-        @apply border-0 bg-transparent p-0 w-6 h-6 cursor-pointer absolute top-1/2 right-1 -translate-y-1/2;
     }
 </style>
