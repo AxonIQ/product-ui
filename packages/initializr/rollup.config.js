@@ -1,8 +1,6 @@
 import replace from '@rollup/plugin-replace';
 import defaultConfig from '../../rollup.config';
 
-const production = !process.env.ROLLUP_WATCH;
-
 export default (args) => {
 	let currentEnv = '';
 
