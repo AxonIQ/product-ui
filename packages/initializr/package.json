@@ -5,15 +5,12 @@
   "scripts": {
     "preinstall": "npx only-allow pnpm",
     "prebuild": "test \"$CI\" = true && npx pnpm install -r --store=node_modules/.pnpm-store || echo skipping pnpm install",
-
     "build": "rollup -c --config-prod",
     "build:local": "rollup -c --config-local",
     "build:netlify": "rollup -c --config-netlify",
-
     "dev": "rollup -c -w --config-netlify",
     "dev:local": "rollup -c -w --config-local",
     "dev:prod": "rollup -c -w --config-prod",
-
     "start": "sirv public --no-clear",
     "validate": "svelte-check"
   },
@@ -22,6 +19,7 @@
     "@rollup/plugin-node-resolve": "^11.0.0",
     "@rollup/plugin-replace": "^2.4.2",
     "@rollup/plugin-typescript": "^8.0.0",
+    "@tailwindcss/line-clamp": "^0.4.0",
     "@tsconfig/svelte": "^1.0.0",
     "rollup": "^2.3.4",
     "rollup-plugin-css-only": "^3.1.0",

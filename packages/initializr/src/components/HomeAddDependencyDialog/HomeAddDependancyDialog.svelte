@@ -59,7 +59,10 @@ $: dependencyAlreadyAdded = (dependencyItem: DependenciesValue) => {
 
 <Dialog
     open={visible}
-    onClose={() => visible = false}
+    onClose={() => {
+        searchInput = '';
+        visible = false;
+    }}
 >
     <div slot="title">
         <div class="text-xl font-bold">Add dependencies</div>
