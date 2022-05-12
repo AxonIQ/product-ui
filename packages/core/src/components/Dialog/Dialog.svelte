@@ -21,7 +21,7 @@
         on:click={onClose}
     >
         <div
-            class="w-[730px] border-0 bg-dove p-8 rounded-2xl shadow-float"
+            class="w-[730px] border-0 bg-dove dark:bg-ox dark:text-dove p-8 rounded-2xl shadow-float"
             on:click={(event) => event.stopPropagation()}
         >
             <div class="flex items-center mb-6">

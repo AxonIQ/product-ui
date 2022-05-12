@@ -28,6 +28,6 @@
         @apply bg-peacock text-dove hover:opacity-75 active:opacity-50;
     }
     .button-secondary {
-        @apply bg-seal text-ox;
+        @apply bg-seal text-ox gdark:bg-ox gdark:text-dove;
     }
 </style>

@@ -1,6 +1,7 @@
 const production = !process.env.ROLLUP_WATCH;
 
 module.exports = {
+  darkMode: 'class',
   content: [
     "./src/**/*.svelte",
   ],

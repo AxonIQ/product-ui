@@ -1,7 +1,7 @@
 <script lang="ts">
 import { Button,Card,IconButton } from '@axoniq-product-ui/core';
-import type { DataDependencies,DependenciesValue } from "../../dataTypes";
-import HomeAddDependancyDialog from '../HomeAddDependencyDialog/HomeAddDependancyDialog.svelte';
+import type { DataDependencies,DependenciesValue } from "../dataTypes";
+import HomeAddDependancyDialog from './HomeAddDependancyDialog.svelte';
 
 export let dependencyData: DataDependencies;
 export let addedDependencies: DependenciesValue[] = [];

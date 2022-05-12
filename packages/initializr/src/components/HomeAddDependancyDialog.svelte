@@ -1,7 +1,7 @@
 <script lang="ts">
 import { Card,Dialog,Search } from '@axoniq-product-ui/core';
 import Fuse from 'fuse.js';
-import type { DataDependencies,DependenciesValue } from "../../dataTypes";
+import type { DataDependencies,DependenciesValue } from "../dataTypes";
 
 export let visible = false;
 export let dependencyData: DataDependencies;
