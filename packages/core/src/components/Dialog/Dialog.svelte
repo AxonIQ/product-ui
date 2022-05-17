@@ -21,7 +21,7 @@
         on:click={onClose}
     >
         <div
-            class="dialog"
+            class="w-[730px] border-0 bg-dove dark:bg-ox dark:text-dove p-8 rounded-2xl shadow-float"
             on:click={(event) => event.stopPropagation()}
         >
             <div class="flex items-center mb-6">
@@ -43,10 +43,3 @@
         </div>
     </div>
 {/if}
-
-<style lang="scss">
-    .dialog {
-        @apply w-[730px] border-0 bg-dove p-8 rounded-2xl;
-        box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.4), 0px 5px 4px rgba(0, 0, 0, 0.1);
-    }
-</style>

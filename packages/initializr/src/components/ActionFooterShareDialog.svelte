@@ -1,6 +1,6 @@
 <script lang="ts">
     import { Button,Dialog,Input } from '@axoniq-product-ui/core';
-    import { userSelection } from "../../userSelectionStore";
+    import { userSelection } from "../userSelectionStore";
     
     export let visible = false;
     let buttonText = "Copy";

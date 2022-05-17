@@ -2,11 +2,12 @@ const defaultConf = require('../../tailwind.config');
 
 module.exports = {
   ...defaultConf,
-  content: [
+content: [
     "../core/src/**/*.svelte",
     "./src/**/*.svelte",
   ],
   plugins: [
     require('@tailwindcss/line-clamp'),
+    require('tailwindcss-global-dark')
   ],
 }

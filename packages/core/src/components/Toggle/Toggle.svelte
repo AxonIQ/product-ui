@@ -31,9 +31,9 @@
     .toggle__slider {
         // In Figma the width is 28px, and the height is 16px, because an outline is used instead of a border.
         // The border is 2px thick, so it needs at least 4px inside an element with box-sizing: border-box
-        @apply cursor-pointer flex p-[2px] items-center w-[32px] h-[20px] text-rhino border-2 border-solid border-rhino rounded-full transition;
+        @apply cursor-pointer flex p-[2px] items-center w-[32px] h-[20px] text-rhino gdark:text-dove border-2 border-solid border-rhino gdark:border-dove rounded-full transition;
     }
     .toggle__slider:before {
-        @apply w-[12px] h-[12px] content-[""] rounded-full transition shadow-[inset_10px_10px] shadow-rhino;
+        @apply w-[12px] h-[12px] content-[""] rounded-full transition shadow-[inset_10px_10px] shadow-rhino gdark:shadow-dove;
     }
 </style>

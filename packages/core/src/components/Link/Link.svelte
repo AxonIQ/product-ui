@@ -16,6 +16,6 @@
         @apply text-peacock hover:opacity-80
     }
     .link-secondary {
-        @apply text-rhino hover:decoration-elephant hover:underline hover:decoration-1 hover:underline-offset-4 visited:text-inherit
+        @apply text-rhino hover:decoration-elephant hover:underline hover:decoration-1 hover:underline-offset-4 visited:text-inherit gdark:text-dove
     }
 </style>

@@ -22,12 +22,12 @@
 
 <style lang="scss">
     .button {
-        @apply min-h-[36px] min-w-[130px] rounded-full normal-case text-base px-4 disabled:pointer-events-none disabled:opacity-50 shadow;
+        @apply min-h-[36px] min-w-[130px] rounded-full normal-case text-base px-4 disabled:pointer-events-none disabled:opacity-50 shadow-float;
     }
     .button-primary {
         @apply bg-peacock text-dove hover:opacity-75 active:opacity-50;
     }
     .button-secondary {
-        @apply bg-seal text-ox;
+        @apply bg-seal text-ox gdark:bg-ox gdark:text-dove;
     }
 </style>

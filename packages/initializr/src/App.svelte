@@ -1,10 +1,10 @@
 <script lang="ts">
 import { onMount } from "svelte";
-import Footer from "./components/Footer/Footer.svelte";
-import Header from "./components/Header/Header.svelte";
-import HomeDependencies from "./components/HomeDependencies/HomeDependencies.svelte";
-import HomeMetadata from "./components/HomeMetadata/HomeMetadata.svelte";
-import HomeSettings from "./components/HomeSettings/HomeSettings.svelte";
+import Footer from "./components/Footer.svelte";
+import Header from "./components/Header.svelte";
+import HomeDependencies from "./components/HomeDependencies.svelte";
+import HomeMetadata from "./components/HomeMetadata.svelte";
+import HomeSettings from "./components/HomeSettings.svelte";
 import type { DependenciesValue,InitializerData } from "./dataTypes";
 import { getInitialData } from "./services/getInitialData";
 import { userSelection } from './userSelectionStore';
@@ -63,12 +63,12 @@ $: $userSelection.dependencies = addedDependencies.map(dep => dep.id);
 {#if !dataLoaded}
 	<div>Loading...</div>
 {:else}
-	<div class="px-4 flex flex-col h-screen bg-dove">
-		<header>
+	<div class="h-screen">
+		<header class="bg-dove dark:bg-rhino dark:text-dove">
 			<Header />
 		</header>
-		<main class="bg-dove overflow-auto h-full">
-			<section class="max-w-screen-lg mx-auto mt-7 grid grid-cols-1 lg:grid-cols-[minmax(auto,_672px)_fit-content(320px)] gap-8">
+		<main class="bg-dove dark:bg-ox dark:text-dove overflow-auto h-full">
+			<section class="max-w-screen-lg mx-auto mt-7 px-4 xl:px-0 grid grid-cols-1 lg:grid-cols-[minmax(auto,_672px)_fit-content(320px)] gap-8">
 				<HomeMetadata
 					bind:groupId={$userSelection.groupId}
 					bind:artifactId={$userSelection.artifactId}
@@ -98,7 +98,7 @@ $: $userSelection.dependencies = addedDependencies.map(dep => dep.id);
 				</div>
 			</section>
 		</main>
-		<footer class="sticky bottom-0 bg-dove">
+		<footer class="sticky bottom-0 bg-dove dark:bg-rhino dark:text-dove">
 			<Footer />
 		</footer>
 	</div>
