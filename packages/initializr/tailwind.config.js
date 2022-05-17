@@ -8,6 +8,5 @@ content: [
   ],
   plugins: [
     require('@tailwindcss/line-clamp'),
-    require('tailwindcss-global-dark'),
   ],
 }

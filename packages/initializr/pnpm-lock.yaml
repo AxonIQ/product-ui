@@ -19,7 +19,6 @@ specifiers:
   svelte: ^3.0.0
   svelte-check: ^1.0.0
   svelte-preprocess: ^4.0.0
-  tailwindcss-global-dark: ^1.0.1
   tslib: ^2.0.0
   typescript: ^4.3.2
 
@@ -27,7 +26,6 @@ dependencies:
   '@axoniq-product-ui/core': link:../core
   fuse.js: 6.4.6
   sirv-cli: 1.0.12
-  tailwindcss-global-dark: 1.0.1
 
 devDependencies:
   '@rollup/plugin-commonjs': 17.1.0_rollup@2.50.1
@@ -906,12 +904,6 @@ packages:
     resolution: {integrity: sha512-q5Dq0/QHh4BLJyEVWGe7Cej5NWs040LWjMbicBGZ+3qpFWJ1YObRmUDZKbbovddLC9WW7THTj3kYbTOFmU9fbg==}
     engines: {node: '>= 8'}
     dev: true
-
-  /tailwindcss-global-dark/1.0.1:
-    resolution: {integrity: sha512-AeldGktCAOjdVnZI5Fm1anf/TQzzN03ER1UcRVfnfjDstMV32OJjR6MGB+CEkwavSzPBDWtgBCP/d8xO+fsGJQ==}
-    peerDependencies:
-      tailwindcss: x
-    dev: false
 
   /terser/5.7.0:
     resolution: {integrity: sha512-HP5/9hp2UaZt5fYkuhNBR8YyRcT8juw8+uFbAme53iN9hblvKnLUTKkmwJG6ocWpIKf8UK4DoeWG4ty0J6S6/g==}

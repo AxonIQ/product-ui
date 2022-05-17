@@ -36,7 +36,6 @@
   "dependencies": {
     "@axoniq-product-ui/core": "workspace:*",
     "fuse.js": "^6.4.6",
-    "sirv-cli": "^1.0.0",
-    "tailwindcss-global-dark": "^1.0.1"
+    "sirv-cli": "^1.0.0"
   }
 }
