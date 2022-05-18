@@ -23,7 +23,7 @@ specifiers:
   typescript: ^4.3.2
 
 dependencies:
-  '@axoniq-product-ui/core': link:../core/package
+  '@axoniq-product-ui/core': link:../core
   fuse.js: 6.6.2
   sirv-cli: 1.0.14
 

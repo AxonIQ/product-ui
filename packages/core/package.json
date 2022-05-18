@@ -2,7 +2,7 @@
   "name": "@axoniq-product-ui/core",
   "version": "1.0.0",
   "private": true,
-  "svelte": "index.js",
+  "svelte": "src/lib/index.ts",
   "scripts": {
     "dev": "svelte-kit dev",
     "build": "svelte-kit build",
