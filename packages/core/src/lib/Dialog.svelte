@@ -1,5 +1,5 @@
 <script lang="ts">
-    import IconButton from "../IconButton/IconButton.svelte";
+    import IconButton from "./IconButton.svelte";
 
     export let open: boolean;
     export let onClose: () => void;

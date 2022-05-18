@@ -1,7 +1,17 @@
 <script lang="ts">
-	import Tailwindcss from '../../../Tailwindcss.svelte';
-
-import { Button, Radio, IconButton, Toggle, Card, Input, Dialog, Search, Link, Dropdown, DropdownLabel, DropdownItems, DropdownItem } from '@axoniq-product-ui/core';
+import Dropdown from '$lib/Dropdown.svelte';
+import Button from '$lib/Button.svelte';
+import Link from '$lib/Link.svelte';
+import Radio from '$lib/Radio.svelte';
+import DropdownLabel from '$lib/DropdownLabel.svelte';
+import DropdownItems from '$lib/DropdownItems.svelte';
+import DropdownItem from '$lib/DropdownItem.svelte';
+import IconButton from '$lib/IconButton.svelte';
+import Toggle from '$lib/Toggle.svelte';
+import Card from '$lib/Card.svelte';
+import Input from '$lib/Input.svelte';
+import Search from '$lib/Search.svelte';
+import Dialog from '$lib/Dialog.svelte';
 
 let group1 = "";
 let group2 = "Java";
@@ -16,8 +26,6 @@ let searchExample = 'I am a filter'
 
 let dialogOpen = false;
 </script>
-
-<Tailwindcss />
 
 <main class="mx-auto p-2 bg-dove">
 	<div class="flex flex-wrap justify-center gap-10">
