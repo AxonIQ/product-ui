@@ -3,6 +3,7 @@
     export let disabled = false;
     export let variant: "primary" | "secondary" = "primary";
     export let onClick: () => void = () => {};
+    export let type: 'button' | 'submit' = 'button';
     
 </script>
 
@@ -10,6 +11,7 @@
     class="button"
     class:button-primary={variant === "primary"}
     class:button-secondary={variant === "secondary"}
+    {type}
     {disabled}
     on:click={() => onClick()}>
         <div

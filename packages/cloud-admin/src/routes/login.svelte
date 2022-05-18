@@ -6,7 +6,7 @@ import IconGithub from "src/components/IconGithub.svelte";
 
 </script>
 <div class="max-w-6xl px-5 mx-auto h-screen">
-  <div class="h-full flex justify-center items-center gap-10">
+  <div class="h-full flex justify-center items-center gap-20">
     <Logo />
     <div class="flex flex-col gap-8 w-full">
       <h1 class="text-2xl font-light">Welcome to AxonIQ Cloud</h1>
@@ -20,7 +20,7 @@ import IconGithub from "src/components/IconGithub.svelte";
       </div>
       <hr class="w-full border-0 m-0 h-px bg-elephant"/>
       <div>
-        No account yet? <Link href="#">Create account</Link>
+        No account yet? <Link href="/register">Create account</Link>
       </div>
     </div>
   </div>
