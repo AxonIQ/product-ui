@@ -1,0 +1,3 @@
+[build.environment]
+  NODE_VERSION = "14"
+  NPM_FLAGS = "--prefix=/"

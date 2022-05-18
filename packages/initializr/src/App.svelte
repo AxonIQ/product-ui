@@ -1,5 +1,4 @@
 <script lang="ts">
-import { onMount } from "svelte";
 import Footer from "./components/Footer.svelte";
 import Header from "./components/Header.svelte";
 import HomeDependencies from "./components/HomeDependencies.svelte";
@@ -9,6 +8,7 @@ import type { DependenciesValue,InitializerData } from "./dataTypes";
 import { getInitialData } from "./services/getInitialData";
 import { userSelection } from './userSelectionStore';
 import Tailwindcss from '../../../Tailwindcss.svelte';
+import { onMount } from "svelte";
 
 let dataLoaded = false;
 let initialData: InitializerData;

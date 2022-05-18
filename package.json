@@ -24,7 +24,7 @@
         "tailwindcss-global-dark": "^1.0.1"
     },
     "devDependencies": {
-        "autoprefixer": "^10.3.1",
-        "postcss": "^8.3.6"
+        "autoprefixer": "^10.4.7",
+        "postcss": "^8.4.13"
     }
 }

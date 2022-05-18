@@ -2,7 +2,6 @@ name: Build Style Guide package
 on:
   pull_request:
     paths: 
-      - 'packages/style-guide/**'
       - 'packages/core/**'
 jobs:
   build-style-guide:
@@ -12,7 +11,7 @@ jobs:
       CI: false
     defaults:
       run:
-        working-directory: ./packages/style-guide
+        working-directory: ./packages/core
 
     steps:
     - uses: actions/checkout@v2
