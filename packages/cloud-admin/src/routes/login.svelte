@@ -1,6 +1,8 @@
 <script>
 import Logo from "src/components/Logo.svelte";
 import {Button, Link} from "@axoniq-product-ui/core";
+import IconGoogle from "src/components/IconGoogle.svelte";
+import IconGithub from "src/components/IconGithub.svelte";
 
 </script>
 <div class="max-w-[1440px] mx-auto h-screen">
@@ -11,10 +13,10 @@ import {Button, Link} from "@axoniq-product-ui/core";
       <hr class="w-full border-0 m-0 h-px bg-elephant"/>
       <div class="flex gap-4">
         <Button variant="secondary">
-          <span class="font-black">Sign in with Google</span>
+          <span class="font-black flex gap-2 items-center"><IconGoogle/> Sign in with Google</span>
         </Button>
         <Button variant="secondary">
-          <span class="font-black">Sign in with Github</span>
+          <span class="font-black flex gap-2 items-center"><IconGithub/> Sign in with Github</span>
         </Button>
       </div>
       <div>
