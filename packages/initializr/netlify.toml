@@ -1,6 +1,6 @@
 [build]
   base = "packages/initializr"
-  command = "npx pnpm install --store=node_modules/.pnpm-store && npx pnpm build"
+  command = "npx pnpm install --store=node_modules/.pnpm-store && npx pnpm build:netlify"
   publish = "public"
 [build.environment]
   NODE_VERSION = "16"
