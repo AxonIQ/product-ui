@@ -4,9 +4,16 @@
 // for information about these interfaces
 declare namespace App {
 	interface Locals {
-		token?: string | null
+		token?: string | null,
+		payload?: any
 	}
 	// interface Platform {}
-	// interface Session {}
+	interface Session {
+		token?: string,
+		userId?: string,
+		externalUserId?: string,
+		email?: string,
+		roles?: string[],
+	}
 	// interface Stuff {}
 }

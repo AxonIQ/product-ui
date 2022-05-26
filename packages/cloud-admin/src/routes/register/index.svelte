@@ -1,11 +1,22 @@
+<script context="module" lang="ts">
+  export const load: import("@sveltejs/kit").Load = async ({session}) => {
+    return {
+      props: {
+        email: session.email
+      }
+    }
+  }
+</script>
 <script>
   import Logo from "src/components/Logo.svelte";
   import {Button, Input, Link} from "@axoniq-product-ui/core";
 
+  export let email;
+  
   let form = {
     firstName: '',
     lastName: '',
-    email: '',
+    email: email ?? '',
     org: '',
     role: '',
   };
@@ -29,7 +40,7 @@
           <Input label="Role in organization" bind:value={form.role} />
 
           <div class="flex gap-6 items-center justify-end">
-            <Link href="/login">Back to sign in</Link>
+            <Link href="/logout">Back to sign in</Link>
             <Button type="submit" variant="secondary" onClick={() => fetch('/api/public/version')}>
               <span class="font-black flex gap-2 items-center">Confirm</span>
             </Button>
