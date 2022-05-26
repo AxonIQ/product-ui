@@ -1,7 +1,6 @@
 <script>
   import Logo from "src/components/Logo.svelte";
   import {Button, Input, Link} from "@axoniq-product-ui/core";
-  import IconGoogle from "src/components/IconGoogle.svelte";
 
   let form = {
     firstName: '',
@@ -31,8 +30,8 @@
 
           <div class="flex gap-6 items-center justify-end">
             <Link href="/login">Back to sign in</Link>
-            <Button type="submit" variant="secondary">
-              <span class="font-black flex gap-2 items-center"><IconGoogle/> Confirm</span>
+            <Button type="submit" variant="secondary" onClick={() => fetch('/api/public/version')}>
+              <span class="font-black flex gap-2 items-center">Confirm</span>
             </Button>
           </div>
         </form>

@@ -11,10 +11,14 @@ import IconGithub from "src/components/IconGithub.svelte";
     <div class="flex flex-col gap-8 w-full">
       <h1 class="text-2xl font-light">Welcome to AxonIQ Cloud</h1>
       <div class="flex gap-4">
-        <Button variant="secondary">
+        <Button
+          variant="secondary"
+          onClick={() => window.location.href = '/oauth2/authorization/google'}>
           <span class="font-black flex gap-2 items-center"><IconGoogle/> Sign in with Google</span>
         </Button>
-        <Button variant="secondary">
+        <Button
+          variant="secondary"
+          onClick={() => window.location.href = '/oauth2/authorization/github'}>
           <span class="font-black flex gap-2 items-center"><IconGithub/> Sign in with Github</span>
         </Button>
       </div>
