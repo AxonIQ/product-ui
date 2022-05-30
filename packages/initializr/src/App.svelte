@@ -15,8 +15,10 @@ let initialData: InitializerData;
 let addedDependencies: DependenciesValue[] = [];
 
 onMount(async() => {
+	debugger;
 	initialData = await getInitialData();
-
+	debugger;
+	
 	const urlSearchParams = new URLSearchParams(window.location.search);
 	const params = Object.fromEntries(urlSearchParams.entries());
 	history.replaceState && history.replaceState(null, '', location.pathname);
