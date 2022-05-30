@@ -13,12 +13,12 @@ import IconGithub from "src/components/IconGithub.svelte";
       <div class="flex gap-4">
         <Button
           variant="secondary"
-          onClick={() => window.location.href = '/oauth2/authorization/google'}>
+          onClick={() => window.location.href = `${import.meta.env.VITE_API_ROOT}/oauth2/authorization/google?redirect_uri=${import.meta.env.VITE_OAUTH_REDIRECT_URI}`}>
           <span class="font-black flex gap-2 items-center"><IconGoogle/> Sign in with Google</span>
         </Button>
         <Button
           variant="secondary"
-          onClick={() => window.location.href = '/oauth2/authorization/github'}>
+          onClick={() => window.location.href = `${import.meta.env.VITE_API_ROOT}/oauth2/authorization/github?redirect_uri=${import.meta.env.VITE_OAUTH_REDIRECT_URI}`}>
           <span class="font-black flex gap-2 items-center"><IconGithub/> Sign in with Github</span>
         </Button>
       </div>
