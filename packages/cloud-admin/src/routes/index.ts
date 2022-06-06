@@ -1,5 +1,5 @@
 import type { RequestHandler } from "@sveltejs/kit"
-import { parse, serialize } from "cookie";
+import { serialize } from "cookie";
 import jwt_decode from "jwt-decode";
 
 export const get: RequestHandler = async(request) => {
@@ -19,22 +19,7 @@ export const get: RequestHandler = async(request) => {
     }
   }
 
-  const cookies = parse(request.request.headers.get('cookie') ?? '');
-  if (cookies.token) {
-    const payload: any = jwt_decode(cookies.token ?? '');
-    const isRegistered = payload?.role?.includes('ROLE_USER')
-    return {
-      status: 302,
-      headers: {
-        location: isRegistered ? '/dashboard' : '/register'
-      }
-    }
-  }
-
   return {
-    status: 302,
-    headers: {
-      location: '/login'
-    }
+    status: 200
   }
 }

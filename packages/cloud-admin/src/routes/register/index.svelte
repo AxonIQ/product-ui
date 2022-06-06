@@ -10,6 +10,8 @@
 <script>
   import Logo from "src/components/Logo.svelte";
   import {Button, Input, Link} from "@axoniq-product-ui/core";
+  import IconCheck from "src/components/IconCheck.svelte";
+  import { register } from "src/services/account";
 
   export let email;
   
@@ -41,8 +43,19 @@
 
           <div class="flex gap-6 items-center justify-end">
             <Link href="/logout">Back to sign in</Link>
-            <Button type="submit" variant="secondary" onClick={() => fetch('/api/public/version')}>
-              <span class="font-black flex gap-2 items-center">Confirm</span>
+            <Button
+              type="submit"
+              variant="secondary"
+              onClick={async () => {
+                await register(form);
+                window.location.href = '/dashboard';
+              }}>
+              <span class="flex items-center gap-2">
+                <span class="shrink-0">
+                  <IconCheck />
+                </span>
+                <span class="font-black flex gap-2 items-center">Confirm</span>
+              </span>
             </Button>
           </div>
         </form>

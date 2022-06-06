@@ -1,9 +1,15 @@
 <script lang="ts" context="module">
-  // export async function load() {
+  export const load: import("@sveltejs/kit").Load = async ({session}) => {
+    if (session.roles?.includes('ROLE_USER')) {
+      return {
+        status: 302,
+        redirect: '/dashboard',
+      }
+    }
 
-  //   return {
-  //     status: 302,
-  //     redirect: '/login',
-  //   }
-  // }
+    return {
+      status: 302,
+      redirect: '/login',
+    }
+  }
 </script>

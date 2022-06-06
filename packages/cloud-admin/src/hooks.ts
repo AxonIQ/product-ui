@@ -28,7 +28,7 @@ export const getSession: GetSession = async (request) => {
       userId: request.locals.payload.sub,
       externalUserId: request.locals.payload.esub,
       email: request.locals.payload.email,
-      roles: request.locals.payload.roles,
+      roles: request.locals.payload.rol,
     };
   }
   

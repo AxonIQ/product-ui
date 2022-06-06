@@ -10,7 +10,8 @@
     "check": "svelte-check --tsconfig ./tsconfig.json",
     "check:watch": "svelte-check --tsconfig ./tsconfig.json --watch",
     "lint": "prettier --ignore-path .gitignore --check --plugin-search-dir=. . && eslint --ignore-path .gitignore .",
-    "format": "prettier --ignore-path .gitignore --write --plugin-search-dir=. ."
+    "format": "prettier --ignore-path .gitignore --write --plugin-search-dir=. .",
+    "generate-types": "openapi-typescript \"https://console.dev.axoniq.net/v3/api-docs\" --output src/services/types/generated.ts"
   },
   "devDependencies": {
     "@sveltejs/adapter-auto": "next",
@@ -21,6 +22,7 @@
     "eslint": "^8.12.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-svelte3": "^4.0.0",
+    "openapi-typescript": "^5.4.0",
     "postcss-load-config": "^3.1.4",
     "prettier": "^2.5.1",
     "prettier-plugin-svelte": "^2.5.0",
