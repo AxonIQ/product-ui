@@ -1,11 +1,6 @@
-import {parse} from 'cookie';
 
-const cookie = parse(document.cookie)
 const defaultHeaders = new Headers();
 defaultHeaders.append("Content-Type", "application/json");
-if (cookie.token) {
-    defaultHeaders.append("Authorization", `Bearer ${cookie.token}`);
-}
 
 const defaultOptions: RequestInit = {
     cache: "no-cache",
