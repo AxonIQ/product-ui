@@ -1,16 +1,17 @@
 <script>
-  import "../app.css";
-  import { onMount } from "svelte";
+  import { browser } from '$app/env';
   import { parse } from 'cookie';
-
+  import { fetchWrapper } from "src/services/fetchWrapper";
   import "../app.css";
-import { fetchWrapper } from "src/services/fetchWrapper";
-  onMount(() => {
+
+  if (browser) {
+    // client-only code here
     const cookie = parse(window.document.cookie)
-    if (cookie.token) {
-      fetchWrapper.setAuthorizationToken(cookie.token)
-    }
-  })
+      if (cookie.token) {
+        console.log('attaching token');
+        fetchWrapper.setAuthorizationToken(cookie.token)
+      }
+  }
 </script>
 
 <slot />

@@ -5,7 +5,7 @@ import IconDashboard from "src/components/IconDashboard.svelte";
   
   </script>
   <div class="flex">
-    <div class="min-w-[295px] h-screen bg-seal px-4 py-3 text-rhino text-sm shadow-float flex flex-col">
+    <div class="sticky left-0 top-0 min-w-[295px] h-screen bg-seal px-4 py-3 text-rhino text-sm shadow-float flex flex-col">
       <div class="mb-10">
         <IconDashboardLogo />
       </div>

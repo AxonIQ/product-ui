@@ -7,7 +7,7 @@
     }
   }
 </script>
-<script>
+<script lang="ts">
   import Logo from "src/components/Logo.svelte";
   import {Button, Input, Link} from "@axoniq-product-ui/core";
   import IconCheck from "src/components/IconCheck.svelte";
