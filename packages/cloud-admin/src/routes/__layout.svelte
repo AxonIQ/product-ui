@@ -8,7 +8,6 @@
     // client-only code here
     const cookie = parse(window.document.cookie)
       if (cookie.token) {
-        console.log('attaching token');
         fetchWrapper.setAuthorizationToken(cookie.token)
       }
   }

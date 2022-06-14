@@ -15,7 +15,7 @@ async function handleRequest(
     options: RequestInit,
     responseInterceptor: ResponseInterceptor
 ) {
-    const response = await fetch(url, options);
+    const response = await fetch(`${import.meta.env.VITE_API_ROOT}${url}`, options);
     responseInterceptor(response);
 
     if (!response.ok) {
