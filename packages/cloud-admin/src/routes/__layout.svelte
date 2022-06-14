@@ -5,7 +5,7 @@
 
   import "../app.css";
 import { fetchWrapper } from "src/services/fetchWrapper";
-  onMount(({}) => {
+  onMount(() => {
     const cookie = parse(window.document.cookie)
     if (cookie.token) {
       fetchWrapper.setAuthorizationToken(cookie.token)
