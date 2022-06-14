@@ -3,7 +3,7 @@
     if (session.roles?.includes('ROLE_USER')) {
       return {
         status: 302,
-        redirect: '/dashboard',
+        redirect: '/admin/dashboard',
       }
     }
 
