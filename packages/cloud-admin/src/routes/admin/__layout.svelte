@@ -1,3 +1,17 @@
+<script lang="ts" context="module">
+  export const load: import("@sveltejs/kit").Load = async ({session}) => {
+    if (!session.roles?.includes('ROLE_USER')) {
+      return {
+        status: 302,
+        redirect: '/login',
+      }
+    }
+    return {
+      status: 200
+    }
+  }
+</script>
+
 <script>
   import IconAccounts from "src/components/IconAccounts.svelte";
 import IconDashboard from "src/components/IconDashboard.svelte";
