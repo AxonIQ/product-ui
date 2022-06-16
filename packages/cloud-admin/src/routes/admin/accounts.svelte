@@ -6,7 +6,6 @@ import { onMount } from "svelte";
   
   onMount(async() => {
     accounts = await getAllAccounts();
-    console.log(accounts);
   })
 
 </script>

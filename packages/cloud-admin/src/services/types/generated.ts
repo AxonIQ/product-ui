@@ -123,6 +123,9 @@ export interface paths {
   "/api/space/{spaceId}/member/all": {
     get: operations["getMembersFromSpace"];
   };
+  "/api/space/{spaceId}/invite/updates": {
+    get: operations["updates"];
+  };
   "/api/space/{spaceId}/invite/all": {
     get: operations["findAllInvitesForSpace"];
   };
@@ -133,13 +136,13 @@ export interface paths {
     get: operations["getCustomCluster"];
   };
   "/api/space/{spaceId}/custom-cluster/updates": {
-    get: operations["updates"];
+    get: operations["updates_1"];
   };
   "/api/space/{spaceId}/context/{id}": {
     get: operations["findContextBySpaceAndId"];
   };
   "/api/space/{spaceId}/context/updates": {
-    get: operations["updates_1"];
+    get: operations["updates_2"];
   };
   "/api/space/{spaceId}/cluster/{clusterId}": {
     get: operations["getCluster_1"];
@@ -149,7 +152,7 @@ export interface paths {
     get: operations["getClusterContexts"];
   };
   "/api/space/{spaceId}/cluster/updates": {
-    get: operations["updates_2"];
+    get: operations["updates_3"];
   };
   "/api/space/{spaceId}/billing/{billingAccountId}/history": {
     get: operations["getHistory"];
@@ -174,7 +177,7 @@ export interface paths {
     get: operations["applicationUpdates"];
   };
   "/api/space/updates": {
-    get: operations["updates_3"];
+    get: operations["updates_4"];
   };
   "/api/space/all": {
     get: operations["findSpacesOfCurrentUser"];
@@ -224,12 +227,6 @@ export interface paths {
   "/api/options/cluster/cluster-types": {
     get: operations["getClusterTypes"];
   };
-  "/api/options/cluster/cluster-regions/{provider}": {
-    get: operations["findClusterRegionsByProvider"];
-  };
-  "/api/options/cluster/cluster-providers": {
-    get: operations["getClusterProviders"];
-  };
   "/api/options/cloud-providers": {
     get: operations["getCloudProviders"];
   };
@@ -237,7 +234,7 @@ export interface paths {
     get: operations["getPaymentProviderConfig"];
   };
   "/api/dashboard/spaces/{spaceId}/updates": {
-    get: operations["updates_4"];
+    get: operations["updates_5"];
   };
   "/api/dashboard/spaces/{spaceId}/applications": {
     get: operations["getConnectedApplications"];
@@ -431,6 +428,10 @@ export interface components {
       email?: string;
       role?: string;
     };
+    FluxServerSentEventSpaceInviteDTO: {
+      /** Format: int32 */
+      prefetch?: number;
+    };
     SpaceInviteDTO: {
       /** Format: int64 */
       id?: number;
@@ -623,18 +624,6 @@ export interface components {
     ClusterTypeDTO: {
       name?: string;
       description?: string;
-    };
-    ClusterRegionDTO: {
-      code?: string;
-      description?: string;
-      clusterProvider?: string;
-      priceCategory?: string;
-      ecoFriendly?: boolean;
-      active?: boolean;
-    };
-    ClusterProviderDTO: {
-      code?: string;
-      name?: string;
     };
     CloudProvidersDTO: {
       code?: string;
@@ -2028,6 +2017,33 @@ export interface operations {
       500: unknown;
     };
   };
+  updates: {
+    parameters: {
+      path: {
+        spaceId: string;
+      };
+    };
+    responses: {
+      /** OK */
+      200: {
+        content: {
+          "text/event-stream": components["schemas"]["FluxServerSentEventSpaceInviteDTO"];
+        };
+      };
+      /** Bad Request */
+      400: unknown;
+      /** Unauthorized */
+      401: unknown;
+      /** Forbidden */
+      403: {
+        content: {
+          "*/*": components["schemas"]["Error"];
+        };
+      };
+      /** Internal Server Error */
+      500: unknown;
+    };
+  };
   findAllInvitesForSpace: {
     parameters: {
       path: {
@@ -2110,7 +2126,7 @@ export interface operations {
       500: unknown;
     };
   };
-  updates: {
+  updates_1: {
     parameters: {
       path: {
         spaceId: string;
@@ -2165,7 +2181,7 @@ export interface operations {
       500: unknown;
     };
   };
-  updates_1: {
+  updates_2: {
     parameters: {
       path: {
         spaceId: string;
@@ -2272,7 +2288,7 @@ export interface operations {
       500: unknown;
     };
   };
-  updates_2: {
+  updates_3: {
     parameters: {
       path: {
         spaceId: string;
@@ -2516,7 +2532,7 @@ export interface operations {
       500: unknown;
     };
   };
-  updates_3: {
+  updates_4: {
     responses: {
       /** OK */
       200: {
@@ -2916,55 +2932,6 @@ export interface operations {
       500: unknown;
     };
   };
-  findClusterRegionsByProvider: {
-    parameters: {
-      path: {
-        provider: string;
-      };
-    };
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "*/*": components["schemas"]["ClusterRegionDTO"][];
-        };
-      };
-      /** Bad Request */
-      400: unknown;
-      /** Unauthorized */
-      401: unknown;
-      /** Forbidden */
-      403: {
-        content: {
-          "*/*": components["schemas"]["Error"];
-        };
-      };
-      /** Internal Server Error */
-      500: unknown;
-    };
-  };
-  getClusterProviders: {
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "*/*": components["schemas"]["ClusterProviderDTO"][];
-        };
-      };
-      /** Bad Request */
-      400: unknown;
-      /** Unauthorized */
-      401: unknown;
-      /** Forbidden */
-      403: {
-        content: {
-          "*/*": components["schemas"]["Error"];
-        };
-      };
-      /** Internal Server Error */
-      500: unknown;
-    };
-  };
   getCloudProviders: {
     responses: {
       /** OK */
@@ -3014,7 +2981,7 @@ export interface operations {
       500: unknown;
     };
   };
-  updates_4: {
+  updates_5: {
     parameters: {
       path: {
         spaceId: string;
