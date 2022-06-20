@@ -19,6 +19,8 @@ import IconApplications from "src/components/IconApplications.svelte";
 import IconContexts from "src/components/IconContexts.svelte";
   import IconDashboard from "src/components/IconDashboard.svelte";
   import IconDashboardLogo from "src/components/IconDashboardLogo.svelte";
+import IconReplicationGroup from "src/components/IconReplicationGroup.svelte";
+import IconWorkspaces from "src/components/IconWorkspaces.svelte";
   
   </script>
   <div class="flex">
@@ -46,6 +48,14 @@ import IconContexts from "src/components/IconContexts.svelte";
         <a href="/admin/applications" class="flex gap-4 items-center">
           <IconApplications />
           <div>Applications</div>
+        </a>
+        <a href="/admin/workspaces" class="flex gap-4 items-center">
+          <IconWorkspaces />
+          <div>Workspaces</div>
+        </a>
+        <a href="/admin/replication-groups" class="flex gap-4 items-center">
+          <IconReplicationGroup />
+          <div>Replication Groups</div>
         </a>
       </div>
       <div class="mt-auto">
