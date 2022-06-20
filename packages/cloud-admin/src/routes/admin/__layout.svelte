@@ -19,6 +19,7 @@ import IconApplications from "src/components/IconApplications.svelte";
 import IconContexts from "src/components/IconContexts.svelte";
   import IconDashboard from "src/components/IconDashboard.svelte";
   import IconDashboardLogo from "src/components/IconDashboardLogo.svelte";
+import IconLogout from "src/components/IconLogout.svelte";
 import IconReplicationGroup from "src/components/IconReplicationGroup.svelte";
 import IconWorkspaces from "src/components/IconWorkspaces.svelte";
   
@@ -59,7 +60,10 @@ import IconWorkspaces from "src/components/IconWorkspaces.svelte";
         </a>
       </div>
       <div class="mt-auto">
-        <a href="/logout">Logout</a>
+        <a href="/logout" class="flex gap-4 items-center">
+          <IconLogout />
+          <div>Logout</div>
+        </a>
       </div>
     </div>
     <div class="mx-16 mt-12 w-full">
