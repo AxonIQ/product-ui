@@ -15,6 +15,7 @@
 <script>
   import IconAccounts from "src/components/IconAccounts.svelte";
   import IconCluster from "src/components/IconCluster.svelte";
+import IconContexts from "src/components/IconContexts.svelte";
   import IconDashboard from "src/components/IconDashboard.svelte";
   import IconDashboardLogo from "src/components/IconDashboardLogo.svelte";
   
@@ -36,6 +37,10 @@
         <a href="/admin/clusters" class="flex gap-4 items-center">
           <IconCluster />
           <div>Clusters</div>
+        </a>
+        <a href="/admin/contexts" class="flex gap-4 items-center">
+          <IconContexts />
+          <div>Contexts</div>
         </a>
       </div>
       <div class="mt-auto">
