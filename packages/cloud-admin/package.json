@@ -37,6 +37,7 @@
   "dependencies": {
     "@axoniq-product-ui/core": "workspace:*",
     "cookie": "^0.5.0",
+    "date-fns": "^2.28.0",
     "jwt-decode": "^3.1.2"
   }
 }

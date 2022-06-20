@@ -1,5 +1,6 @@
 <script lang="ts">
 import { getAllContexts } from "src/services/context";
+import { formatDate } from "src/services/dateTimeFormatter";
     import { onMount } from "svelte";
       let contexts: Awaited<ReturnType<typeof getAllContexts>>
       
@@ -30,7 +31,9 @@ import { getAllContexts } from "src/services/context";
               <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">{context.contextStatus}</td>
               <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">{context.type}</td>
               <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">{context.region}</td>
-              <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">{context.creationTime}</td>
+              {#if context.creationTime && context.creationTime.length > 0}
+                <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">{formatDate(context.creationTime)}</td>
+              {/if}
             </tr>
           {/each}
     
