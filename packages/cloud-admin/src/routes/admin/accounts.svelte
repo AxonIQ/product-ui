@@ -1,7 +1,6 @@
 <script lang="ts">
 import { getAllAccounts } from "src/services/account";
 import { onMount } from "svelte";
-  // export let accounts;
   let accounts: Awaited<ReturnType<typeof getAllAccounts>>
   
   onMount(async() => {
