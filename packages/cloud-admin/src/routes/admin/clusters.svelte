@@ -1,14 +1,25 @@
+<script lang="ts" context="module">
+  export const load: import("@sveltejs/kit").Load = async ({session, fetch}) => {
+    fetchWrapper.setFetchToUse(fetch);
+    if (session.token) {
+      fetchWrapper.setAuthorizationToken(session.token);
+    }
+
+    const clusters = await getAllClusters();
+    return {
+      status: 200,
+      props: {
+        clusters
+      },
+    }
+  }
+</script>
 <script lang="ts">
-import { getAllClusters } from "src/services/cluster";
-  import { onMount } from "svelte";
-    // export let accounts;
-    let clusters: Awaited<ReturnType<typeof getAllClusters>>
-    
-    onMount(async() => {
-      clusters = await getAllClusters();
-    })
-  
-  </script>
+  import { getAllClusters } from "src/services/cluster";
+  import { fetchWrapper } from "src/services/fetchWrapper";
+
+  export let clusters: Awaited<ReturnType<typeof getAllClusters>>
+</script>
   
   <h1 class="text-2xl font-black mb-6">Clusters</h1>
   {#if clusters}

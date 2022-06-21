@@ -1,12 +1,28 @@
-<script lang="ts">
-import { getAllAccounts } from "src/services/account";
-import { onMount } from "svelte";
-  let accounts: Awaited<ReturnType<typeof getAllAccounts>>
-  
-  onMount(async() => {
-    accounts = await getAllAccounts();
-  })
+<script lang="ts" context="module">
+  export const load: import("@sveltejs/kit").Load = async ({session, fetch}) => {
+    fetchWrapper.setFetchToUse(fetch);
+    if (session.token) {
+      fetchWrapper.setAuthorizationToken(session.token);
+    }
 
+    const accounts = await getAllAccounts();
+    return {
+      status: 200,
+      props: {
+        accounts
+      }
+    }
+  }
+</script>
+<script lang="ts">
+  import { getAllAccounts } from "src/services/account";
+  import { fetchWrapper } from "src/services/fetchWrapper";
+  import { onMount } from "svelte";
+  export let accounts: Awaited<ReturnType<typeof getAllAccounts>>
+
+  onMount(async () => {
+    await getAllAccounts();
+  })
 </script>
 
 <h1 class="text-2xl font-black mb-6">Accounts</h1>

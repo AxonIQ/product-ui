@@ -1,12 +1,25 @@
+<script lang="ts" context="module">
+import { fetchWrapper } from "src/services/fetchWrapper";
+
+  export const load: import("@sveltejs/kit").Load = async ({session, fetch}) => {
+    fetchWrapper.setFetchToUse(fetch);
+    if (session.token) {
+      fetchWrapper.setAuthorizationToken(session.token);
+    }
+
+    const replicationGroups = await getAllReplicationGroups();
+    return {
+      status: 200,
+      props: {
+        replicationGroups
+      },
+    }
+  }
+</script>
 <script lang="ts">
 import { getAllReplicationGroups } from "src/services/replicationGroup";
-import { onMount } from "svelte";
 
-  let replicationGroups: Awaited<ReturnType<typeof getAllReplicationGroups>>
-    
-  onMount(async() => {
-    replicationGroups = await getAllReplicationGroups();
-  })
+export let replicationGroups: Awaited<ReturnType<typeof getAllReplicationGroups>>
 </script>
     
 <h1 class="text-2xl font-black mb-6">Replication Groups</h1>

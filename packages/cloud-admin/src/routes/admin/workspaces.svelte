@@ -1,12 +1,25 @@
-<script lang="ts">
-  import { getAllSpaces } from "src/services/space";
-  import { onMount } from "svelte";
+<script lang="ts" context="module">
+import { fetchWrapper } from "src/services/fetchWrapper";
 
-  let spaces: Awaited<ReturnType<typeof getAllSpaces>>
-    
-  onMount(async() => {
-    spaces = await getAllSpaces();
-  })
+  export const load: import("@sveltejs/kit").Load = async ({session, fetch}) => {
+    fetchWrapper.setFetchToUse(fetch);
+    if (session.token) {
+      fetchWrapper.setAuthorizationToken(session.token);
+    }
+
+    const spaces = await getAllSpaces();
+    return {
+      status: 200,
+      props: {
+        spaces
+      },
+    }
+  }
+</script>
+<script lang="ts">
+import { getAllSpaces } from "src/services/space";
+
+export let spaces: Awaited<ReturnType<typeof getAllSpaces>>
 </script>
     
 <h1 class="text-2xl font-black mb-6">Workspaces</h1>

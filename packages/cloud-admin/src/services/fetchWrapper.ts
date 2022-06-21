@@ -8,6 +8,8 @@ const defaultOptions: RequestInit = {
     headers: defaultHeaders,
 };
 
+let fetchToUse: (info: RequestInfo, init?: RequestInit | undefined) => Promise<Response>;
+
 type ResponseInterceptor = (response: Response) => Response;
 
 async function handleRequest(
@@ -15,7 +17,8 @@ async function handleRequest(
     options: RequestInit,
     responseInterceptor: ResponseInterceptor
 ) {
-    const response = await fetch(`${import.meta.env.VITE_API_ROOT}${url}`, options);
+    const fetchToExecute = fetchToUse ?? fetch;
+    const response = await fetchToExecute(`https://console.dev.axoniq.net${url}`, options);
     responseInterceptor(response);
 
     if (!response.ok) {
@@ -48,6 +51,9 @@ export const fetchWrapper = {
     },
     removeAuthorizationToken() {
         defaultHeaders.delete("Authorization");
+    },
+    setFetchToUse(fetchMethod: (info: RequestInfo, init?: RequestInit | undefined) => Promise<Response>) {
+        fetchToUse = fetchMethod;
     },
 
     async get(url: string, customOptions?: RequestInit) {

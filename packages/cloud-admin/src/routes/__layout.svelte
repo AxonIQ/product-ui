@@ -6,6 +6,8 @@
 
   if (browser) {
     // client-only code here
+    fetchWrapper.setFetchToUse(fetch);
+
     const cookie = parse(window.document.cookie)
       if (cookie.token) {
         fetchWrapper.setAuthorizationToken(cookie.token)
