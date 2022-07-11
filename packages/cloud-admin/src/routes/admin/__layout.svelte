@@ -13,7 +13,6 @@
 </script>
 
 <script>
-  import IconAccounts from "src/components/IconAccounts.svelte";
 import IconApplications from "src/components/IconApplications.svelte";
   import IconCluster from "src/components/IconCluster.svelte";
 import IconContexts from "src/components/IconContexts.svelte";
@@ -33,10 +32,6 @@ import IconWorkspaces from "src/components/IconWorkspaces.svelte";
         <a href="/admin/dashboard" class="flex gap-4 items-center">
           <IconDashboard />
           <div>Dashboard</div>
-        </a>
-        <a href="/admin/accounts" class="flex gap-4 items-center">
-          <IconAccounts />
-          <div>Accounts</div>
         </a>
         <a href="/admin/clusters" class="flex gap-4 items-center">
           <IconCluster />
