@@ -1,7 +1,10 @@
 <script lang="ts">
   export let value: string;
-  
+  export let hidden: boolean;
 </script>
-<option {value}>
+<option
+  {hidden}
+  {value}
+>
   <slot />
 </option>
