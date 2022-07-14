@@ -48,7 +48,7 @@
               variant="secondary"
               onClick={async () => {
                 await register(form);
-                window.location.href = '/admin/dashboard';
+                window.location.href = '/user/dashboard';
               }}>
               <span class="flex items-center gap-2">
                 <span class="shrink-0">

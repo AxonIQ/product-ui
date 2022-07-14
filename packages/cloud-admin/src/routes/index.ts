@@ -14,7 +14,7 @@ export const get: RequestHandler = async(request) => {
         'Set-Cookie': serialize("token", token, {
           path: '/'
         }),
-        location: isRegistered ? '/admin/dashboard' : '/register'
+        location: isRegistered ? '/user/dashboard' : '/register'
       }
     }
   }
