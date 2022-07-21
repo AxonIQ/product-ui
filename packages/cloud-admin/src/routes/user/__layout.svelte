@@ -6,13 +6,20 @@
         redirect: '/login',
       }
     }
+    
+    fetchWrapper.setFetchToUse(fetch);
+    if (session.token) {
+      fetchWrapper.setAuthorizationToken(session.token);
+    }
+
     return {
-      status: 200
+      status: 200,
     }
   }
 </script>
 
-<script>
+<script lang="ts">
+  import { Dropdown,DropdownItem,DropdownItems,DropdownLabel } from '@axoniq-product-ui/core';
   import IconApplications from "src/components/IconApplications.svelte";
   import IconCluster from "src/components/IconCluster.svelte";
   import IconContexts from "src/components/IconContexts.svelte";
@@ -21,7 +28,19 @@
   import IconLogout from "src/components/IconLogout.svelte";
   import IconReplicationGroup from "src/components/IconReplicationGroup.svelte";
   import IconWorkspaces from "src/components/IconWorkspaces.svelte";
-  import { Dropdown,DropdownLabel,DropdownItems,DropdownItem } from '@axoniq-product-ui/core';
+  import { fetchWrapper } from "src/services/fetchWrapper";
+  import { subscribeToSpaces } from "src/services/space";
+  import { onMount } from "svelte";
+  
+  onMount(async () => {
+    const spaceUpdates = await subscribeToSpaces();
+
+    spaceUpdates.subscribe('ADDED', (event) => console.log('added', event))
+    spaceUpdates.subscribe('update', (event) => console.log('update', event))
+    spaceUpdates.subscribe('UPDATED', (event) => console.log('updated', event))
+    
+    spaceUpdates.onError((error: any) => console.log('error!', error))
+  })
 
   let selectedWorkspace = ''
   

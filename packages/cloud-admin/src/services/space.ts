@@ -1,9 +1,16 @@
 import { fetchWrapper } from "./fetchWrapper";
+import { sse } from "./sse";
 import type { components, operations } from "./types/generated";
 
 export type SpaceDTO = components["schemas"]["SpaceDTO"];
 export type SpaceMemberDTO = components["schemas"]["SpaceMemberDTO"];
 export type SpaceInviteDTO = components["schemas"]["SpaceInviteDTO"];
+
+export async function subscribeToSpaces() {
+    return await sse("/api/space/updates", {
+        format: "json",
+    });
+}
 
 type CreateSpace = operations["create"];
 export async function createSpace(
