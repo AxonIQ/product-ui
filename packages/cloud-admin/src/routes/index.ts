@@ -2,7 +2,7 @@ import type { RequestHandler } from "@sveltejs/kit"
 import { serialize } from "cookie";
 import jwt_decode from "jwt-decode";
 
-export const get: RequestHandler = async(request) => {
+export const GET: RequestHandler = async(request) => {
   const token = request.url.searchParams.get('token');
   
   if (token) {

@@ -1,7 +1,7 @@
 import type { RequestHandler } from "@sveltejs/kit"
 import { serialize } from "cookie";
 
-export const get: RequestHandler = async(request) => {
+export const GET: RequestHandler = async(request) => {
   request.locals.token = null;
 
   return {
