@@ -29,20 +29,31 @@
   import IconReplicationGroup from "src/components/IconReplicationGroup.svelte";
   import IconWorkspaces from "src/components/IconWorkspaces.svelte";
   import { fetchWrapper } from "src/services/fetchWrapper";
-  import { subscribeToSpaces } from "src/services/space";
+  import { subscribeToSpaces, type SpaceDTO } from "src/services/space";
   import { onMount } from "svelte";
+
+  let spaces: SpaceDTO[] = []
+  let selectedWorkspace = ''
   
   onMount(async () => {
     const spaceUpdates = await subscribeToSpaces();
 
-    spaceUpdates.subscribe('ADDED', (event) => console.log('added', event))
+    spaceUpdates.subscribe('ADDED', (spaceToAdd: SpaceDTO) => {
+      if (spaces.find(space => spaceToAdd.id === space.id)) {
+        return;
+      }
+      
+      spaces = [
+        ...spaces,
+        spaceToAdd
+      ];
+    })
+
     spaceUpdates.subscribe('update', (event) => console.log('update', event))
     spaceUpdates.subscribe('UPDATED', (event) => console.log('updated', event))
     
     spaceUpdates.onError((error: any) => console.log('error!', error))
   })
-
-  let selectedWorkspace = ''
   
 </script>
   <div class="flex">
@@ -55,35 +66,34 @@
           <DropdownLabel>Workspace</DropdownLabel>
           <DropdownItems bind:value={selectedWorkspace}>
             <DropdownItem value="" hidden>Select a workspace</DropdownItem>
-            <DropdownItem value={'Workspace 1'}>Workspace 1</DropdownItem>
-            <DropdownItem value={'Workspace 2'}>Workspace 2</DropdownItem>
-            <DropdownItem value={'Workspace 3'}>Workspace 3</DropdownItem>
-            <DropdownItem value={'Reallly really really long text'}>Reallly really really long text</DropdownItem>
+            {#each spaces as space}
+              <DropdownItem value={space.id}>{space.name}</DropdownItem>
+            {/each}
           </DropdownItems>
         </Dropdown>
       </div>
       <div class="flex flex-col gap-5">
-        <a href="/user/dashboard" class="flex gap-4 items-center">
+        <a href="space/dashboard" class="flex gap-4 items-center">
           <IconDashboard />
           <div>Dashboard</div>
         </a>
-        <a href="/user/clusters" class="flex gap-4 items-center">
+        <a href="space/clusters" class="flex gap-4 items-center">
           <IconCluster />
           <div>Clusters</div>
         </a>
-        <a href="/user/contexts" class="flex gap-4 items-center">
+        <a href="space/contexts" class="flex gap-4 items-center">
           <IconContexts />
           <div>Contexts</div>
         </a>
-        <a href="/user/applications" class="flex gap-4 items-center">
+        <a href="space/applications" class="flex gap-4 items-center">
           <IconApplications />
           <div>Applications</div>
         </a>
-        <a href="/user/workspaces" class="flex gap-4 items-center">
+        <a href="space/workspaces" class="flex gap-4 items-center">
           <IconWorkspaces />
           <div>Workspaces</div>
         </a>
-        <a href="/user/replication-groups" class="flex gap-4 items-center">
+        <a href="space/replication-groups" class="flex gap-4 items-center">
           <IconReplicationGroup />
           <div>Replication Groups</div>
         </a>
