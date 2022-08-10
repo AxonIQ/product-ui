@@ -1,24 +1,31 @@
-<script lang="ts" context="module">
-  export const load: import("@sveltejs/kit").Load = async ({session, fetch}) => {
-    fetchWrapper.setFetchToUse(fetch);
-    if (session.token) {
-      fetchWrapper.setAuthorizationToken(session.token);
-    }
 
-    const applications = await getAllApplications();
-    return {
-      status: 200,
-      props: {
-        applications
-      }
-    }
-  }
-</script>
 <script lang="ts">
-import { getAllApplications } from "src/services/application";
-import { fetchWrapper } from "src/services/fetchWrapper";
+import { page } from '$app/stores';
+import { subscribeToApplications,type ApplicationDTO } from "src/services/application";
+import { onMount } from "svelte";
 
-export let applications: Awaited<ReturnType<typeof getAllApplications>>
+let applications: ApplicationDTO[] = []
+
+onMount(async () => {
+    const spaceUpdates = await subscribeToApplications($page.params?.spaceId);
+
+    spaceUpdates.subscribe('ADDED', (applicationToAdd: ApplicationDTO) => {
+      if (applications.find(application => applicationToAdd.id === application.id)) {
+        return;
+      }
+      
+      applications = [
+        ...applications,
+        applicationToAdd
+      ];
+    })
+
+    spaceUpdates.subscribe('update', (event) => console.log('update', event))
+    spaceUpdates.subscribe('UPDATED', (event) => console.log('updated', event))
+    
+    spaceUpdates.onError((error: any) => console.log('error!', error))
+  })
+
 
 </script>
 

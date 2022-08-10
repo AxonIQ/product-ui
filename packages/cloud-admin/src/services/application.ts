@@ -1,5 +1,12 @@
 import { fetchWrapper } from "./fetchWrapper";
+import { sse } from "./sse";
 import type { components, operations } from "./types/generated";
+
+export async function subscribeToApplications(spaceId: string) {
+    return await sse(`/api/space/${spaceId}/application/updates`, {
+        format: "json",
+    });
+}
 
 export type ApplicationDTO = components["schemas"]["ApplicationDTO"];
 export type LoadBalanceStrategyDTO =
