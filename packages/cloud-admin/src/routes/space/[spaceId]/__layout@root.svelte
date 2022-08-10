@@ -20,14 +20,21 @@
 
 <script lang="ts">
   import { Dropdown,DropdownItem,DropdownItems,DropdownLabel } from '@axoniq-product-ui/core';
+  import IconApplications from "src/components/IconApplications.svelte";
+  import IconCluster from "src/components/IconCluster.svelte";
+  import IconContexts from "src/components/IconContexts.svelte";
+  import IconDashboard from "src/components/IconDashboard.svelte";
   import IconDashboardLogo from "src/components/IconDashboardLogo.svelte";
   import IconLogout from "src/components/IconLogout.svelte";
+  import IconReplicationGroup from "src/components/IconReplicationGroup.svelte";
+  import IconWorkspaces from "src/components/IconWorkspaces.svelte";
   import { fetchWrapper } from "src/services/fetchWrapper";
-  import { subscribeToSpaces,type SpaceDTO } from "src/services/space";
+  import { subscribeToSpaces, type SpaceDTO } from "src/services/space";
   import { onMount } from "svelte";
+  import { page } from '$app/stores';
 
   let spaces: SpaceDTO[] = []
-  let selectedWorkspace = ''
+  let selectedWorkspace = $page.params?.spaceId
   
   onMount(async () => {
     const spaceUpdates = await subscribeToSpaces();
@@ -62,13 +69,40 @@
             bind:value={selectedWorkspace}
             on:change={() => {
               window.location.href = `/space/${selectedWorkspace}/dashboard`;
-            }}>
-            <DropdownItem value="" hidden>Select a workspace</DropdownItem>
+            }}
+          >
             {#each spaces as space}
-              <DropdownItem value={space.id}>{space.name}</DropdownItem>
+            <DropdownItem value={space.id}>{space.name}</DropdownItem>
             {/each}
+            <DropdownItem value="" hidden>Select a workspace</DropdownItem>
           </DropdownItems>
         </Dropdown>
+      </div>
+      <div class="flex flex-col gap-5">
+        <a href={`/space/${$page.params?.spaceId}/dashboard`} class="flex gap-4 items-center">
+          <IconDashboard />
+          <div>Dashboard</div>
+        </a>
+        <a href={`/space/${$page.params?.spaceId}/clusters`} class="flex gap-4 items-center">
+          <IconCluster />
+          <div>Clusters</div>
+        </a>
+        <a href={`/space/${$page.params?.spaceId}/contexts`} class="flex gap-4 items-center">
+          <IconContexts />
+          <div>Contexts</div>
+        </a>
+        <a href={`/space/${$page.params?.spaceId}/applications`} class="flex gap-4 items-center">
+          <IconApplications />
+          <div>Applications</div>
+        </a>
+        <a href={`/space/${$page.params?.spaceId}/workspaces`} class="flex gap-4 items-center">
+          <IconWorkspaces />
+          <div>Workspaces</div>
+        </a>
+        <a href={`/space/${$page.params?.spaceId}/replication-groups`} class="flex gap-4 items-center">
+          <IconReplicationGroup />
+          <div>Replication Groups</div>
+        </a>
       </div>
       <div class="mt-auto">
         <a href="/logout" class="flex gap-4 items-center">
