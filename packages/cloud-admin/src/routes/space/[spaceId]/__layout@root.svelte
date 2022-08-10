@@ -72,7 +72,7 @@
             }}
           >
             {#each spaces as space}
-            <DropdownItem value={space.id}>{space.name}</DropdownItem>
+              <DropdownItem value={space.id}>{space.name}</DropdownItem>
             {/each}
             <DropdownItem value="" hidden>Select a workspace</DropdownItem>
           </DropdownItems>
@@ -93,11 +93,11 @@
         </a>
         <a href={`/space/${$page.params?.spaceId}/applications`} class="flex gap-4 items-center">
           <IconApplications />
-          <div>Applications</div>
+          <div>Application bindings</div>
         </a>
-        <a href={`/space/${$page.params?.spaceId}/workspaces`} class="flex gap-4 items-center">
+        <a href={`/space/${$page.params?.spaceId}/manage-workspaces`} class="flex gap-4 items-center">
           <IconWorkspaces />
-          <div>Workspaces</div>
+          <div>Manage Workspaces</div>
         </a>
         <a href={`/space/${$page.params?.spaceId}/replication-groups`} class="flex gap-4 items-center">
           <IconReplicationGroup />

@@ -1,15 +1,17 @@
 
 <script lang="ts">
-import { page } from '$app/stores';
-import { subscribeToApplications,type ApplicationDTO } from "src/services/application";
-import { onMount } from "svelte";
+  import { page } from '$app/stores';
+  import { subscribeToApplications,type ApplicationDTO } from "src/services/application";
+import type { SSEConnection } from 'src/services/sse';
+  import { onDestroy, onMount } from "svelte";
 
-let applications: ApplicationDTO[] = []
+  let applications: ApplicationDTO[] = []
+  let applicationUpdates: SSEConnection;
 
-onMount(async () => {
-    const spaceUpdates = await subscribeToApplications($page.params?.spaceId);
+  onMount(async () => {
+    applicationUpdates = await subscribeToApplications($page.params?.spaceId);
 
-    spaceUpdates.subscribe('ADDED', (applicationToAdd: ApplicationDTO) => {
+    applicationUpdates.subscribe('ADDED', (applicationToAdd: ApplicationDTO) => {
       if (applications.find(application => applicationToAdd.id === application.id)) {
         return;
       }
@@ -20,13 +22,17 @@ onMount(async () => {
       ];
     })
 
-    spaceUpdates.subscribe('update', (event) => console.log('update', event))
-    spaceUpdates.subscribe('UPDATED', (event) => console.log('updated', event))
+    applicationUpdates.subscribe('update', (event) => console.log('update', event))
+    applicationUpdates.subscribe('UPDATED', (event) => console.log('updated', event))
     
-    spaceUpdates.onError((error: any) => console.log('error!', error))
+    applicationUpdates.onError((error: any) => console.log('error!', error))
   })
 
-
+  onDestroy(() => {
+    if (applicationUpdates) {
+      applicationUpdates.close();
+    }
+  })
 </script>
 
 <h1 class="text-2xl font-black mb-6">Applications</h1>

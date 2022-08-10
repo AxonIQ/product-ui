@@ -8,7 +8,7 @@ const defaultOptions: RequestInit = {
     headers: defaultHeaders,
 };
 
-let fetchToUse: (info: RequestInfo, init?: RequestInit | undefined) => Promise<Response>;
+let fetchToUse: null | ((info: RequestInfo, init?: RequestInit | undefined) => Promise<Response>) = null;
 
 type ResponseInterceptor = (response: Response) => Response;
 

@@ -1,4 +1,5 @@
 import { fetchWrapper } from "./fetchWrapper";
+import { sse } from "./sse";
 import type { components, operations } from "./types/generated";
 
 export type ContextDTO = components["schemas"]["ContextDTO"];
@@ -8,6 +9,12 @@ export type ContextPriceCalculationResponseDTO =
     components["schemas"]["ContextPriceCalculationResponseDTO"];
 export type ContextCloudProviderDTO =
     components["schemas"]["ContextCloudProviderDTO"];
+
+export async function subscribeToContexts(spaceId: string) {
+    return await sse(`/api/space/${spaceId}/context/updates`, {
+        format: "json",
+    });
+}
 
 type GetUserContext = operations["findContextsOfCurrentSpace"];
 export async function getUserContexts(

@@ -24,13 +24,15 @@
   import IconLogout from "src/components/IconLogout.svelte";
   import { fetchWrapper } from "src/services/fetchWrapper";
   import { subscribeToSpaces,type SpaceDTO } from "src/services/space";
-  import { onMount } from "svelte";
+import type { SSEConnection } from 'src/services/sse';
+  import { onDestroy, onMount } from "svelte";
 
   let spaces: SpaceDTO[] = []
   let selectedWorkspace = ''
+  let spaceUpdates: SSEConnection;
   
   onMount(async () => {
-    const spaceUpdates = await subscribeToSpaces();
+    spaceUpdates = await subscribeToSpaces();
 
     spaceUpdates.subscribe('ADDED', (spaceToAdd: SpaceDTO) => {
       if (spaces.find(space => spaceToAdd.id === space.id)) {
@@ -47,6 +49,12 @@
     spaceUpdates.subscribe('UPDATED', (event) => console.log('updated', event))
     
     spaceUpdates.onError((error: any) => console.log('error!', error))
+  })
+
+  onDestroy(() => {
+    if (spaceUpdates) {
+      spaceUpdates.close();
+    }
   })
   
 </script>

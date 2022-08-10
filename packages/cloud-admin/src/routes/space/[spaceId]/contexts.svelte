@@ -1,32 +1,38 @@
-<script lang="ts" context="module">
-  export const load: import("@sveltejs/kit").Load = async ({session, fetch}) => {
-    fetchWrapper.setFetchToUse(fetch);
-    if (session.token) {
-      fetchWrapper.setAuthorizationToken(session.token);
-    }
-
-    const contexts = await getAllContexts();
-    return {
-      status: 200,
-      props: {
-        contexts
-      },
-    }
-  }
-</script>
 <script lang="ts">
-import { getAllContexts } from "src/services/context";
-import { formatDate } from "src/services/dateTimeFormatter";
-import { fetchWrapper } from "src/services/fetchWrapper";
-import { onMount } from "svelte";
+  import { page } from '$app/stores';
+  import { subscribeToContexts,type ContextDTO } from "src/services/context";
+  import { formatDate } from "src/services/dateTimeFormatter";
+import type { SSEConnection } from 'src/services/sse';
+  import { onDestroy, onMount } from "svelte";
 
-export let contexts: Awaited<ReturnType<typeof getAllContexts>>
+  let contexts: ContextDTO[] = []
+  let contextUpdates: SSEConnection;
 
-// export let contexts: Awaited<ReturnType<typeof getAllContexts>>
+  onMount(async () => {
+    contextUpdates = await subscribeToContexts($page.params?.spaceId);
 
-onMount(async() => {
-  const tempContexts = await getAllContexts();
-})
+    contextUpdates.subscribe('ADDED', (contextToAdd: ContextDTO) => {
+      if (contexts.find(context => contextToAdd.contextId === context.contextId)) {
+        return;
+      }
+      
+      contexts = [
+        ...contexts,
+        contextToAdd
+      ];
+    })
+
+    contextUpdates.subscribe('update', (event) => console.log('update', event))
+    contextUpdates.subscribe('UPDATED', (event) => console.log('updated', event))
+    
+    contextUpdates.onError((error: any) => console.log('error!', error))
+  })
+
+  onDestroy(() => {
+    if (contextUpdates) {
+      contextUpdates.close();
+    }
+  })
 </script>
 
 <h1 class="text-2xl font-black mb-6">Contexts</h1>

@@ -1,12 +1,6 @@
 <script lang="ts" context="module">
-import { fetchWrapper } from "src/services/fetchWrapper";
 
   export const load: import("@sveltejs/kit").Load = async ({session, fetch}) => {
-    fetchWrapper.setFetchToUse(fetch);
-    if (session.token) {
-      fetchWrapper.setAuthorizationToken(session.token);
-    }
-
     const replicationGroups = await getAllReplicationGroups();
     return {
       status: 200,
