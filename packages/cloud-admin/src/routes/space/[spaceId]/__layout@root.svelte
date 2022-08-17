@@ -99,10 +99,10 @@
           <IconWorkspaces />
           <div>Manage Workspaces</div>
         </a>
-        <a href={`/space/${$page.params?.spaceId}/replication-groups`} class="flex gap-4 items-center">
+        <!-- <a href={`/space/${$page.params?.spaceId}/replication-groups`} class="flex gap-4 items-center">
           <IconReplicationGroup />
           <div>Replication Groups</div>
-        </a>
+        </a> -->
       </div>
       <div class="mt-auto">
         <a href="/logout" class="flex gap-4 items-center">
