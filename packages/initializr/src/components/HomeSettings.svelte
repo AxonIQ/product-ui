@@ -11,6 +11,9 @@ import type { DataType,SettingsItem } from "../dataTypes";
     export let projectJavaVersionData: SettingsItem;
     export let projectJavaVersionSelected = '';
 
+    export let projectBootVersionData: SettingsItem;
+    export let projectBootVersionSelected = '';
+
     export let projectPackagingData: SettingsItem;
     export let projectPackagingSelected = '';
 
@@ -46,6 +49,14 @@ import type { DataType,SettingsItem } from "../dataTypes";
             <DropdownItems bind:value={projectJavaVersionSelected}>
                 {#each projectJavaVersionData.values as projectJavaVersionItem (projectJavaVersionItem.id) }
                     <DropdownItem value={projectJavaVersionItem.id}>{projectJavaVersionItem.name}</DropdownItem>
+                {/each}
+            </DropdownItems>
+        </Dropdown>
+        <Dropdown>
+            <DropdownLabel>Spring Boot</DropdownLabel>
+            <DropdownItems bind:value={projectBootVersionSelected}>
+                {#each projectBootVersionData.values as projectBootVersionItem (projectBootVersionItem.id) }
+                    <DropdownItem value={projectBootVersionItem.id}>{projectBootVersionItem.name}</DropdownItem>
                 {/each}
             </DropdownItems>
         </Dropdown>
