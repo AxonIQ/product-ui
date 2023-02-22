@@ -5,3 +5,6 @@
 
 # Local Netlify folder
 .netlify
+
+# IntelliJ files
+.idea

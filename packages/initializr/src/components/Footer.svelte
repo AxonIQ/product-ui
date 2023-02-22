@@ -47,7 +47,7 @@ async function download() {
                 <Link href="https://discuss.axoniq.io/" target="_blank" variant="secondary">
                     AxonIQ Discuss
                 </Link>
-                <Link href="https://axoniqio.cdn.prismic.io/axoniqio%2Fdc52fae5-3e71-46d1-9bb5-29eb89485294_general+conditions+axoniq_1.0.1.docx-2.pdf" target="_blank" variant="secondary">
+                <Link href="https://lp.axoniq.io/hubfs/axoniq-general-terms-and-conditions.pdf" target="_blank" variant="secondary">
                     General Conditions
                 </Link>
                 <Link href="https://axoniq.io/resources/privacy" target="_blank" variant="secondary">

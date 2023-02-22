@@ -32,6 +32,7 @@ onMount(async() => {
 		type: params.type || initialData.type.default,
 		language: params.language || initialData.language.default,
 		javaVersion: params.javaVersion || initialData.javaVersion.default,
+		bootVersion: params.bootVersion || initialData.bootVersion.default,
 		packaging: params.packaging || initialData.packaging.default,
 		usingAxonServer: params.usingAxonServer || 'CLOUD',
 		axonServerContext: params.axonServerContext || '',
@@ -80,11 +81,13 @@ $: $userSelection.dependencies = addedDependencies.map(dep => dep.id);
 					projectTypeData={initialData.type}
 					projectLanguageData={initialData.language}
 					projectJavaVersionData={initialData.javaVersion}
+					projectBootVersionData={initialData.bootVersion}
 					projectPackagingData={initialData.packaging}
 
 					bind:projectTypeSelected={$userSelection.type}
 					bind:projectLanguageSelected={$userSelection.language}
 					bind:projectJavaVersionSelected={$userSelection.javaVersion}
+					bind:projectBootVersionSelected={$userSelection.bootVersion}
 					bind:projectPackagingSelected={$userSelection.packaging}
 					bind:projectUsingAxonServer={$userSelection.usingAxonServer}
 					bind:projectAxonServerContext={$userSelection.axonServerContext}
