@@ -1,6 +1,6 @@
 {
     "name": "axoniq-product-ui",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "description": "A monorepo for AxonIQ product frontends",
     "scripts": {
         "preinstall": "npx only-allow pnpm",

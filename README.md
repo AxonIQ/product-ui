@@ -20,4 +20,4 @@ The frontend code for the initializr app.
 
 ### [@style-guide](https://github.com/AxonIQ/product-ui/tree/master/packages/style-guide)
 
-The component style-guide. This is just a wrapper to demo the [@core](https://github.com/AxonIQ/product-ui/tree/master/packages/core) components. It deploys to netlify, so a change in implementation can be shared with the design team for further clarification.
+The component style-guide. This is just a wrapper to demo the [@core](https://github.com/AxonIQ/product-ui/tree/master/packages/core) components. It deploys to netlify, so a change in implementation can be shared with the design team for further clarification. 
