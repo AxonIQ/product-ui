@@ -30,9 +30,9 @@ jobs:
           ${{ runner.os }}-build-${{ env.cache-name }}-${{ matrix.node-version }}-
 
     - name: Install dependencies
-      uses: pnpm/action-setup@v2.0.1
+      uses: pnpm/action-setup@v2.2.4
       with:
-        version: 6.9.1
+        version: 7
         run_install: true
     
     - name: Generate the build
